@@ -16,14 +16,14 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_Delivery : ReportClass {
+    public class rpt_Shipment : ReportClass {
         
-        public rpt_Delivery() {
+        public rpt_Shipment() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_Delivery.rpt";
+                return "rpt_Shipment.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         public override string FullResourceName {
             get {
-                return "CyberErp.Presentation.Psms.Web.Reports.List.Purchase.rpt_Delivery.rpt";
+                return "CyberErp.Presentation.Psms.Web.Reports.List.Purchase.rpt_Shipment.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,17 +106,25 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[8];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_Delivery : Component, ICachedReport {
+    public class Cachedrpt_Shipment : Component, ICachedReport {
         
-        public Cachedrpt_Delivery() {
+        public Cachedrpt_Shipment() {
         }
         
         [Browsable(false)]
@@ -153,7 +161,7 @@ namespace CyberErp.Presentation.Psms.Web.Reports.List.Purchase {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_Delivery rpt = new rpt_Delivery();
+            rpt_Shipment rpt = new rpt_Shipment();
             rpt.Site = this.Site;
             return rpt;
         }
