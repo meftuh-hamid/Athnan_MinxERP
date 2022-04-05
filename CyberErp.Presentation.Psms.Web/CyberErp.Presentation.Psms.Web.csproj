@@ -1,0 +1,2538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAD514F7-F7B3-494B-A8C6-7F89A959E273}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyberErp.Presentation.Psms.Web</RootNamespace>
+    <AssemblyName>CyberErp.Presentation.Psms.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Taju\Inventory Final\Presentation.Inventory.Web\Assemblies\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CyberErp.Business.Component.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CyberErp.Business.Component.Hrms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Hrms.dll</HintPath>
+    </Reference>
+    <Reference Include="CyberErp.Business.Component.Ifms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Ifms.dll</HintPath>
+    </Reference>
+    <Reference Include="CyberErp.Business.Component.Psms.Purchasing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Psms.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="CyberErp.Business.Component.Slms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Slms.dll</HintPath>
+    </Reference>
+    <Reference Include="CyberErp.Business.Component.Srms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\CyberErp.Business.Component.Srms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Direct.Mvc, Version=2.1.0.0, Culture=neutral, PublicKeyToken=2ec707a789ea209b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Ext.Direct.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>Assemblies\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
+    <Reference Include="IronBarCode">
+      <HintPath>Assemblies\IronBarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.5.6.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\New-Solution-NVI\CyberErp\CyberErp.Presentation.Psms.Web\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="zxing">
+      <HintPath>Assemblies\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculation\BincardCalculation.aspx.cs">
+      <DependentUpon>BincardCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calculation\BincardCalculation.aspx.designer.cs">
+      <DependentUpon>BincardCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calculation\Calculation.aspx.cs">
+      <DependentUpon>Calculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calculation\Calculation.aspx.designer.cs">
+      <DependentUpon>Calculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calculation\BalanceImport.aspx.cs">
+      <DependentUpon>BalanceImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calculation\BalanceImport.aspx.designer.cs">
+      <DependentUpon>BalanceImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calculation\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calculation\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Barcode.cs" />
+    <Compile Include="Classes\ConfigReader.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\DataHelper.cs" />
+    <Compile Include="Classes\DocumentConfirmation.cs" />
+    <Compile Include="Classes\Encryption.cs" />
+    <Compile Include="Classes\ExportToExcelHelper.cs" />
+    <Compile Include="Classes\GuidEncoder.cs" />
+    <Compile Include="Classes\Model.cs" />
+    <Compile Include="Classes\Permission.cs" />
+    <Compile Include="Classes\Utility.cs" />
+    <Compile Include="Controllers\AdjustmentController.cs" />
+    <Compile Include="Controllers\ApproverController.cs" />
+    <Compile Include="Controllers\BillofMaterialController.cs" />
+    <Compile Include="Controllers\BinCardStockCardController.cs" />
+    <Compile Include="Controllers\BinCardController.cs" />
+    <Compile Include="Controllers\CustodianController.cs" />
+    <Compile Include="Controllers\CustomerCategoryController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\DeliveryOrderController.cs" />
+    <Compile Include="Controllers\DisposalController.cs" />
+    <Compile Include="Controllers\DocumentAttachmentController.cs" />
+    <Compile Include="Controllers\DocumentNoSettingController.cs" />
+    <Compile Include="Controllers\ERPReportController.cs" />
+    <Compile Include="Controllers\FreightOrderController.cs" />
+    <Compile Include="Controllers\GoodsRequestManagementController.cs" />
+    <Compile Include="Controllers\HolidayController.cs" />
+    <Compile Include="Controllers\ItemLocationController.cs" />
+    <Compile Include="Controllers\ItemLocationTransactionController.cs" />
+    <Compile Include="Controllers\ItemPriceController.cs" />
+    <Compile Include="Controllers\OperationController.cs" />
+    <Compile Include="Controllers\PriceCategoryController.cs" />
+    <Compile Include="Controllers\ProductionCenterController.cs" />
+    <Compile Include="Controllers\ProductionOrderController.cs" />
+    <Compile Include="Controllers\ProductionPlanController.cs" />
+    <Compile Include="Controllers\ProductionPlanDeliveryController.cs" />
+    <Compile Include="Controllers\SalesAreaController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\SupplierSettlementController.cs" />
+    <Compile Include="Controllers\SettlementController.cs" />
+    <Compile Include="Controllers\StoreRequestController.cs" />
+    <Compile Include="Controllers\DailySalesController.cs" />
+    <Compile Include="Controllers\TransportationController.cs" />
+    <Compile Include="Controllers\VoucherWorkFlowController.cs" />
+    <Compile Include="Controllers\InventoryRecordController.cs" />
+    <Compile Include="Controllers\IssueController.cs" />
+    <Compile Include="Controllers\ItemCategoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\ItemLOTController.cs" />
+    <Compile Include="Controllers\ItemSerialController.cs" />
+    <Compile Include="Controllers\ItemStoreController.cs" />
+    <Compile Include="Controllers\LookupController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\PsmsController.cs" />
+    <Compile Include="Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Controllers\PurchaseRequestController.cs" />
+    <Compile Include="Controllers\ReceiveController.cs" />
+    <Compile Include="Controllers\ReceptionController.cs" />
+    <Compile Include="Controllers\ReturnController.cs" />
+    <Compile Include="Controllers\Setting.cs" />
+    <Compile Include="Controllers\StoreLocationController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StorePermissionController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\TaxRateController.cs" />
+    <Compile Include="Controllers\TransferIssueController.cs" />
+    <Compile Include="Controllers\TransferReceiveController.cs" />
+    <Compile Include="Controllers\WorkbenchController.cs" />
+    <Compile Include="Controllers\WorkStationController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ErpReportViewer.aspx.cs">
+      <DependentUpon>ErpReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ErpReportViewer.aspx.designer.cs">
+      <DependentUpon>ErpReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Images\rptReportHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReportHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_FixedAssetListByUserCard.cs">
+      <DependentUpon>rpt_FixedAssetListByUserCard.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Documents\rpt_ItemCode - Copy.cs">
+      <DependentUpon>rpt_ItemCode - Copy.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_ItemCode.cs">
+      <DependentUpon>rpt_ItemCode.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_StockEvaluation.cs">
+      <DependentUpon>rpt_StockEvaluation.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerBalanceList.cs">
+      <DependentUpon>rpt_SupplierLedgerBalanceList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerList.cs">
+      <DependentUpon>rpt_SupplierLedgerList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\Payment\rpt_SupplierSettlementList.cs">
+      <DependentUpon>rpt_SupplierSettlementList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\Payment\rpt_SupplierCreditAgingList.cs">
+      <DependentUpon>rpt_SupplierCreditAgingList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\Payment\rpt_PaymentList.cs">
+      <DependentUpon>rpt_PaymentList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_Delivery.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Delivery.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_DeliveryByCustomer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DeliveryByCustomer.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_FreightOrder.cs">
+      <DependentUpon>rpt_FreightOrder.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_PurchaseOrderByATC.cs">
+      <DependentUpon>rpt_PurchaseOrderByATC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_SalesWithDelivery.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_SalesWithDelivery.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Production\rptProductionOrderDeliveryFullStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionOrderDeliveryFullStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rptProductionOrderDeliveryList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionOrderDeliveryList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rptProductionOrderDeliveryRawMaterialList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionOrderDeliveryRawMaterialList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rptProductionOrderDeliveryStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionOrderDeliveryStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rptProductionPlanStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionPlanStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rpt_BillofMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_BillofMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rpt_ProductionOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ProductionOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rpt_ProductionPlan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ProductionPlan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Production\rpt_ProductionPlanJobCard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ProductionPlanJobCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_CollectionList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CollectionList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_CreditAgingList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CreditAgingList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_CustomerLedgerBalanceList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CustomerLedgerBalanceList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_CustomerLedgerList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CustomerLedgerList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_SalesSummaryList.cs">
+      <DependentUpon>rpt_SalesSummaryList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_SalesList.cs">
+      <DependentUpon>rpt_SalesList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_SettlementList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_SettlementList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_Adjustment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Adjustment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_AdjustmentList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_AdjustmentList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_BincardList.cs">
+      <DependentUpon>rpt_BincardList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_Bincard1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Bincard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_BincardBegining1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_BincardBegining.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_DeliveryOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DeliveryOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_PurchaseOrderByAmountList.cs">
+      <DependentUpon>rpt_PurchaseOrderByAmountList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_DeliveryOrderList.cs">
+      <DependentUpon>rpt_DeliveryOrderList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_Disposal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Disposal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_DisposalList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DisposalList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_FixedAssetList1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_FixedAssetList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_FixedAssetListByItem1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_FixedAssetListByItem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_FixedAssetListByItemCustodian1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_FixedAssetListByItemCustodian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_FixedAssetTransfer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_FixedAssetTransfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\FixedAsset\rpt_FixedAssetTransferList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_FixedAssetTransferList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_GoodsRequestList.cs">
+      <DependentUpon>rpt_GoodsRequestList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_GoodsRequest1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_GoodsRequest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_InventoryByStore.cs">
+      <DependentUpon>rpt_InventoryByStore.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_Inventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Inventory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_InventoryCounting.cs">
+      <DependentUpon>rpt_InventoryCounting.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_InventoryClosing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_InventoryClosing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_InventoryReOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_InventoryReOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_IssueList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_IssueList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_PurchaseOrderOutStandingList.cs">
+      <DependentUpon>rpt_PurchaseOrderOutStandingList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_SupplierList.cs">
+      <DependentUpon>rpt_SupplierList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_ItemLOT.cs">
+      <DependentUpon>rpt_ItemLOT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_Item.cs">
+      <DependentUpon>rpt_Item.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_ItemClass.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ItemClass.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_PurchaseOrder1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PurchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_PurchaseRequest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PurchaseRequest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_PurchaseOrderList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PurchaseOrderList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_PurchaseRequestList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_PurchaseRequestList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_Receive1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Receive.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_ReceiveList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ReceiveList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_ReturnList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ReturnList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_StockCard1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StockCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_StockMovement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StockMovement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\Bincard\rpt_StockStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StockStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_StoreIssue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StoreIssue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_StoreReturn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StoreReturn.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_ObSoleteStock.cs">
+      <DependentUpon>rpt_ObSoleteStock.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_Transaction1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Transaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_TransferIssue1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TransferIssue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_TransferIssueList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TransferIssueList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Voucher\rpt_TransferReceive1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TransferReceive.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Inventory\List\rpt_TransferReceiveList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TransferReceiveList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkFlow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkFlow.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assemblies\CyberErp.Business.Component.Core.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Hrms.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Ifms.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Psms.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Psms.Purchasing.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Slms.dll" />
+    <Content Include="Assemblies\CyberErp.Business.Component.Srms.dll" />
+    <Content Include="Assemblies\Ext.Direct.Mvc.dll" />
+    <Content Include="Assemblies\Newtonsoft.Json.dll" />
+    <Content Include="Calculation\BincardCalculation.aspx" />
+    <Content Include="Calculation\Calculation.aspx" />
+    <Content Include="Calculation\BalanceImport.aspx" />
+    <Content Include="Calculation\Import.aspx" />
+    <Content Include="Content\css\app\fileuploadfield.css" />
+    <Content Include="Content\css\app\icons.css" />
+    <Content Include="Content\css\app\main.css" />
+    <Content Include="Content\css\azzurra-legacy.css" />
+    <Content Include="Content\css\debug.css" />
+    <Content Include="Content\css\ext-all-notheme.css" />
+    <Content Include="Content\css\ext-all.css" />
+    <Content Include="Content\css\portal.css" />
+    <Content Include="Content\css\reportviewer.css" />
+    <Content Include="Content\css\reset-min.css" />
+    <Content Include="Content\css\structure\borders.css" />
+    <Content Include="Content\css\structure\box.css" />
+    <Content Include="Content\css\structure\button.css" />
+    <Content Include="Content\css\structure\combo.css" />
+    <Content Include="Content\css\structure\core.css" />
+    <Content Include="Content\css\structure\date-picker.css" />
+    <Content Include="Content\css\structure\dd.css" />
+    <Content Include="Content\css\structure\debug.css" />
+    <Content Include="Content\css\structure\dialog.css" />
+    <Content Include="Content\css\structure\editor.css" />
+    <Content Include="Content\css\structure\form.css" />
+    <Content Include="Content\css\structure\grid.css" />
+    <Content Include="Content\css\structure\layout.css" />
+    <Content Include="Content\css\structure\list-view.css" />
+    <Content Include="Content\css\structure\menu.css" />
+    <Content Include="Content\css\structure\panel-reset.css" />
+    <Content Include="Content\css\structure\panel.css" />
+    <Content Include="Content\css\structure\pivotgrid.css" />
+    <Content Include="Content\css\structure\progress.css" />
+    <Content Include="Content\css\structure\qtips.css" />
+    <Content Include="Content\css\structure\reset.css" />
+    <Content Include="Content\css\structure\resizable.css" />
+    <Content Include="Content\css\structure\slider.css" />
+    <Content Include="Content\css\structure\tabs.css" />
+    <Content Include="Content\css\structure\toolbar.css" />
+    <Content Include="Content\css\structure\tree.css" />
+    <Content Include="Content\css\structure\window.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\theme-access\borders.css" />
+    <Content Include="Content\css\theme-access\box.css" />
+    <Content Include="Content\css\theme-access\button.css" />
+    <Content Include="Content\css\theme-access\combo.css" />
+    <Content Include="Content\css\theme-access\core.css" />
+    <Content Include="Content\css\theme-access\date-picker.css" />
+    <Content Include="Content\css\theme-access\dd.css" />
+    <Content Include="Content\css\theme-access\debug.css" />
+    <Content Include="Content\css\theme-access\dialog.css" />
+    <Content Include="Content\css\theme-access\editor.css" />
+    <Content Include="Content\css\theme-access\form.css" />
+    <Content Include="Content\css\theme-access\grid.css" />
+    <Content Include="Content\css\theme-access\layout.css" />
+    <Content Include="Content\css\theme-access\list-view.css" />
+    <Content Include="Content\css\theme-access\menu.css" />
+    <Content Include="Content\css\theme-access\panel.css" />
+    <Content Include="Content\css\theme-access\progress.css" />
+    <Content Include="Content\css\theme-access\qtips.css" />
+    <Content Include="Content\css\theme-access\resizable.css" />
+    <Content Include="Content\css\theme-access\slider.css" />
+    <Content Include="Content\css\theme-access\tabs.css" />
+    <Content Include="Content\css\theme-access\toolbar.css" />
+    <Content Include="Content\css\theme-access\tree.css" />
+    <Content Include="Content\css\theme-access\window.css" />
+    <Content Include="Content\css\theme-gray\borders.css" />
+    <Content Include="Content\css\theme-gray\box.css" />
+    <Content Include="Content\css\theme-gray\button.css" />
+    <Content Include="Content\css\theme-gray\combo.css" />
+    <Content Include="Content\css\theme-gray\core.css" />
+    <Content Include="Content\css\theme-gray\date-picker.css" />
+    <Content Include="Content\css\theme-gray\dd.css" />
+    <Content Include="Content\css\theme-gray\debug.css" />
+    <Content Include="Content\css\theme-gray\dialog.css" />
+    <Content Include="Content\css\theme-gray\editor.css" />
+    <Content Include="Content\css\theme-gray\form.css" />
+    <Content Include="Content\css\theme-gray\grid.css" />
+    <Content Include="Content\css\theme-gray\layout.css" />
+    <Content Include="Content\css\theme-gray\list-view.css" />
+    <Content Include="Content\css\theme-gray\menu.css" />
+    <Content Include="Content\css\theme-gray\panel.css" />
+    <Content Include="Content\css\theme-gray\progress.css" />
+    <Content Include="Content\css\theme-gray\qtips.css" />
+    <Content Include="Content\css\theme-gray\resizable.css" />
+    <Content Include="Content\css\theme-gray\slider.css" />
+    <Content Include="Content\css\theme-gray\tabs.css" />
+    <Content Include="Content\css\theme-gray\toolbar.css" />
+    <Content Include="Content\css\theme-gray\tree.css" />
+    <Content Include="Content\css\theme-gray\window.css" />
+    <Content Include="Content\css\visual\borders.css" />
+    <Content Include="Content\css\visual\box.css" />
+    <Content Include="Content\css\visual\button.css" />
+    <Content Include="Content\css\visual\combo.css" />
+    <Content Include="Content\css\visual\core.css" />
+    <Content Include="Content\css\visual\date-picker.css" />
+    <Content Include="Content\css\visual\dd.css" />
+    <Content Include="Content\css\visual\debug.css" />
+    <Content Include="Content\css\visual\dialog.css" />
+    <Content Include="Content\css\visual\editor.css" />
+    <Content Include="Content\css\visual\form.css" />
+    <Content Include="Content\css\visual\grid.css" />
+    <Content Include="Content\css\visual\layout.css" />
+    <Content Include="Content\css\visual\list-view.css" />
+    <Content Include="Content\css\visual\menu.css" />
+    <Content Include="Content\css\visual\panel.css" />
+    <Content Include="Content\css\visual\pivotgrid.css" />
+    <Content Include="Content\css\visual\progress.css" />
+    <Content Include="Content\css\visual\qtips.css" />
+    <Content Include="Content\css\visual\resizable.css" />
+    <Content Include="Content\css\visual\slider.css" />
+    <Content Include="Content\css\visual\tabs.css" />
+    <Content Include="Content\css\visual\toolbar.css" />
+    <Content Include="Content\css\visual\tree.css" />
+    <Content Include="Content\css\visual\window.css" />
+    <Content Include="Content\css\xtheme-access.css" />
+    <Content Include="Content\css\xtheme-blue.css" />
+    <Content Include="Content\css\xtheme-gray.css" />
+    <Content Include="Content\css\yourtheme.css" />
+    <Content Include="Content\images\app\Background.jpg" />
+    <Content Include="Content\images\app\delivery.png" />
+    <Content Include="Content\images\app\department.png" />
+    <Content Include="Content\images\app\disposal.png" />
+    <Content Include="Content\images\app\expense.png" />
+    <Content Include="Content\images\app\holiday.png" />
+    <Content Include="Content\images\app\in.png" />
+    <Content Include="Content\images\app\issue.png" />
+    <Content Include="Content\images\app\job.png" />
+    <Content Include="Content\images\app\New Text Document %282%29.txt" />
+    <Content Include="Content\images\app\order.png" />
+    <Content Include="Content\images\app\out.png" />
+    <Content Include="Content\images\app\plan.png" />
+    <Content Include="Content\images\app\receive.png" />
+    <Content Include="Content\images\app\report.png" />
+    <Content Include="Content\images\app\request.png" />
+    <Content Include="Content\images\app\return.png" />
+    <Content Include="Content\images\app\station.png" />
+    <Content Include="Content\images\app\status.png" />
+    <Content Include="Scripts\Cement\ATCCollection.js" />
+    <Content Include="Scripts\Cement\CementReport.js" />
+    <Content Include="Scripts\Cement\Delivery.js" />
+    <Content Include="Scripts\Cement\DeliverySchedule.js" />
+    <Content Include="Scripts\Cement\FreightOrder.js" />
+    <Content Include="Scripts\Cement\Transportation.js" />
+    <Content Include="Scripts\Inventory\Item\ProductionPicker.js" />
+    <Content Include="Scripts\Inventory\Transaction\StoreRequest.js" />
+    <Content Include="Scripts\Production\BillofMaterial.js" />
+    <Content Include="Scripts\Production\BillofMaterialOperation.js" />
+    <Content Include="Scripts\Production\BillofMaterialtem.js" />
+    <Content Include="Scripts\Production\Holiday.js" />
+    <Content Include="Scripts\Production\Operation.js" />
+    <Content Include="Scripts\Production\ProductionCenter.js" />
+    <Content Include="Scripts\Production\ProductionDelivery.js" />
+    <Content Include="Scripts\Production\ProductionJobCard.js" />
+    <Content Include="Scripts\Production\ProductionJobCardStatus.js" />
+    <Content Include="Scripts\Production\ProductionOrder.js" />
+    <Content Include="Scripts\Production\ProductionPlan.js" />
+    <Content Include="Scripts\Production\ProductionPlanItem.js" />
+    <Content Include="Scripts\Production\ProductionPlanOperation.js" />
+    <Content Include="Scripts\Production\ProductionPlanOperationTeam.js" />
+    <Content Include="Scripts\Production\ProductionPlanStatus.js" />
+    <Content Include="Scripts\Production\ProductionReport.js" />
+    <Content Include="Scripts\Production\WorkStation.js" />
+    <Content Include="Scripts\Purchase\SupplierSettlement.js" />
+    <Content Include="Scripts\Purchase\SupplierCredit.js" />
+    <Content Include="Scripts\Sales\DailySales.js" />
+    <Content Include="Scripts\Sales\CustomerCredit.js" />
+    <Content Include="Scripts\Sales\Customer.js" />
+    <Content Include="Scripts\Sales\CustomerCategory.js" />
+    <Content Include="Scripts\Sales\ItemPrice.js" />
+    <Content Include="Scripts\Sales\PriceCategory.js" />
+    <Content Include="Scripts\Sales\Sales.js" />
+    <Content Include="Scripts\Sales\SalesArea.js" />
+    <Content Include="Scripts\Sales\SalesItemPicker.js" />
+    <Content Include="Scripts\Sales\SalesReport.js" />
+    <Content Include="Scripts\Sales\Settlement.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="Content\images\access\box\corners-blue.gif" />
+    <Content Include="Content\images\access\box\corners.gif" />
+    <Content Include="Content\images\access\box\l-blue.gif" />
+    <Content Include="Content\images\access\box\l.gif" />
+    <Content Include="Content\images\access\box\r-blue.gif" />
+    <Content Include="Content\images\access\box\r.gif" />
+    <Content Include="Content\images\access\box\tb-blue.gif" />
+    <Content Include="Content\images\access\box\tb.gif" />
+    <Content Include="Content\images\access\button\arrow.gif" />
+    <Content Include="Content\images\access\button\btn.gif" />
+    <Content Include="Content\images\access\button\group-cs.gif" />
+    <Content Include="Content\images\access\button\group-lr.gif" />
+    <Content Include="Content\images\access\button\group-tb.gif" />
+    <Content Include="Content\images\access\button\s-arrow-b-noline.gif" />
+    <Content Include="Content\images\access\button\s-arrow-b.gif" />
+    <Content Include="Content\images\access\button\s-arrow-bo.gif" />
+    <Content Include="Content\images\access\button\s-arrow-noline.gif" />
+    <Content Include="Content\images\access\button\s-arrow-o.gif" />
+    <Content Include="Content\images\access\button\s-arrow.gif" />
+    <Content Include="Content\images\access\editor\tb-sprite.gif" />
+    <Content Include="Content\images\access\form\checkbox.gif" />
+    <Content Include="Content\images\access\form\clear-trigger.gif" />
+    <Content Include="Content\images\access\form\date-trigger.gif" />
+    <Content Include="Content\images\access\form\error-tip-corners.gif" />
+    <Content Include="Content\images\access\form\exclamation.gif" />
+    <Content Include="Content\images\access\form\radio.gif" />
+    <Content Include="Content\images\access\form\search-trigger.gif" />
+    <Content Include="Content\images\access\form\text-bg.gif" />
+    <Content Include="Content\images\access\form\trigger-tpl.gif" />
+    <Content Include="Content\images\access\form\trigger.gif" />
+    <Content Include="Content\images\access\grid\arrow-left-white.gif" />
+    <Content Include="Content\images\access\grid\arrow-right-white.gif" />
+    <Content Include="Content\images\access\grid\col-move-bottom.gif" />
+    <Content Include="Content\images\access\grid\col-move-top.gif" />
+    <Content Include="Content\images\access\grid\columns.gif" />
+    <Content Include="Content\images\access\grid\dirty.gif" />
+    <Content Include="Content\images\access\grid\done.gif" />
+    <Content Include="Content\images\access\grid\drop-no.gif" />
+    <Content Include="Content\images\access\grid\drop-yes.gif" />
+    <Content Include="Content\images\access\grid\footer-bg.gif" />
+    <Content Include="Content\images\access\grid\grid-blue-hd.gif" />
+    <Content Include="Content\images\access\grid\grid-blue-split.gif" />
+    <Content Include="Content\images\access\grid\grid-hrow.gif" />
+    <Content Include="Content\images\access\grid\grid-loading.gif" />
+    <Content Include="Content\images\access\grid\grid-split.gif" />
+    <Content Include="Content\images\access\grid\grid-vista-hd.gif" />
+    <Content Include="Content\images\access\grid\grid3-hd-btn.gif" />
+    <Content Include="Content\images\access\grid\grid3-hrow-over.gif" />
+    <Content Include="Content\images\access\grid\grid3-hrow.gif" />
+    <Content Include="Content\images\access\grid\grid3-special-col-bg.gif" />
+    <Content Include="Content\images\access\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Content\images\access\grid\group-by.gif" />
+    <Content Include="Content\images\access\grid\group-collapse.gif" />
+    <Content Include="Content\images\access\grid\group-expand-sprite.gif" />
+    <Content Include="Content\images\access\grid\group-expand.gif" />
+    <Content Include="Content\images\access\grid\hd-pop.gif" />
+    <Content Include="Content\images\access\grid\hmenu-asc.gif" />
+    <Content Include="Content\images\access\grid\hmenu-desc.gif" />
+    <Content Include="Content\images\access\grid\hmenu-lock.gif" />
+    <Content Include="Content\images\access\grid\hmenu-lock.png" />
+    <Content Include="Content\images\access\grid\hmenu-unlock.gif" />
+    <Content Include="Content\images\access\grid\hmenu-unlock.png" />
+    <Content Include="Content\images\access\grid\invalid_line.gif" />
+    <Content Include="Content\images\access\grid\loading.gif" />
+    <Content Include="Content\images\access\grid\mso-hd.gif" />
+    <Content Include="Content\images\access\grid\nowait.gif" />
+    <Content Include="Content\images\access\grid\page-first-disabled.gif" />
+    <Content Include="Content\images\access\grid\page-first.gif" />
+    <Content Include="Content\images\access\grid\page-last-disabled.gif" />
+    <Content Include="Content\images\access\grid\page-last.gif" />
+    <Content Include="Content\images\access\grid\page-next-disabled.gif" />
+    <Content Include="Content\images\access\grid\page-next.gif" />
+    <Content Include="Content\images\access\grid\page-prev-disabled.gif" />
+    <Content Include="Content\images\access\grid\page-prev.gif" />
+    <Content Include="Content\images\access\grid\pick-button.gif" />
+    <Content Include="Content\images\access\grid\refresh.gif" />
+    <Content Include="Content\images\access\grid\row-check-sprite.gif" />
+    <Content Include="Content\images\access\grid\row-expand-sprite.gif" />
+    <Content Include="Content\images\access\grid\row-over.gif" />
+    <Content Include="Content\images\access\grid\row-sel.gif" />
+    <Content Include="Content\images\access\grid\sort-hd.gif" />
+    <Content Include="Content\images\access\grid\sort_asc.gif" />
+    <Content Include="Content\images\access\grid\sort_desc.gif" />
+    <Content Include="Content\images\access\grid\wait.gif" />
+    <Content Include="Content\images\access\menu\checked.gif" />
+    <Content Include="Content\images\access\menu\group-checked.gif" />
+    <Content Include="Content\images\access\menu\item-over.gif" />
+    <Content Include="Content\images\access\menu\menu-parent.gif" />
+    <Content Include="Content\images\access\menu\menu.gif" />
+    <Content Include="Content\images\access\menu\unchecked.gif" />
+    <Content Include="Content\images\access\panel\corners-sprite.gif" />
+    <Content Include="Content\images\access\panel\left-right.gif" />
+    <Content Include="Content\images\access\panel\light-hd.gif" />
+    <Content Include="Content\images\access\panel\tool-sprite-tpl.gif" />
+    <Content Include="Content\images\access\panel\tool-sprites.gif" />
+    <Content Include="Content\images\access\panel\tools-sprites-trans.gif" />
+    <Content Include="Content\images\access\panel\top-bottom.gif" />
+    <Content Include="Content\images\access\panel\white-corners-sprite.gif" />
+    <Content Include="Content\images\access\panel\white-left-right.gif" />
+    <Content Include="Content\images\access\panel\white-top-bottom.gif" />
+    <Content Include="Content\images\access\progress\progress-bg.gif" />
+    <Content Include="Content\images\access\qtip\close.gif" />
+    <Content Include="Content\images\access\qtip\tip-anchor-sprite.gif" />
+    <Content Include="Content\images\access\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\access\shared\glass-bg.gif" />
+    <Content Include="Content\images\access\shared\hd-sprite.gif" />
+    <Content Include="Content\images\access\shared\left-btn.gif" />
+    <Content Include="Content\images\access\shared\right-btn.gif" />
+    <Content Include="Content\images\access\sizer\e-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\e-handle.gif" />
+    <Content Include="Content\images\access\sizer\ne-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\ne-handle.gif" />
+    <Content Include="Content\images\access\sizer\nw-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\nw-handle.gif" />
+    <Content Include="Content\images\access\sizer\s-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\s-handle.gif" />
+    <Content Include="Content\images\access\sizer\se-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\se-handle.gif" />
+    <Content Include="Content\images\access\sizer\square.gif" />
+    <Content Include="Content\images\access\sizer\sw-handle-dark.gif" />
+    <Content Include="Content\images\access\sizer\sw-handle.gif" />
+    <Content Include="Content\images\access\slider\slider-bg.png" />
+    <Content Include="Content\images\access\slider\slider-thumb.png" />
+    <Content Include="Content\images\access\slider\slider-v-bg.png" />
+    <Content Include="Content\images\access\slider\slider-v-thumb.png" />
+    <Content Include="Content\images\access\tabs\scroll-left.gif" />
+    <Content Include="Content\images\access\tabs\scroll-right.gif" />
+    <Content Include="Content\images\access\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\access\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\access\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\access\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\access\tabs\tab-close.gif" />
+    <Content Include="Content\images\access\tabs\tab-strip-bg.gif" />
+    <Content Include="Content\images\access\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Content\images\access\tabs\tabs-sprite.gif" />
+    <Content Include="Content\images\access\toolbar\bg.gif" />
+    <Content Include="Content\images\access\toolbar\btn-arrow-light.gif" />
+    <Content Include="Content\images\access\toolbar\btn-arrow.gif" />
+    <Content Include="Content\images\access\toolbar\btn-over-bg.gif" />
+    <Content Include="Content\images\access\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\access\toolbar\more.gif" />
+    <Content Include="Content\images\access\toolbar\s-arrow-bo.gif" />
+    <Content Include="Content\images\access\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\access\toolbar\tb-xl-btn-sprite.gif" />
+    <Content Include="Content\images\access\toolbar\tb-xl-sep.gif" />
+    <Content Include="Content\images\access\tree\arrows.gif" />
+    <Content Include="Content\images\access\tree\drop-add.gif" />
+    <Content Include="Content\images\access\tree\drop-between.gif" />
+    <Content Include="Content\images\access\tree\drop-no.gif" />
+    <Content Include="Content\images\access\tree\drop-over.gif" />
+    <Content Include="Content\images\access\tree\drop-under.gif" />
+    <Content Include="Content\images\access\tree\drop-yes.gif" />
+    <Content Include="Content\images\access\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Content\images\access\tree\elbow-end-minus.gif" />
+    <Content Include="Content\images\access\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Content\images\access\tree\elbow-end-plus.gif" />
+    <Content Include="Content\images\access\tree\elbow-end.gif" />
+    <Content Include="Content\images\access\tree\elbow-line.gif" />
+    <Content Include="Content\images\access\tree\elbow-minus-nl.gif" />
+    <Content Include="Content\images\access\tree\elbow-minus.gif" />
+    <Content Include="Content\images\access\tree\elbow-plus-nl.gif" />
+    <Content Include="Content\images\access\tree\elbow-plus.gif" />
+    <Content Include="Content\images\access\tree\elbow.gif" />
+    <Content Include="Content\images\access\tree\folder-open.gif" />
+    <Content Include="Content\images\access\tree\folder.gif" />
+    <Content Include="Content\images\access\tree\leaf.gif" />
+    <Content Include="Content\images\access\tree\loading.gif" />
+    <Content Include="Content\images\access\tree\s.gif" />
+    <Content Include="Content\images\access\window\icon-error.gif" />
+    <Content Include="Content\images\access\window\icon-info.gif" />
+    <Content Include="Content\images\access\window\icon-question.gif" />
+    <Content Include="Content\images\access\window\icon-warning.gif" />
+    <Content Include="Content\images\access\window\left-corners.png" />
+    <Content Include="Content\images\access\window\left-right.png" />
+    <Content Include="Content\images\access\window\right-corners.png" />
+    <Content Include="Content\images\access\window\top-bottom.png" />
+    <Content Include="Content\images\app\accept.png" />
+    <Content Include="Content\images\app\add.png" />
+    <Content Include="Content\images\app\adjustment.png" />
+    <Content Include="Content\images\app\benefit.png" />
+    <Content Include="Content\images\app\bullet-green.png" />
+    <Content Include="Content\images\app\cancel.png" />
+    <Content Include="Content\images\app\charts.swf" />
+    <Content Include="Content\images\app\collapse-all.gif" />
+    <Content Include="Content\images\app\delete.png" />
+    <Content Include="Content\images\app\disk.png" />
+    <Content Include="Content\images\app\education.png" />
+    <Content Include="Content\images\app\evaluation.png" />
+    <Content Include="Content\images\app\exclamation.gif" />
+    <Content Include="Content\images\app\expand-all.gif" />
+    <Content Include="Content\images\app\experience.png" />
+    <Content Include="Content\images\app\filter.png" />
+    <Content Include="Content\images\app\folder-vertical.png" />
+    <Content Include="Content\images\app\folder.png" />
+    <Content Include="Content\images\app\folder_go.png" />
+    <Content Include="Content\images\app\headerbg.gif" />
+    <Content Include="Content\images\app\hierarchy.png" />
+    <Content Include="Content\images\app\home.png" />
+    <Content Include="Content\images\app\image_add.png" />
+    <Content Include="Content\images\app\information.png" />
+    <Content Include="Content\images\app\jobgrade.png" />
+    <Content Include="Content\images\app\key.png" />
+    <Content Include="Content\images\app\loading.gif" />
+    <Content Include="Content\images\app\lockworkbench.png" />
+    <Content Include="Content\images\app\login-bg.png" />
+    <Content Include="Content\images\app\logo.png" />
+    <Content Include="Content\images\app\logout.png" />
+    <Content Include="Content\images\app\member.png" />
+    <Content Include="Content\images\app\menu.png" />
+    <Content Include="Content\images\app\messagebox-critical.png" />
+    <Content Include="Content\images\app\messagebox-error.png" />
+    <Content Include="Content\images\app\messagebox-info.png" />
+    <Content Include="Content\images\app\messagebox-question.png" />
+    <Content Include="Content\images\app\messagebox-warning.png" />
+    <Content Include="Content\images\app\module.png" />
+    <Content Include="Content\images\app\no.png" />
+    <Content Include="Content\images\app\operation.png" />
+    <Content Include="Content\images\app\payrollitem.png" />
+    <Content Include="Content\images\app\pending.png" />
+    <Content Include="Content\images\app\permission.png" />
+    <Content Include="Content\images\app\position.png" />
+    <Content Include="Content\images\app\positionclass.png" />
+    <Content Include="Content\images\app\preview.png" />
+    <Content Include="Content\images\app\printer.png" />
+    <Content Include="Content\images\app\professioncategory.png" />
+    <Content Include="Content\images\app\refresh.gif" />
+    <Content Include="Content\images\app\requirement.png" />
+    <Content Include="Content\images\app\responsibility.png" />
+    <Content Include="Content\images\app\restart.png" />
+    <Content Include="Content\images\app\resultset_first.png" />
+    <Content Include="Content\images\app\resultset_last.png" />
+    <Content Include="Content\images\app\resultset_next.png" />
+    <Content Include="Content\images\app\resultset_previous.png" />
+    <Content Include="Content\images\app\role.png" />
+    <Content Include="Content\images\app\salaryscale.png" />
+    <Content Include="Content\images\app\saved.png" />
+    <Content Include="Content\images\app\select.png" />
+    <Content Include="Content\images\app\startup-bg.png" />
+    <Content Include="Content\images\app\subsystem.png" />
+    <Content Include="Content\images\app\transfer.png" />
+    <Content Include="Content\images\app\unit.png" />
+    <Content Include="Content\images\app\yes.png" />
+    <Content Include="Content\images\azzurra-legacy\box\corners-blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\corners.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\l-blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\l-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\l.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\r-blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\r-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\r.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\tb-blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\box\tb.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\arrow-w.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\arrow.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\btn.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\group-cs.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\group-lr.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\group-tb.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-b-noline.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-b.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-b1.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-bo-white.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-bo-white1.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-bo.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-noline.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-o-w.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-o-w1.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-o.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-w-noline.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow-w.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow.gif" />
+    <Content Include="Content\images\azzurra-legacy\button\s-arrow1.gif" />
+    <Content Include="Content\images\azzurra-legacy\dd\drop-add.gif" />
+    <Content Include="Content\images\azzurra-legacy\dd\drop-no.gif" />
+    <Content Include="Content\images\azzurra-legacy\dd\drop-yes.gif" />
+    <Content Include="Content\images\azzurra-legacy\editor\tb-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\editor\tb-sprite.png" />
+    <Content Include="Content\images\azzurra-legacy\form\checkbox.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\clear-trigger.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\clear-trigger.png" />
+    <Content Include="Content\images\azzurra-legacy\form\date-trigger.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\date-trigger.png" />
+    <Content Include="Content\images\azzurra-legacy\form\error-tip-corners.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\exclamation.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\radio.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\search-trigger-single.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\search-trigger.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\search-trigger.png" />
+    <Content Include="Content\images\azzurra-legacy\form\search-trigger1.png" />
+    <Content Include="Content\images\azzurra-legacy\form\search-trigger2.png" />
+    <Content Include="Content\images\azzurra-legacy\form\spinner1.png" />
+    <Content Include="Content\images\azzurra-legacy\form\text-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger-square.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger-tpl.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger.gif" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger.png" />
+    <Content Include="Content\images\azzurra-legacy\gradient-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\arrow-down-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\arrow-down-gray.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\arrow-left-white.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\arrow-right-white.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\arrow-up-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\col-move-bottom.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\col-move-top.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\columns.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\dirty.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\done.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\drop-no.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\drop-yes.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\footer-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-blue-hd.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-blue-split.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-hrow.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-loading.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-split.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid-vista-hd.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-hd-btn.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-hrow-over-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-hrow-over.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-hrow.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-special-col-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-special-col-sel-bg-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-special-col-sel-bg-gray1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-by.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-collapse.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-collapse1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-expand-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-expand.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\group-expand1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hd-pop.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-asc.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-asc.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-desc.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-desc.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-lock.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-lock.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-unlock.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\hmenu-unlock.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\invalid_line.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\loading.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\mso-hd.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\nowait.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\pagingbar-sprite.png" />
+    <Content Include="Content\images\azzurra-legacy\grid\pick-button.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-check-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-check-sprite1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-expand-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-expand-sprite1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-over.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\row-sel.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort-hd-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort-hd-gray1.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort-hd-gray2.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort-hd.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort_asc_blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort_asc_gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort_desc_blue.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\sort_desc_gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\grid\wait.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\collapse.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\expand.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\gradient-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\mini-bottom.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\mini-left.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\mini-right.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\mini-top.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\ns-collapse.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\ns-expand.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\panel-close.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\panel-title-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\panel-title-light-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\stick.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\stuck.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\tab-close-on.gif" />
+    <Content Include="Content\images\azzurra-legacy\layout\tab-close.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\checked.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\group-checked.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\item-over.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\menu-parent.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\menu.gif" />
+    <Content Include="Content\images\azzurra-legacy\menu\unchecked.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\corners-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\left-right.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\light-hd.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\tool-sprite-tpl.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\tool-sprite.png" />
+    <Content Include="Content\images\azzurra-legacy\panel\tool-sprites.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\tools-sprites-trans.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\top-bottom.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\top-bottom.png" />
+    <Content Include="Content\images\azzurra-legacy\panel\white-corners-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\white-left-right.gif" />
+    <Content Include="Content\images\azzurra-legacy\panel\white-top-bottom.gif" />
+    <Content Include="Content\images\azzurra-legacy\progress\progress-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\qtip\bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\qtip\close.gif" />
+    <Content Include="Content\images\azzurra-legacy\qtip\tip-anchor-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\README.txt" />
+    <Content Include="Content\images\azzurra-legacy\s.gif" />
+    <Content Include="Content\images\azzurra-legacy\shadow-c.png" />
+    <Content Include="Content\images\azzurra-legacy\shadow-lr.png" />
+    <Content Include="Content\images\azzurra-legacy\shadow.png" />
+    <Content Include="Content\images\azzurra-legacy\shared\blue-loading.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\calendar.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\glass-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\hd-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\large-loading.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\left-btn.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\loading-balls.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\right-btn.gif" />
+    <Content Include="Content\images\azzurra-legacy\shared\warning.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\e-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\e-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\ne-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\ne-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\nw-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\nw-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\s-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\s-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\se-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\se-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\square.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\sw-handle-dark.gif" />
+    <Content Include="Content\images\azzurra-legacy\sizer\sw-handle.gif" />
+    <Content Include="Content\images\azzurra-legacy\slider\slider-bg.png" />
+    <Content Include="Content\images\azzurra-legacy\slider\slider-thumb.png" />
+    <Content Include="Content\images\azzurra-legacy\slider\slider-v-bg.png" />
+    <Content Include="Content\images\azzurra-legacy\slider\slider-v-thumb.png" />
+    <Content Include="Content\images\azzurra-legacy\tabs\scroll-left-no-border.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\scroll-left.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\scroll-right-no-border.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\scroll-right.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\scroller-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-over-left-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-over-right-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-close-default.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-close.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-scroller-menu-gray.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-scroller-menu-gray1.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-strip-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-strip-bg.png" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\tabs\tabs-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\btn-arrow-light.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\btn-arrow.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\btn-over-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\more.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\tb-bg.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\tb-xl-btn-sprite.gif" />
+    <Content Include="Content\images\azzurra-legacy\toolbar\tb-xl-sep.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\all-elbows-medium.png" />
+    <Content Include="Content\images\azzurra-legacy\tree\all-elbows-small.png" />
+    <Content Include="Content\images\azzurra-legacy\tree\arrows.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-add.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-between.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-no.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-over.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-under.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\drop-yes.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-end-minus.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-end-plus.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-end.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-line.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-minus-nl.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-minus.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-plus-nl.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow-plus.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\elbow.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\folder-open.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\folder.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\icons-medium.png" />
+    <Content Include="Content\images\azzurra-legacy\tree\icons-small.png" />
+    <Content Include="Content\images\azzurra-legacy\tree\leaf.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\loading.gif" />
+    <Content Include="Content\images\azzurra-legacy\tree\s.gif" />
+    <Content Include="Content\images\azzurra-legacy\window\icon-error.gif" />
+    <Content Include="Content\images\azzurra-legacy\window\icon-info.gif" />
+    <Content Include="Content\images\azzurra-legacy\window\icon-question.gif" />
+    <Content Include="Content\images\azzurra-legacy\window\icon-warning.gif" />
+    <Content Include="Content\images\azzurra-legacy\window\left-corners.png" />
+    <Content Include="Content\images\azzurra-legacy\window\left-right.png" />
+    <Content Include="Content\images\azzurra-legacy\window\right-corners.png" />
+    <Content Include="Content\images\azzurra-legacy\window\top-bottom.png" />
+    <Content Include="Content\images\default\box\corners-blue.gif" />
+    <Content Include="Content\images\default\box\corners.gif" />
+    <Content Include="Content\images\default\box\l-blue.gif" />
+    <Content Include="Content\images\default\box\l.gif" />
+    <Content Include="Content\images\default\box\r-blue.gif" />
+    <Content Include="Content\images\default\box\r.gif" />
+    <Content Include="Content\images\default\box\tb-blue.gif" />
+    <Content Include="Content\images\default\box\tb.gif" />
+    <Content Include="Content\images\default\button\arrow.gif" />
+    <Content Include="Content\images\default\button\btn.gif" />
+    <Content Include="Content\images\default\button\group-cs.gif" />
+    <Content Include="Content\images\default\button\group-lr.gif" />
+    <Content Include="Content\images\default\button\group-tb.gif" />
+    <Content Include="Content\images\default\button\s-arrow-b-noline.gif" />
+    <Content Include="Content\images\default\button\s-arrow-b.gif" />
+    <Content Include="Content\images\default\button\s-arrow-bo.gif" />
+    <Content Include="Content\images\default\button\s-arrow-noline.gif" />
+    <Content Include="Content\images\default\button\s-arrow-o.gif" />
+    <Content Include="Content\images\default\button\s-arrow.gif" />
+    <Content Include="Content\images\default\dd\drop-add.gif" />
+    <Content Include="Content\images\default\dd\drop-no.gif" />
+    <Content Include="Content\images\default\dd\drop-yes.gif" />
+    <Content Include="Content\images\default\editor\tb-sprite.gif" />
+    <Content Include="Content\images\default\form\checkbox.gif" />
+    <Content Include="Content\images\default\form\clear-trigger.gif" />
+    <Content Include="Content\images\default\form\date-trigger.gif" />
+    <Content Include="Content\images\default\form\error-tip-corners.gif" />
+    <Content Include="Content\images\default\form\exclamation.gif" />
+    <Content Include="Content\images\default\form\radio.gif" />
+    <Content Include="Content\images\default\form\search-trigger.gif" />
+    <Content Include="Content\images\default\form\text-bg.gif" />
+    <Content Include="Content\images\default\form\trigger-square.gif" />
+    <Content Include="Content\images\default\form\trigger-tpl.gif" />
+    <Content Include="Content\images\default\form\trigger.gif" />
+    <Content Include="Content\images\default\gradient-bg.gif" />
+    <Content Include="Content\images\default\grid\arrow-left-white.gif" />
+    <Content Include="Content\images\default\grid\arrow-right-white.gif" />
+    <Content Include="Content\images\default\grid\col-move-bottom.gif" />
+    <Content Include="Content\images\default\grid\col-move-top.gif" />
+    <Content Include="Content\images\default\grid\columns.gif" />
+    <Content Include="Content\images\default\grid\dirty.gif" />
+    <Content Include="Content\images\default\grid\done.gif" />
+    <Content Include="Content\images\default\grid\drop-no.gif" />
+    <Content Include="Content\images\default\grid\drop-yes.gif" />
+    <Content Include="Content\images\default\grid\footer-bg.gif" />
+    <Content Include="Content\images\default\grid\grid-blue-hd.gif" />
+    <Content Include="Content\images\default\grid\grid-blue-split.gif" />
+    <Content Include="Content\images\default\grid\grid-hrow.gif" />
+    <Content Include="Content\images\default\grid\grid-loading.gif" />
+    <Content Include="Content\images\default\grid\grid-split.gif" />
+    <Content Include="Content\images\default\grid\grid-vista-hd.gif" />
+    <Content Include="Content\images\default\grid\grid3-hd-btn.gif" />
+    <Content Include="Content\images\default\grid\grid3-hrow-over.gif" />
+    <Content Include="Content\images\default\grid\grid3-hrow.gif" />
+    <Content Include="Content\images\default\grid\grid3-rowheader.gif" />
+    <Content Include="Content\images\default\grid\grid3-special-col-bg.gif" />
+    <Content Include="Content\images\default\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Content\images\default\grid\group-by.gif" />
+    <Content Include="Content\images\default\grid\group-collapse.gif" />
+    <Content Include="Content\images\default\grid\group-expand-sprite.gif" />
+    <Content Include="Content\images\default\grid\group-expand.gif" />
+    <Content Include="Content\images\default\grid\hd-pop.gif" />
+    <Content Include="Content\images\default\grid\hmenu-asc.gif" />
+    <Content Include="Content\images\default\grid\hmenu-desc.gif" />
+    <Content Include="Content\images\default\grid\hmenu-lock.gif" />
+    <Content Include="Content\images\default\grid\hmenu-lock.png" />
+    <Content Include="Content\images\default\grid\hmenu-unlock.gif" />
+    <Content Include="Content\images\default\grid\hmenu-unlock.png" />
+    <Content Include="Content\images\default\grid\invalid_line.gif" />
+    <Content Include="Content\images\default\grid\loading.gif" />
+    <Content Include="Content\images\default\grid\mso-hd.gif" />
+    <Content Include="Content\images\default\grid\nowait.gif" />
+    <Content Include="Content\images\default\grid\page-first-disabled.gif" />
+    <Content Include="Content\images\default\grid\page-first.gif" />
+    <Content Include="Content\images\default\grid\page-last-disabled.gif" />
+    <Content Include="Content\images\default\grid\page-last.gif" />
+    <Content Include="Content\images\default\grid\page-next-disabled.gif" />
+    <Content Include="Content\images\default\grid\page-next.gif" />
+    <Content Include="Content\images\default\grid\page-prev-disabled.gif" />
+    <Content Include="Content\images\default\grid\page-prev.gif" />
+    <Content Include="Content\images\default\grid\pick-button.gif" />
+    <Content Include="Content\images\default\grid\refresh-disabled.gif" />
+    <Content Include="Content\images\default\grid\refresh.gif" />
+    <Content Include="Content\images\default\grid\row-check-sprite.gif" />
+    <Content Include="Content\images\default\grid\row-expand-sprite.gif" />
+    <Content Include="Content\images\default\grid\row-over.gif" />
+    <Content Include="Content\images\default\grid\row-sel.gif" />
+    <Content Include="Content\images\default\grid\sort-hd.gif" />
+    <Content Include="Content\images\default\grid\sort_asc.gif" />
+    <Content Include="Content\images\default\grid\sort_desc.gif" />
+    <Content Include="Content\images\default\grid\wait.gif" />
+    <Content Include="Content\images\default\layout\collapse.gif" />
+    <Content Include="Content\images\default\layout\expand.gif" />
+    <Content Include="Content\images\default\layout\gradient-bg.gif" />
+    <Content Include="Content\images\default\layout\mini-bottom.gif" />
+    <Content Include="Content\images\default\layout\mini-left.gif" />
+    <Content Include="Content\images\default\layout\mini-right.gif" />
+    <Content Include="Content\images\default\layout\mini-top.gif" />
+    <Content Include="Content\images\default\layout\ns-collapse.gif" />
+    <Content Include="Content\images\default\layout\ns-expand.gif" />
+    <Content Include="Content\images\default\layout\panel-close.gif" />
+    <Content Include="Content\images\default\layout\panel-title-bg.gif" />
+    <Content Include="Content\images\default\layout\panel-title-light-bg.gif" />
+    <Content Include="Content\images\default\layout\stick.gif" />
+    <Content Include="Content\images\default\layout\stuck.gif" />
+    <Content Include="Content\images\default\layout\tab-close-on.gif" />
+    <Content Include="Content\images\default\layout\tab-close.gif" />
+    <Content Include="Content\images\default\menu\checked.gif" />
+    <Content Include="Content\images\default\menu\group-checked.gif" />
+    <Content Include="Content\images\default\menu\item-over.gif" />
+    <Content Include="Content\images\default\menu\menu-parent.gif" />
+    <Content Include="Content\images\default\menu\menu.gif" />
+    <Content Include="Content\images\default\menu\unchecked.gif" />
+    <Content Include="Content\images\default\panel\corners-sprite.gif" />
+    <Content Include="Content\images\default\panel\left-right.gif" />
+    <Content Include="Content\images\default\panel\light-hd.gif" />
+    <Content Include="Content\images\default\panel\tool-sprite-tpl.gif" />
+    <Content Include="Content\images\default\panel\tool-sprites.gif" />
+    <Content Include="Content\images\default\panel\tools-sprites-trans.gif" />
+    <Content Include="Content\images\default\panel\top-bottom.gif" />
+    <Content Include="Content\images\default\panel\top-bottom.png" />
+    <Content Include="Content\images\default\panel\white-corners-sprite.gif" />
+    <Content Include="Content\images\default\panel\white-left-right.gif" />
+    <Content Include="Content\images\default\panel\white-top-bottom.gif" />
+    <Content Include="Content\images\default\progress\progress-bg.gif" />
+    <Content Include="Content\images\default\qtip\bg.gif" />
+    <Content Include="Content\images\default\qtip\close.gif" />
+    <Content Include="Content\images\default\qtip\tip-anchor-sprite.gif" />
+    <Content Include="Content\images\default\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\default\s.gif" />
+    <Content Include="Content\images\default\shadow-c.png" />
+    <Content Include="Content\images\default\shadow-lr.png" />
+    <Content Include="Content\images\default\shadow.png" />
+    <Content Include="Content\images\default\shared\blue-loading.gif" />
+    <Content Include="Content\images\default\shared\calendar.gif" />
+    <Content Include="Content\images\default\shared\glass-bg.gif" />
+    <Content Include="Content\images\default\shared\hd-sprite.gif" />
+    <Content Include="Content\images\default\shared\large-loading.gif" />
+    <Content Include="Content\images\default\shared\left-btn.gif" />
+    <Content Include="Content\images\default\shared\loading-balls.gif" />
+    <Content Include="Content\images\default\shared\right-btn.gif" />
+    <Content Include="Content\images\default\shared\warning.gif" />
+    <Content Include="Content\images\default\sizer\e-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\e-handle.gif" />
+    <Content Include="Content\images\default\sizer\ne-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\ne-handle.gif" />
+    <Content Include="Content\images\default\sizer\nw-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\nw-handle.gif" />
+    <Content Include="Content\images\default\sizer\s-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\s-handle.gif" />
+    <Content Include="Content\images\default\sizer\se-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\se-handle.gif" />
+    <Content Include="Content\images\default\sizer\square.gif" />
+    <Content Include="Content\images\default\sizer\sw-handle-dark.gif" />
+    <Content Include="Content\images\default\sizer\sw-handle.gif" />
+    <Content Include="Content\images\default\slider\slider-bg.png" />
+    <Content Include="Content\images\default\slider\slider-thumb.png" />
+    <Content Include="Content\images\default\slider\slider-v-bg.png" />
+    <Content Include="Content\images\default\slider\slider-v-thumb.png" />
+    <Content Include="Content\images\default\tabs\scroll-left.gif" />
+    <Content Include="Content\images\default\tabs\scroll-right.gif" />
+    <Content Include="Content\images\default\tabs\scroller-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-over-left-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-over-right-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-close.gif" />
+    <Content Include="Content\images\default\tabs\tab-strip-bg.gif" />
+    <Content Include="Content\images\default\tabs\tab-strip-bg.png" />
+    <Content Include="Content\images\default\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Content\images\default\tabs\tabs-sprite.gif" />
+    <Content Include="Content\images\default\toolbar\bg.gif" />
+    <Content Include="Content\images\default\toolbar\btn-arrow-light.gif" />
+    <Content Include="Content\images\default\toolbar\btn-arrow.gif" />
+    <Content Include="Content\images\default\toolbar\btn-over-bg.gif" />
+    <Content Include="Content\images\default\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\default\toolbar\more.gif" />
+    <Content Include="Content\images\default\toolbar\tb-bg.gif" />
+    <Content Include="Content\images\default\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\default\toolbar\tb-xl-btn-sprite.gif" />
+    <Content Include="Content\images\default\toolbar\tb-xl-sep.gif" />
+    <Content Include="Content\images\default\tree\arrows.gif" />
+    <Content Include="Content\images\default\tree\drop-add.gif" />
+    <Content Include="Content\images\default\tree\drop-between.gif" />
+    <Content Include="Content\images\default\tree\drop-no.gif" />
+    <Content Include="Content\images\default\tree\drop-over.gif" />
+    <Content Include="Content\images\default\tree\drop-under.gif" />
+    <Content Include="Content\images\default\tree\drop-yes.gif" />
+    <Content Include="Content\images\default\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Content\images\default\tree\elbow-end-minus.gif" />
+    <Content Include="Content\images\default\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Content\images\default\tree\elbow-end-plus.gif" />
+    <Content Include="Content\images\default\tree\elbow-end.gif" />
+    <Content Include="Content\images\default\tree\elbow-line.gif" />
+    <Content Include="Content\images\default\tree\elbow-minus-nl.gif" />
+    <Content Include="Content\images\default\tree\elbow-minus.gif" />
+    <Content Include="Content\images\default\tree\elbow-plus-nl.gif" />
+    <Content Include="Content\images\default\tree\elbow-plus.gif" />
+    <Content Include="Content\images\default\tree\elbow.gif" />
+    <Content Include="Content\images\default\tree\folder-open.gif" />
+    <Content Include="Content\images\default\tree\folder.gif" />
+    <Content Include="Content\images\default\tree\leaf.gif" />
+    <Content Include="Content\images\default\tree\loading.gif" />
+    <Content Include="Content\images\default\tree\s.gif" />
+    <Content Include="Content\images\default\window\icon-error.gif" />
+    <Content Include="Content\images\default\window\icon-info.gif" />
+    <Content Include="Content\images\default\window\icon-question.gif" />
+    <Content Include="Content\images\default\window\icon-warning.gif" />
+    <Content Include="Content\images\default\window\left-corners.png" />
+    <Content Include="Content\images\default\window\left-right.png" />
+    <Content Include="Content\images\default\window\right-corners.png" />
+    <Content Include="Content\images\default\window\top-bottom.png" />
+    <Content Include="Content\images\gray\button\btn-arrow.gif" />
+    <Content Include="Content\images\gray\button\btn-sprite.gif" />
+    <Content Include="Content\images\gray\button\btn.gif" />
+    <Content Include="Content\images\gray\button\group-cs.gif" />
+    <Content Include="Content\images\gray\button\group-lr.gif" />
+    <Content Include="Content\images\gray\button\group-tb.gif" />
+    <Content Include="Content\images\gray\button\s-arrow-bo.gif" />
+    <Content Include="Content\images\gray\button\s-arrow-o.gif" />
+    <Content Include="Content\images\gray\form\clear-trigger.gif" />
+    <Content Include="Content\images\gray\form\date-trigger.gif" />
+    <Content Include="Content\images\gray\form\search-trigger.gif" />
+    <Content Include="Content\images\gray\form\trigger-square.gif" />
+    <Content Include="Content\images\gray\form\trigger.gif" />
+    <Content Include="Content\images\gray\gradient-bg.gif" />
+    <Content Include="Content\images\gray\grid\col-move-bottom.gif" />
+    <Content Include="Content\images\gray\grid\col-move-top.gif" />
+    <Content Include="Content\images\gray\grid\grid3-hd-btn.gif" />
+    <Content Include="Content\images\gray\grid\grid3-hrow-over.gif" />
+    <Content Include="Content\images\gray\grid\grid3-hrow-over2.gif" />
+    <Content Include="Content\images\gray\grid\grid3-hrow.gif" />
+    <Content Include="Content\images\gray\grid\grid3-hrow2.gif" />
+    <Content Include="Content\images\gray\grid\grid3-special-col-bg.gif" />
+    <Content Include="Content\images\gray\grid\grid3-special-col-bg2.gif" />
+    <Content Include="Content\images\gray\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Content\images\gray\grid\group-collapse.gif" />
+    <Content Include="Content\images\gray\grid\group-expand-sprite.gif" />
+    <Content Include="Content\images\gray\grid\group-expand.gif" />
+    <Content Include="Content\images\gray\grid\page-first.gif" />
+    <Content Include="Content\images\gray\grid\page-last.gif" />
+    <Content Include="Content\images\gray\grid\page-next.gif" />
+    <Content Include="Content\images\gray\grid\page-prev.gif" />
+    <Content Include="Content\images\gray\grid\refresh.gif" />
+    <Content Include="Content\images\gray\grid\row-expand-sprite.gif" />
+    <Content Include="Content\images\gray\grid\sort_asc.gif" />
+    <Content Include="Content\images\gray\grid\sort_desc.gif" />
+    <Content Include="Content\images\gray\menu\group-checked.gif" />
+    <Content Include="Content\images\gray\menu\item-over-disabled.gif" />
+    <Content Include="Content\images\gray\menu\item-over.gif" />
+    <Content Include="Content\images\gray\menu\menu-parent.gif" />
+    <Content Include="Content\images\gray\panel\corners-sprite.gif" />
+    <Content Include="Content\images\gray\panel\left-right.gif" />
+    <Content Include="Content\images\gray\panel\light-hd.gif" />
+    <Content Include="Content\images\gray\panel\tool-sprite-tpl.gif" />
+    <Content Include="Content\images\gray\panel\tool-sprites.gif" />
+    <Content Include="Content\images\gray\panel\tools-sprites-trans.gif" />
+    <Content Include="Content\images\gray\panel\top-bottom.gif" />
+    <Content Include="Content\images\gray\panel\top-bottom.png" />
+    <Content Include="Content\images\gray\panel\white-corners-sprite.gif" />
+    <Content Include="Content\images\gray\panel\white-left-right.gif" />
+    <Content Include="Content\images\gray\panel\white-top-bottom.gif" />
+    <Content Include="Content\images\gray\progress\progress-bg.gif" />
+    <Content Include="Content\images\gray\qtip\bg.gif" />
+    <Content Include="Content\images\gray\qtip\close.gif" />
+    <Content Include="Content\images\gray\qtip\tip-anchor-sprite.gif" />
+    <Content Include="Content\images\gray\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\gray\s.gif" />
+    <Content Include="Content\images\gray\shared\hd-sprite.gif" />
+    <Content Include="Content\images\gray\shared\left-btn.gif" />
+    <Content Include="Content\images\gray\shared\right-btn.gif" />
+    <Content Include="Content\images\gray\sizer\e-handle.gif" />
+    <Content Include="Content\images\gray\sizer\ne-handle.gif" />
+    <Content Include="Content\images\gray\sizer\nw-handle.gif" />
+    <Content Include="Content\images\gray\sizer\s-handle.gif" />
+    <Content Include="Content\images\gray\sizer\se-handle.gif" />
+    <Content Include="Content\images\gray\sizer\square.gif" />
+    <Content Include="Content\images\gray\sizer\sw-handle.gif" />
+    <Content Include="Content\images\gray\slider\slider-thumb.png" />
+    <Content Include="Content\images\gray\slider\slider-v-thumb.png" />
+    <Content Include="Content\images\gray\tabs\scroll-left.gif" />
+    <Content Include="Content\images\gray\tabs\scroll-right.gif" />
+    <Content Include="Content\images\gray\tabs\scroller-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-over-left-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-over-right-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-close.gif" />
+    <Content Include="Content\images\gray\tabs\tab-strip-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tab-strip-bg.png" />
+    <Content Include="Content\images\gray\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Content\images\gray\tabs\tabs-sprite.gif" />
+    <Content Include="Content\images\gray\toolbar\bg.gif" />
+    <Content Include="Content\images\gray\toolbar\btn-arrow-light.gif" />
+    <Content Include="Content\images\gray\toolbar\btn-arrow.gif" />
+    <Content Include="Content\images\gray\toolbar\btn-over-bg.gif" />
+    <Content Include="Content\images\gray\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\gray\toolbar\more.gif" />
+    <Content Include="Content\images\gray\toolbar\tb-bg.gif" />
+    <Content Include="Content\images\gray\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\gray\tree\arrows.gif" />
+    <Content Include="Content\images\gray\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Content\images\gray\tree\elbow-end-minus.gif" />
+    <Content Include="Content\images\gray\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Content\images\gray\tree\elbow-end-plus.gif" />
+    <Content Include="Content\images\gray\window\icon-error.gif" />
+    <Content Include="Content\images\gray\window\icon-info.gif" />
+    <Content Include="Content\images\gray\window\icon-question.gif" />
+    <Content Include="Content\images\gray\window\icon-warning.gif" />
+    <Content Include="Content\images\gray\window\left-corners.png" />
+    <Content Include="Content\images\gray\window\left-right.png" />
+    <Content Include="Content\images\gray\window\right-corners.png" />
+    <Content Include="Content\images\gray\window\top-bottom.png" />
+    <Content Include="Content\images\vista\basic-dialog\bg-center.gif" />
+    <Content Include="Content\images\vista\basic-dialog\bg-left.gif" />
+    <Content Include="Content\images\vista\basic-dialog\bg-right.gif" />
+    <Content Include="Content\images\vista\basic-dialog\close.gif" />
+    <Content Include="Content\images\vista\basic-dialog\collapse.gif" />
+    <Content Include="Content\images\vista\basic-dialog\dlg-bg.gif" />
+    <Content Include="Content\images\vista\basic-dialog\e-handle.gif" />
+    <Content Include="Content\images\vista\basic-dialog\expand.gif" />
+    <Content Include="Content\images\vista\basic-dialog\hd-sprite.gif" />
+    <Content Include="Content\images\vista\basic-dialog\s-handle.gif" />
+    <Content Include="Content\images\vista\basic-dialog\se-handle.gif" />
+    <Content Include="Content\images\vista\basic-dialog\w-handle.gif" />
+    <Content Include="Content\images\vista\gradient-bg.gif" />
+    <Content Include="Content\images\vista\grid\grid-split.gif" />
+    <Content Include="Content\images\vista\grid\grid-vista-hd.gif" />
+    <Content Include="Content\images\vista\layout\collapse.gif" />
+    <Content Include="Content\images\vista\layout\expand.gif" />
+    <Content Include="Content\images\vista\layout\gradient-bg.gif" />
+    <Content Include="Content\images\vista\layout\ns-collapse.gif" />
+    <Content Include="Content\images\vista\layout\ns-expand.gif" />
+    <Content Include="Content\images\vista\layout\panel-close.gif" />
+    <Content Include="Content\images\vista\layout\panel-title-bg.gif" />
+    <Content Include="Content\images\vista\layout\panel-title-light-bg.gif" />
+    <Content Include="Content\images\vista\layout\stick.gif" />
+    <Content Include="Content\images\vista\layout\tab-close-on.gif" />
+    <Content Include="Content\images\vista\layout\tab-close.gif" />
+    <Content Include="Content\images\vista\qtip\bg.gif" />
+    <Content Include="Content\images\vista\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\vista\s.gif" />
+    <Content Include="Content\images\vista\sizer\e-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\e-handle.gif" />
+    <Content Include="Content\images\vista\sizer\ne-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\ne-handle.gif" />
+    <Content Include="Content\images\vista\sizer\nw-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\nw-handle.gif" />
+    <Content Include="Content\images\vista\sizer\s-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\s-handle.gif" />
+    <Content Include="Content\images\vista\sizer\se-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\se-handle.gif" />
+    <Content Include="Content\images\vista\sizer\sw-handle-dark.gif" />
+    <Content Include="Content\images\vista\sizer\sw-handle.gif" />
+    <Content Include="Content\images\vista\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\vista\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\vista\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\vista\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\vista\tabs\tab-sprite.gif" />
+    <Content Include="Content\images\vista\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\vista\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\yourtheme\box\corners-blue.gif" />
+    <Content Include="Content\images\yourtheme\box\corners.gif" />
+    <Content Include="Content\images\yourtheme\box\l-blue.gif" />
+    <Content Include="Content\images\yourtheme\box\l.gif" />
+    <Content Include="Content\images\yourtheme\box\r-blue.gif" />
+    <Content Include="Content\images\yourtheme\box\r.gif" />
+    <Content Include="Content\images\yourtheme\box\tb-blue.gif" />
+    <Content Include="Content\images\yourtheme\box\tb.gif" />
+    <Content Include="Content\images\yourtheme\button\arrow.gif" />
+    <Content Include="Content\images\yourtheme\button\btn.gif" />
+    <Content Include="Content\images\yourtheme\button\group-cs.gif" />
+    <Content Include="Content\images\yourtheme\button\group-lr.gif" />
+    <Content Include="Content\images\yourtheme\button\group-tb.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow-b-noline.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow-b.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow-bo.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow-noline.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow-o.gif" />
+    <Content Include="Content\images\yourtheme\button\s-arrow.gif" />
+    <Content Include="Content\images\yourtheme\dd\drop-add.gif" />
+    <Content Include="Content\images\yourtheme\dd\drop-no.gif" />
+    <Content Include="Content\images\yourtheme\dd\drop-yes.gif" />
+    <Content Include="Content\images\yourtheme\editor\tb-sprite.gif" />
+    <Content Include="Content\images\yourtheme\form\checkbox.gif" />
+    <Content Include="Content\images\yourtheme\form\clear-trigger.gif" />
+    <Content Include="Content\images\yourtheme\form\date-trigger.gif" />
+    <Content Include="Content\images\yourtheme\form\error-tip-corners.gif" />
+    <Content Include="Content\images\yourtheme\form\exclamation.gif" />
+    <Content Include="Content\images\yourtheme\form\radio.gif" />
+    <Content Include="Content\images\yourtheme\form\search-trigger.gif" />
+    <Content Include="Content\images\yourtheme\form\text-bg.gif" />
+    <Content Include="Content\images\yourtheme\form\trigger-square.gif" />
+    <Content Include="Content\images\yourtheme\form\trigger-tpl.gif" />
+    <Content Include="Content\images\yourtheme\form\trigger.gif" />
+    <Content Include="Content\images\yourtheme\gradient-bg.gif" />
+    <Content Include="Content\images\yourtheme\grid\arrow-left-white.gif" />
+    <Content Include="Content\images\yourtheme\grid\arrow-right-white.gif" />
+    <Content Include="Content\images\yourtheme\grid\col-move-bottom.gif" />
+    <Content Include="Content\images\yourtheme\grid\col-move-top.gif" />
+    <Content Include="Content\images\yourtheme\grid\columns.gif" />
+    <Content Include="Content\images\yourtheme\grid\dirty.gif" />
+    <Content Include="Content\images\yourtheme\grid\done.gif" />
+    <Content Include="Content\images\yourtheme\grid\drop-no.gif" />
+    <Content Include="Content\images\yourtheme\grid\drop-yes.gif" />
+    <Content Include="Content\images\yourtheme\grid\footer-bg.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-blue-hd.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-blue-split.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-hrow.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-loading.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-split.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid-vista-hd.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid3-hd-btn.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid3-hrow-over.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid3-hrow.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid3-special-col-bg.gif" />
+    <Content Include="Content\images\yourtheme\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Content\images\yourtheme\grid\group-by.gif" />
+    <Content Include="Content\images\yourtheme\grid\group-collapse.gif" />
+    <Content Include="Content\images\yourtheme\grid\group-expand-sprite.gif" />
+    <Content Include="Content\images\yourtheme\grid\group-expand.gif" />
+    <Content Include="Content\images\yourtheme\grid\hd-pop.gif" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-asc.gif" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-desc.gif" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-lock.gif" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-lock.png" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-unlock.gif" />
+    <Content Include="Content\images\yourtheme\grid\hmenu-unlock.png" />
+    <Content Include="Content\images\yourtheme\grid\invalid_line.gif" />
+    <Content Include="Content\images\yourtheme\grid\loading.gif" />
+    <Content Include="Content\images\yourtheme\grid\mso-hd.gif" />
+    <Content Include="Content\images\yourtheme\grid\nowait.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-first-disabled.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-first.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-last-disabled.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-last.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-next-disabled.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-next.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-prev-disabled.gif" />
+    <Content Include="Content\images\yourtheme\grid\page-prev.gif" />
+    <Content Include="Content\images\yourtheme\grid\pick-button.gif" />
+    <Content Include="Content\images\yourtheme\grid\refresh.gif" />
+    <Content Include="Content\images\yourtheme\grid\row-check-sprite.gif" />
+    <Content Include="Content\images\yourtheme\grid\row-expand-sprite.gif" />
+    <Content Include="Content\images\yourtheme\grid\row-over.gif" />
+    <Content Include="Content\images\yourtheme\grid\row-sel.gif" />
+    <Content Include="Content\images\yourtheme\grid\sort-hd.gif" />
+    <Content Include="Content\images\yourtheme\grid\sort_asc.gif" />
+    <Content Include="Content\images\yourtheme\grid\sort_desc.gif" />
+    <Content Include="Content\images\yourtheme\grid\wait.gif" />
+    <Content Include="Content\images\yourtheme\layout\collapse.gif" />
+    <Content Include="Content\images\yourtheme\layout\expand.gif" />
+    <Content Include="Content\images\yourtheme\layout\gradient-bg.gif" />
+    <Content Include="Content\images\yourtheme\layout\mini-bottom.gif" />
+    <Content Include="Content\images\yourtheme\layout\mini-left.gif" />
+    <Content Include="Content\images\yourtheme\layout\mini-right.gif" />
+    <Content Include="Content\images\yourtheme\layout\mini-top.gif" />
+    <Content Include="Content\images\yourtheme\layout\ns-collapse.gif" />
+    <Content Include="Content\images\yourtheme\layout\ns-expand.gif" />
+    <Content Include="Content\images\yourtheme\layout\panel-close.gif" />
+    <Content Include="Content\images\yourtheme\layout\panel-title-bg.gif" />
+    <Content Include="Content\images\yourtheme\layout\panel-title-light-bg.gif" />
+    <Content Include="Content\images\yourtheme\layout\stick.gif" />
+    <Content Include="Content\images\yourtheme\layout\stuck.gif" />
+    <Content Include="Content\images\yourtheme\layout\tab-close-on.gif" />
+    <Content Include="Content\images\yourtheme\layout\tab-close.gif" />
+    <Content Include="Content\images\yourtheme\menu\checked.gif" />
+    <Content Include="Content\images\yourtheme\menu\group-checked.gif" />
+    <Content Include="Content\images\yourtheme\menu\item-over.gif" />
+    <Content Include="Content\images\yourtheme\menu\menu-parent.gif" />
+    <Content Include="Content\images\yourtheme\menu\menu.gif" />
+    <Content Include="Content\images\yourtheme\menu\unchecked.gif" />
+    <Content Include="Content\images\yourtheme\panel\corners-sprite.gif" />
+    <Content Include="Content\images\yourtheme\panel\left-right.gif" />
+    <Content Include="Content\images\yourtheme\panel\light-hd.gif" />
+    <Content Include="Content\images\yourtheme\panel\tool-sprite-tpl.gif" />
+    <Content Include="Content\images\yourtheme\panel\tool-sprites.gif" />
+    <Content Include="Content\images\yourtheme\panel\tools-sprites-trans.gif" />
+    <Content Include="Content\images\yourtheme\panel\top-bottom.gif" />
+    <Content Include="Content\images\yourtheme\panel\top-bottom.png" />
+    <Content Include="Content\images\yourtheme\panel\white-corners-sprite.gif" />
+    <Content Include="Content\images\yourtheme\panel\white-left-right.gif" />
+    <Content Include="Content\images\yourtheme\panel\white-top-bottom.gif" />
+    <Content Include="Content\images\yourtheme\progress\progress-bg.gif" />
+    <Content Include="Content\images\yourtheme\qtip\bg.gif" />
+    <Content Include="Content\images\yourtheme\qtip\close.gif" />
+    <Content Include="Content\images\yourtheme\qtip\tip-anchor-sprite.gif" />
+    <Content Include="Content\images\yourtheme\qtip\tip-sprite.gif" />
+    <Content Include="Content\images\yourtheme\README.txt" />
+    <Content Include="Content\images\yourtheme\s.gif" />
+    <Content Include="Content\images\yourtheme\shadow-c.png" />
+    <Content Include="Content\images\yourtheme\shadow-lr.png" />
+    <Content Include="Content\images\yourtheme\shadow.png" />
+    <Content Include="Content\images\yourtheme\shared\blue-loading.gif" />
+    <Content Include="Content\images\yourtheme\shared\calendar.gif" />
+    <Content Include="Content\images\yourtheme\shared\glass-bg.gif" />
+    <Content Include="Content\images\yourtheme\shared\hd-sprite.gif" />
+    <Content Include="Content\images\yourtheme\shared\large-loading.gif" />
+    <Content Include="Content\images\yourtheme\shared\left-btn.gif" />
+    <Content Include="Content\images\yourtheme\shared\loading-balls.gif" />
+    <Content Include="Content\images\yourtheme\shared\right-btn.gif" />
+    <Content Include="Content\images\yourtheme\shared\warning.gif" />
+    <Content Include="Content\images\yourtheme\sizer\e-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\e-handle.gif" />
+    <Content Include="Content\images\yourtheme\sizer\ne-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\ne-handle.gif" />
+    <Content Include="Content\images\yourtheme\sizer\nw-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\nw-handle.gif" />
+    <Content Include="Content\images\yourtheme\sizer\s-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\s-handle.gif" />
+    <Content Include="Content\images\yourtheme\sizer\se-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\se-handle.gif" />
+    <Content Include="Content\images\yourtheme\sizer\square.gif" />
+    <Content Include="Content\images\yourtheme\sizer\sw-handle-dark.gif" />
+    <Content Include="Content\images\yourtheme\sizer\sw-handle.gif" />
+    <Content Include="Content\images\yourtheme\slider\slider-bg.png" />
+    <Content Include="Content\images\yourtheme\slider\slider-thumb.png" />
+    <Content Include="Content\images\yourtheme\slider\slider-v-bg.png" />
+    <Content Include="Content\images\yourtheme\slider\slider-v-thumb.png" />
+    <Content Include="Content\images\yourtheme\tabs\scroll-left.gif" />
+    <Content Include="Content\images\yourtheme\tabs\scroll-right.gif" />
+    <Content Include="Content\images\yourtheme\tabs\scroller-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-over-left-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-over-right-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-close.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-strip-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tab-strip-bg.png" />
+    <Content Include="Content\images\yourtheme\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Content\images\yourtheme\tabs\tabs-sprite.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\bg.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\btn-arrow-light.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\btn-arrow.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\btn-over-bg.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\gray-bg.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\more.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\tb-bg.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\tb-xl-btn-sprite.gif" />
+    <Content Include="Content\images\yourtheme\toolbar\tb-xl-sep.gif" />
+    <Content Include="Content\images\yourtheme\tree\arrows.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-add.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-between.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-no.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-over.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-under.gif" />
+    <Content Include="Content\images\yourtheme\tree\drop-yes.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-end-minus.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-end-plus.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-end.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-line.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-minus-nl.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-minus.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-plus-nl.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow-plus.gif" />
+    <Content Include="Content\images\yourtheme\tree\elbow.gif" />
+    <Content Include="Content\images\yourtheme\tree\folder-open.gif" />
+    <Content Include="Content\images\yourtheme\tree\folder.gif" />
+    <Content Include="Content\images\yourtheme\tree\leaf.gif" />
+    <Content Include="Content\images\yourtheme\tree\loading.gif" />
+    <Content Include="Content\images\yourtheme\tree\s.gif" />
+    <Content Include="Content\images\yourtheme\window\icon-error.gif" />
+    <Content Include="Content\images\yourtheme\window\icon-info.gif" />
+    <Content Include="Content\images\yourtheme\window\icon-question.gif" />
+    <Content Include="Content\images\yourtheme\window\icon-warning.gif" />
+    <Content Include="Content\images\yourtheme\window\left-corners.png" />
+    <Content Include="Content\images\yourtheme\window\left-right.png" />
+    <Content Include="Content\images\yourtheme\window\right-corners.png" />
+    <Content Include="Content\images\yourtheme\window\top-bottom.png" />
+    <Content Include="Content\themes\blue\css\style.css" />
+    <Content Include="Content\themes\blue\images\highlight_bg.png" />
+    <Content Include="Content\themes\blue\images\highlight_bg2.png" />
+    <Content Include="Content\themes\green\css\style.css" />
+    <Content Include="Content\themes\green\images\highlight_bg.png" />
+    <Content Include="Content\themes\green\images\highlight_bg1.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Reports\ErpReportViewer.aspx" />
+    <Content Include="Reports\Images\Logo.jpg" />
+    <Content Include="Reports\Images\Logo.png" />
+    <Content Include="Scripts\Inventory\Transaction\Adjustment.js" />
+    <Content Include="Scripts\Ext\azzurra.js" />
+    <Content Include="Scripts\Inventory\BinCardStockCard.js" />
+    <Content Include="Scripts\Inventory\ContractAgreement.js" />
+    <Content Include="Scripts\Common\DocumentAttachment.js" />
+    <Content Include="Scripts\Inventory\InventoryEvaluation.js" />
+    <Content Include="Scripts\Inventory\Item\ItemPackage.js" />
+    <Content Include="Scripts\Inventory\Item\AlternativeItem.js" />
+    <Content Include="Scripts\Common\Approver.js" />
+    <Content Include="Scripts\Ext\array-tree.js" />
+    <Content Include="Scripts\Inventory\BinCard.js" />
+    <Content Include="Scripts\Inventory\Item\ItemLocation.js" />
+    <Content Include="Scripts\Inventory\Item\ItemLocationTransaction.js" />
+    <Content Include="Scripts\Inventory\Item\ItemReport.js" />
+    <Content Include="Scripts\Inventory\BincardReport.js" />
+    <Content Include="Scripts\Ext\CheckColumn.js" />
+    <Content Include="Scripts\Ext\ComboColumn.js" />
+    <Content Include="Scripts\Common\Common.js" />
+    <Content Include="Scripts\FixedAsset\Custodian.js" />
+    <Content Include="Scripts\Inventory\Transaction\DeliveryOrder.js" />
+    <Content Include="Scripts\Inventory\Transaction\Disposal.js" />
+    <Content Include="Scripts\Common\DocumentNoSetting.js" />
+    <Content Include="Scripts\Common\Entry.js" />
+    <Content Include="Scripts\Ext\ext-all.js" />
+    <Content Include="Scripts\Ext\ext-base.js" />
+    <Content Include="Scripts\Ext\FileUploadField.js" />
+    <Content Include="Scripts\FixedAsset\FixedAssetReport.js" />
+    <Content Include="Scripts\FixedAsset\FixedAssetTransfer.js" />
+    <Content Include="Scripts\Inventory\Transaction\GoodsRequestManagement.js" />
+    <Content Include="Scripts\Inventory\InventoryRecord.js" />
+    <Content Include="Scripts\Inventory\Item\ItemBarcode.js" />
+    <Content Include="Scripts\Ext\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\Purchase\PurchaseOrderRevision.js" />
+    <Content Include="Scripts\Common\VoucherApproval.js" />
+    <Content Include="Scripts\Common\VoucherWorkFlow.js" />
+    <Content Include="Scripts\Inventory\Transaction\Issue.js" />
+    <Content Include="Scripts\Inventory\Item\Item.js" />
+    <Content Include="Scripts\Inventory\Item\ItemCategory.js" />
+    <Content Include="Scripts\Inventory\Item\ItemCategoryChange.js" />
+    <Content Include="Scripts\Purchase\ItemPurchasePrice.js" />
+    <Content Include="Scripts\Inventory\Item\ItemLOT.js" />
+    <Content Include="Scripts\Inventory\Item\ItemLOTSelector.js" />
+    <Content Include="Scripts\Inventory\Item\ItemPicker.js" />
+    <Content Include="Scripts\Inventory\Item\ItemSerial.js" />
+    <Content Include="Scripts\Inventory\Item\ItemSerialItemChange.js" />
+    <Content Include="Scripts\Inventory\Item\ItemSerialSelector.js" />
+    <Content Include="Scripts\Inventory\Item\ItemStore.js" />
+    <Content Include="Scripts\Inventory\Item\ItemUnit.js" />
+    <Content Include="Scripts\Common\Login.js" />
+    <Content Include="Scripts\Common\Logout.js" />
+    <Content Include="Scripts\Common\Lookup.js" />
+    <Content Include="Scripts\Common\Notifications.js" />
+    <Content Include="Scripts\Ext\PagingRowNumberer.js" />
+    <Content Include="Scripts\Common\PasswordChange.js" />
+    <Content Include="Scripts\Ext\Portal.js" />
+    <Content Include="Scripts\Ext\PortalColumn.js" />
+    <Content Include="Scripts\Ext\Portlet.js" />
+    <Content Include="Scripts\Purchase\PurchaseReport.js" />
+    <Content Include="Scripts\Inventory\StoreLocationBin.js" />
+    <Content Include="Scripts\Inventory\StoreLocation.js" />
+    <Content Include="Scripts\Purchase\PurchaseOrder.js" />
+    <Content Include="Scripts\Purchase\PurchaseRequest.js" />
+    <Content Include="Scripts\Purchase\PurchaseRequestItemPicker.js" />
+    <Content Include="Scripts\Purchase\PurchaseRequestSelector.js" />
+    <Content Include="Scripts\Inventory\Transaction\Receive.js" />
+    <Content Include="Scripts\Common\Reception.js" />
+    <Content Include="Scripts\Inventory\Transaction\RequestOrder.js" />
+    <Content Include="Scripts\Inventory\Transaction\RequestOrderPicker.js" />
+    <Content Include="Scripts\Inventory\Transaction\Return.js" />
+    <Content Include="Scripts\Ext\RowActions.js" />
+    <Content Include="Scripts\Common\SearchTransactions.js" />
+    <Content Include="Scripts\Common\Setting.js" />
+    <Content Include="Scripts\Inventory\StockSummaryReport.js" />
+    <Content Include="Scripts\Inventory\Store.js" />
+    <Content Include="Scripts\Inventory\StorePermission.js" />
+    <Content Include="Scripts\Purchase\Supplier.js" />
+    <Content Include="Scripts\Ext\SystemMessage.js" />
+    <Content Include="Scripts\Ext\SystemMessageManager.js" />
+    <Content Include="Scripts\Ext\SystemSoundManager.js" />
+    <Content Include="Scripts\Ext\tab-close-menu.js" />
+    <Content Include="Scripts\Common\TaxPicker.js" />
+    <Content Include="Scripts\Common\TaxRate.js" />
+    <Content Include="Scripts\Inventory\TransactionReport.js" />
+    <Content Include="Scripts\Inventory\Transaction\TransferIssue.js" />
+    <Content Include="Scripts\Inventory\Transaction\TransferReceive.js" />
+    <Content Include="Scripts\Ext\ux-util.js" />
+    <Content Include="Scripts\Common\Workbench.js" />
+    <Content Include="Views\Reception\Index.aspx" />
+    <Content Include="Views\Workbench\Index.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\vista\dd\" />
+    <Folder Include="Content\images\vista\tree\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CyberErp.Business.Component.Psms\CyberErp.Business.Component.Psms.csproj">
+      <Project>{034F5579-6BAD-4B44-B546-FAE26E5E152E}</Project>
+      <Name>CyberErp.Business.Component.Psms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CyberErp.Data.Infrastructure\CyberErp.Data.Infrastructure.csproj">
+      <Project>{C2A0D296-71A6-46BB-8DA6-2051985D05FB}</Project>
+      <Name>CyberErp.Data.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CyberErp.Data.Model\CyberErp.Data.Model.csproj">
+      <Project>{EE0BE27B-3FA9-4D17-9995-7C0EAA6E3202}</Project>
+      <Name>CyberErp.Data.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <None Include="Content\images\access\form\clear-trigger.psd" />
+    <None Include="Content\images\access\form\date-trigger.psd" />
+    <None Include="Content\images\access\form\search-trigger.psd" />
+    <None Include="Content\images\access\form\trigger.psd" />
+    <Content Include="Content\images\azzurra-legacy\form\date-trigger.psd" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger-square.psd" />
+    <Content Include="Content\images\azzurra-legacy\form\trigger.psd" />
+    <Content Include="Content\images\azzurra-legacy\window\left-corners.psd" />
+    <Content Include="Content\images\azzurra-legacy\window\left-right.psd" />
+    <Content Include="Content\images\azzurra-legacy\window\right-corners.psd" />
+    <Content Include="Content\images\azzurra-legacy\window\top-bottom.psd" />
+    <None Include="Content\images\default\form\clear-trigger.psd" />
+    <None Include="Content\images\default\form\date-trigger.psd" />
+    <None Include="Content\images\default\form\search-trigger.psd" />
+    <None Include="Content\images\default\form\trigger-square.psd" />
+    <None Include="Content\images\default\form\trigger.psd" />
+    <None Include="Content\images\default\window\left-corners.psd" />
+    <None Include="Content\images\default\window\left-right.psd" />
+    <None Include="Content\images\default\window\right-corners.psd" />
+    <None Include="Content\images\default\window\top-bottom.psd" />
+    <None Include="Content\images\yourtheme\form\clear-trigger.psd" />
+    <None Include="Content\images\yourtheme\form\date-trigger.psd" />
+    <None Include="Content\images\yourtheme\form\search-trigger.psd" />
+    <None Include="Content\images\yourtheme\form\trigger-square.psd" />
+    <None Include="Content\images\yourtheme\form\trigger.psd" />
+    <None Include="Content\images\yourtheme\window\left-corners.psd" />
+    <None Include="Content\images\yourtheme\window\left-right.psd" />
+    <None Include="Content\images\yourtheme\window\right-corners.psd" />
+    <None Include="Content\images\yourtheme\window\top-bottom.psd" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\AB-HAM.pubxml" />
+    <Content Include="Reports\List\Purchase\iffs.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Images\rptReportHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReportHeader.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_FixedAssetListByUserCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetListByUserCard.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\rpt_ItemCode - Copy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ItemCode - Copy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_ItemCode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ItemCode.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_StockEvaluation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StockEvaluation.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerBalanceList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SupplierLedgerBalanceList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SupplierLedgerList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_SupplierSettlementList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SupplierSettlementList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_SupplierCreditAgingList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SupplierCreditAgingList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_PaymentList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PaymentList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_Delivery.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Delivery.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_DeliveryByCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DeliveryByCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_FreightOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FreightOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_PurchaseOrderByATC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseOrderByATC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_SalesWithDelivery.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesWithDelivery.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rptProductionOrderDeliveryFullStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionOrderDeliveryFullStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rptProductionOrderDeliveryList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionOrderDeliveryList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rptProductionOrderDeliveryRawMaterialList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionOrderDeliveryRawMaterialList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rptProductionOrderDeliveryStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionOrderDeliveryStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rptProductionPlanStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionPlanStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rpt_BillofMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BillofMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rpt_ProductionOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ProductionOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rpt_ProductionPlan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ProductionPlan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Production\rpt_ProductionPlanJobCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ProductionPlanJobCard.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_CollectionList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CollectionList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_CreditAgingList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CreditAgingList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_CustomerLedgerBalanceList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CustomerLedgerBalanceList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_CustomerLedgerList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CustomerLedgerList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_SalesSummaryList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesSummaryList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_SalesList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_SettlementList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SettlementList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_Adjustment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Adjustment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_AdjustmentList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_AdjustmentList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_BincardList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BincardList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_Bincard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Bincard1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_BincardBegining.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BincardBegining1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_DeliveryOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DeliveryOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_PurchaseOrderByAmountList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseOrderByAmountList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_DeliveryOrderList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DeliveryOrderList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_Disposal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Disposal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_DisposalList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DisposalList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_FixedAssetList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetList1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_FixedAssetListByItem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetListByItem1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_FixedAssetListByItemCustodian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetListByItemCustodian1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_FixedAssetTransfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetTransfer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_FixedAssetTransferList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FixedAssetTransferList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_GoodsRequestList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_GoodsRequestList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_GoodsRequest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_GoodsRequest1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_InventoryByStore.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InventoryByStore.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_Inventory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Inventory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_InventoryCounting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InventoryCounting.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_InventoryClosing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InventoryClosing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_InventoryReOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InventoryReOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_IssueList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_IssueList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_PurchaseOrderOutStandingList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseOrderOutStandingList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_SupplierList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SupplierList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_ItemLOT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ItemLOT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_Item.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Item.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_ItemClass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ItemClass.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_PurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseOrder1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_PurchaseRequest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseRequest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_PurchaseOrderList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseOrderList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_PurchaseRequestList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_PurchaseRequestList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_Receive.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Receive1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_ReceiveList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ReceiveList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_ReturnList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ReturnList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_StockCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StockCard1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_StockMovement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StockMovement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_StockStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StockStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_StoreIssue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StoreIssue.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_StoreReturn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StoreReturn.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_ObSoleteStock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ObSoleteStock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_Transaction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Transaction1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_TransferIssue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransferIssue1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_TransferIssueList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransferIssueList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Voucher\rpt_TransferReceive.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransferReceive1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\List\rpt_TransferReceiveList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransferReceiveList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\WorkFlow.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WorkFlow.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45317</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

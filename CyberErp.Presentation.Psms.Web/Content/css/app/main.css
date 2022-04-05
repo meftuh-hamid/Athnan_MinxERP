@@ -1,0 +1,323 @@
+﻿/*************************Reception*******************************/
+.reception-body {
+    background-color:#e4eaef
+}
+
+.reception-LogoutWindow .x-window-body {
+    padding:10px 25px;
+}
+
+.reception-LogoutWindow-button {
+    height:100px;
+    width:64px;
+}
+
+.reception-LogoutWindow-button .button {
+    height:64px;
+    cursor:pointer;
+    width:64px;
+    background-position:0px 0px;
+}
+
+.reception-LogoutWindow-button.over .button {
+    background-position:64px 0px;
+}
+
+.reception-LogoutWindow-button .text {
+    height:23px;
+    width:64px;
+    line-height:23px;
+    color:black;
+    font-weight:bold;
+    text-align:center;
+}
+
+.reception-LogoutWindow-button.reception-LogoutWindow-logoutButton .button {
+    background-image:url(../../images/app/logout.png);
+}
+
+.reception-LogoutWindow-button.reception-LogoutWindow-lockButton .button {
+    background-image:url(../../images/app/lockworkbench.png);
+}
+
+.reception-LogoutWindow-button.reception-LogoutWindow-restartButton .button {
+    background-image:url(../../images/app/restart.png);
+}
+
+.reception-LoginWindow .x-window-body {
+    background-color:#ffffff;
+     background-image:url(../../images/app/Background.jpg); background-repeat:no-repeat;
+    background-position:left bottom;
+}
+
+.reception-LoginWindow .x-panel-body {
+    background:none!important;
+}
+
+.reception-LoginWindow-Header {
+    font-weight: bold;
+    text-align: center;
+    color: Red;
+    padding: 10px;
+}
+
+.reception-LoginWindow-Logo {
+    float: right;
+}
+
+.reception-LoginWindow-softwareLabel {
+    font-weight:bold;
+    font-size:12px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#2D5094;
+    float: right;
+}
+
+.reception-LoginWindow-editionLabel {
+    font-weight:bold;
+    font-size:11px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#2D5094;
+    float: right;
+}
+
+.reception-LoginWindow-versionLabel {
+    font-weight: bold;
+    font-style: italic;
+    position:absolute;
+    bottom:40px;
+    right:15px;
+    font-size:9px;
+    color:#2D5094;
+}
+
+.reception-LoginWindow-formPanel {
+    width:300px;
+    margin:10px 10 0 75;
+}
+
+.reception-LoginWindow .formIntro {
+    width:300px;
+    margin:-10px 0 0 75px;
+}
+
+.reception-LoginWindow-stateIndicator {
+    width:300px;
+    margin:10px 0 0 75px;
+}
+
+/*************************Workbench******************************/
+#header {
+    background : #447a44; 
+    border     : solid 1px #122A59;
+    font-family: tahoma,arial,verdana,sans-serif;
+}
+
+.api-title {
+	color       : white;
+	font-size   : 16px;
+	font-weight : normal;
+	padding     : 5px 10px;
+}
+
+/**************************Message Box****************************/
+.msgbox-critical .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-critical .ext-mb-error {
+    background-image:url(../../images/app/messagebox-critical.png);
+}
+
+.msgbox-critical .ext-mb-content {
+    height:110px;
+    background:white;
+    padding:4px;
+    overflow:auto;
+    border:1px solid #99BBE8;
+}
+
+.msgbox-critical .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-critical .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+/**
+ * Error dialog "error"
+ */
+.msgbox-error .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-error .ext-mb-error {
+    background-image:url(../../images/app/messagebox-error.png);
+    height:60px;
+}
+
+.msgbox-error .ext-mb-content {
+    /*background:white;*/
+    padding:4px;
+    overflow:auto;
+    /*border:1px solid #99BBE8;*/
+}
+
+.msgbox-error .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-error .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+
+/**
+ * Wait dialog
+ */
+.msgbox-wait .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-wait .ext-mb-content {
+    background:#F6F6F6;
+    padding:4px;
+    overflow:auto;
+}
+
+.msgbox-wait .x-window-header-text {
+    display:none!important;
+}
+
+.msgbox-wait .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+/**
+ * Info dialog ""
+ */
+.msgbox-info .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-info .ext-mb-info {
+    background-image:url(../../images/app/messagebox-info.png);
+}
+
+.msgbox-info .ext-mb-content {
+    height:60px;
+    background:#F6F6F6;
+    padding:4px;
+    overflow:auto;
+}
+
+.msgbox-info .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-info .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+/**
+ * Warning dialog ""
+ */
+.msgbox-warning .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-warning .ext-mb-warning {
+    background-image:url(../../images/app/messagebox-warning.png);
+}
+
+.msgbox-warning .ext-mb-content {
+    height:60px;
+    background:#F6F6F6;
+    padding:4px;
+    overflow:auto;
+}
+
+.msgbox-warning .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-warning .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+/**
+ * Prompt dialog ""
+ */
+.com-conjoon-msgbox-prompt .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-prompt .ext-mb-warning {
+    background-image:url(../../images/app/messagebox-warning.png);
+}
+
+.msgbox-prompt .ext-mb-content {
+    background:#F6F6F6;
+    padding:4px;
+}
+
+.msgbox-prompt .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-prompt .ext-mb-input {
+    font-size:11px !important;
+    padding:2px;
+    width:98%!important;
+}
+
+.msgbox-prompt .ext-mb-fix-cursor {
+    overflow:visible;
+}
+
+.msgbox-prompt .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}
+
+/**
+ * question dialog
+ */
+.msgbox-question .ext-mb-text {
+    font-size:11px !important;
+}
+
+.msgbox-question .ext-mb-question {
+    background-image:url(../../images/app/messagebox-question.png);
+    height:60px;
+}
+
+.msgbox-question .ext-mb-content {
+    background:#F6F6F6;
+    padding:4px;
+    overflow:auto;
+}
+
+.msgbox-question .x-window-header-text {
+    font-size:11px !important;
+}
+
+.msgbox-question .x-window-mc {
+    border:1px solid #99BBE8 !important;
+    background-color:#F6F6F6 !important;
+    padding:0px !important;
+}

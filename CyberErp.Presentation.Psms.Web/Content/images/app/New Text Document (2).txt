@@ -1,0 +1,273 @@
+
+
+/**
+* @desc      Item selection window
+* @author    Meftuh Mohammed
+* @copyright (c) 2019, 
+* @date      oct 16, 2019
+* @namespace Ext.ffms.ux.report
+* @class     Ext.ffms.ux.report.Window
+* @extends   Ext.Window
+*/
+Ext.ffms.ux.report.Window = function (config) {
+    Ext.ffms.ux.report.Window.superclass.constructor.call(this, Ext.apply({
+        layout: 'form',
+        width: 850,
+        height: 400,
+        id: 'report-window',
+        closeAction: 'close',
+        objectSchemaStore: new Ext.data.Store(),
+        criteriaStore: new Ext.data.Store(),
+        modal: true,
+        saveMode: 'add',
+        resizable: false,
+        buttonAlign: 'right',
+        operationIds: '',
+        statusorExpenseTypeIds: '',
+        bodyStyle: 'background:transparent; padding-top: 10px;',
+
+    }, config));
+}
+Ext.extend(Ext.ffms.ux.report.Window, Ext.Window, {
+    initComponent: function () {
+        this.panel = [new Ext.ffms.ux.report.InstructionPanel()];
+        this.items = [this.panel[0]];
+        this.currentPanelIndex = 0;
+        this.doLayout();
+        this.bbar = [{
+            xtype: 'tbfill'
+        }, {
+            text: 'Previous',
+            iconCls: 'icon-arrowleft',
+            scope: this,
+            handler: this.onPrevous
+        }, {
+            xtype: 'tbseparator'
+        }, {
+            text: 'Next',
+            iconCls: 'icon-arrowright',
+            scope: this,
+            id: 'nextButton',
+            handler: this.onNext
+        }, {
+            xtype: 'tbseparator'
+        }, {
+            text: 'Close',
+            iconCls: 'icon-exit',
+            handler: this.onClose,
+            scope: this
+        }];
+        Ext.ffms.ux.report.Window.superclass.initComponent.call(this, arguments);
+    },
+
+    onExport: function () {
+        var form = Ext.getCmp('report-form');
+        var localWindow = this;
+        var operationTypeId = form.getForm().findField('OperationTypeId').getValue();
+        var operationIds = Ext.getCmp('report-window').operationIds;
+        var statusorExpenseIds = '', containerStatusIds = '', fields = "", criteria = "", containerFields='';
+        var grid = Ext.getCmp('report-grid');
+        var criteriaGrid = Ext.getCmp('reportFieldPicker-CriteriaGrid');
+        if (!grid.getSelectionModel().hasSelection()) return;
+        var selectedItems = grid.getSelectionModel().getSelections();
+          var criteriaStore = criteriaGrid.getStore();
+          if (operationIds=="") {
+              var msg = Ext.MessageBox;
+              Ext.MessageBox.show({
+                  title: 'failed',
+                  msg: "Please select operations first",
+                  icon: Ext.MessageBox.ERROR,
+                  scope: this
+              });
+              return;
+          }
+        for (var i = 0; i < selectedItems.length; i++) {
+                    if (selectedItems[i].data['Type'] == "Container Status")
+                        containerStatusIds = containerStatusIds + selectedItems[i].data['Id'] + ",";
+                    else if (selectedItems[i].data['Type'] == "Operation")
+                        fields = fields + selectedItems[i].data['Name'] + ",";
+                    else if (selectedItems[i].data['Type'] == "Container")
+                        containerFields = containerFields + selectedItems[i].data['Name'] + ",";
+                    else
+                        statusorExpenseIds = statusorExpenseIds + selectedItems[i].data['Id'] + ",";       
+        }
+        criteriaStore.each(function (item) {
+            criteria = criteria + item.data['FullName'] + ':' +
+                              item.data['Comparator'] + ':' +
+                              item.data['IsNumeric'] + ':' +
+                              item.data['FirstValue'] + ':' +
+                              item.data['LastValue'] + ';';
+
+        });
+        Ext.MessageBox.show({
+            msg: 'Please wait...',
+            width: 250,
+            wait: true,
+            waitConfig: { interval: 1000 }
+        });
+        Ext.Ajax.timeout = "600000";
+        form.getForm().submit({
+            waslmsg: 'Please wait...',
+            params: { record: Ext.encode({ operationIds: operationIds,operationTypeId:operationTypeId, statusorExpenseIds: statusorExpenseIds, fields: fields, containerFields: containerFields, criteria: criteria, containerStatusIds: containerStatusIds }) },
+            success: function (form, action) {
+                window.open('Report/Export?sp=' + '', '', '');
+              //  localWindow.onRenderGrid(action.result.success, action.result.data, action.result.fields, action.result.total);
+                Ext.MessageBox.show({
+                    title: 'Success',
+                    msg: "Successful",
+                    buttons: Ext.Msg.OK,
+                    scope: this
+                });
+                localWindow.closeAction = 'destroy';
+                localWindow.close();
+         
+            },
+            failure: function (form, action) {
+                Ext.MessageBox.show({
+                    title: 'Error',
+                    msg: action.result.data,
+                    buttons: Ext.Msg.OK,
+                    icon: Ext.MessageBox.ERROR,
+                    scope: this
+                });
+            }
+        });
+    },
+
+    onNext: function () {
+        var panel;
+        var window = Ext.getCmp('report-window');
+        var nextPanelId = window.panel[window.currentPanelIndex].nextPanel;
+        if (nextPanelId == 'operationPanel') {
+            var form = Ext.getCmp('report-form');
+            if (!form.getForm().isValid()) return;
+            panel = Ext.ffms.ux.report.OperationPanel;
+            if (typeof Ext.getCmp('report-operationGrid') != "undefined")
+                Ext.getCmp('report-operationGrid').LoadOperationPanel();
+        }
+       else if (nextPanelId == 'reportFieldPickerPanel') {
+           panel = Ext.ffms.ux.reportFieldPicker.Panel;
+          }
+        if (nextPanelId == 'report-form')
+            panel = Ext.ffms.ux.report.Form;
+        if (nextPanelId == 'selectionPanel') {
+            panel = Ext.ffms.ux.report.SelectionPanel;
+            if (typeof Ext.getCmp('report-selectionGrid') != "undefined")
+                Ext.getCmp('report-selectionGrid').LoadSelectionPanel();
+            Ext.getCmp('nextButton').setValue = 'Finished';
+        }
+        else {
+            Ext.getCmp('nextButton').text = 'Next';
+
+        }
+        if (nextPanelId == 'finalPanel') {
+            panel = Ext.ffms.ux.report.SelectionPanel;
+            this.onExport();
+        }
+
+            if (window.currentPanelIndex < 4)
+                window.currentPanelIndex = window.currentPanelIndex + 1;
+            if (window.panel.length > window.currentPanelIndex) {
+                window.panel[window.currentPanelIndex].show();
+            }
+            else {
+                window.panel[window.currentPanelIndex] = new panel();
+                window.add(window.panel[window.currentPanelIndex]);
+            }
+            window.panel[window.currentPanelIndex - 1].hide();
+            window.doLayout();
+
+    },
+
+    onPrevous: function () {
+        var panel;
+        var window = Ext.getCmp('report-window');
+        if (window.currentPanelIndex != 0) {
+            var window = Ext.getCmp('report-window');
+            var nextPanelId = window.panel[window.currentPanelIndex].nextPanel;
+
+            window.panel[window.currentPanelIndex].hide();
+            window.panel[window.currentPanelIndex - 1].show();
+            window.currentPanelIndex = window.currentPanelIndex - 1;
+            window.doLayout();
+        }
+
+    },
+
+    addItem: function () {
+        var selectionGrid = Ext.getCmp('report-selectionGrid');
+        var grid = Ext.getCmp('report-grid');
+        if (!selectionGrid.getSelectionModel().hasSelection()) return;
+        var selectedItems = selectionGrid.getSelectionModel().getSelections();
+        var store = grid.getStore();
+        var itemPicker = store.recordType;
+        for (var i = 0; i < selectedItems.length; i++) {
+            var index = store.findExact("Name", selectedItems[i].get('Name'))
+            if (index == -1) {
+                var p = new itemPicker({
+                    Id: selectedItems[i].get('Id'),
+                    Name: selectedItems[i].get('Name'),
+                    Type: selectedItems[i].get('Type'),
+                    Code: selectedItems[i].get('Code'),
+                });
+                var count = store.getCount();
+                store.insert(count, p);
+            }
+
+        }
+    },
+
+    removeItem: function () {
+        var grid = Ext.getCmp('report-grid');
+        if (!grid.getSelectionModel().hasSelection()) return;
+        var selectedItems = grid.getSelectionModel().getSelections();
+        var store = grid.getStore();
+
+        for (var i = 0; i < selectedItems.length; i++) {
+            store.remove(selectedItems[i]);
+        }
+
+    },
+
+    onRenderGrid: function (success, data, fields, total) {
+
+        var storeFields = fields;
+        var grid = Ext.getCmp('report-reportGrid');
+
+        var store = new Ext.ffms.ux.report.Store({
+            fields: (function () {
+                var fields = [];
+                for (var i = 0; i < storeFields.length; i++) {
+                    fields.push(storeFields[i].Name);
+                }
+                return fields;
+            }).createDelegate(this)()
+        });
+        var columns = new Ext.grid.ColumnModel((function () {
+            var columns = [];
+
+            for (var i = 0; i < storeFields.length; i++) {
+                var col = {
+                    dataIndex: storeFields[i].Name,
+                    header: storeFields[i].Name,
+                    sortable: true,
+                    width: 150,
+                    menuDisabled: true,
+                };
+                columns.push(col);
+            }
+            return columns;
+        }).createDelegate(this)());
+        grid.reconfigure(store, columns);
+        store.loadData(data);
+
+
+
+    },
+
+    onClose: function () {
+
+        this.close();
+    }
+});
+Ext.reg('report-Window', Ext.ffms.ux.report.Window);

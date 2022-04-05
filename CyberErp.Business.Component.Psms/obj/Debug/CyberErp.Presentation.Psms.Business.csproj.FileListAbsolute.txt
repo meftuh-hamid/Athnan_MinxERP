@@ -1,0 +1,14 @@
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Iffs.dll.config
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Iffs.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Iffs.pdb
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.pdb
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.pdb
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.xml
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.xml
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Presentation.Psms.Business.csprojResolveAssemblyReference.cache
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Iffs.dll
+F:\Meftuh Project\TodRoad\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Iffs.pdb

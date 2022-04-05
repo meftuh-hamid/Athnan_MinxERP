@@ -1,0 +1,42 @@
+﻿/*
+ * This css file is for crystal report viewer for VS2010
+ * It is necessary inorder to remove cr viewer borders and grey background
+ * Wondwosen Desalegn
+ */
+body 
+{
+    margin: 0;
+}
+
+.hideableFrame, .leftPanel, .menuShadow
+{
+    display:none !important;
+}
+
+.dialogzone
+{
+    background-color:transparent !important;
+}
+
+.insetBorder
+{
+    background-color:transparent !important;
+    border:none !important;
+}
+.insetBorder div
+{
+    border:none !important;
+    margin:0 !important;
+}
+.crtoolbar
+{
+    background-color: #D0DEF0 !important;
+    background-image: none !important;
+}
+
+#bobjid_1344089709120
+{
+    background: none !important;
+}
+
+

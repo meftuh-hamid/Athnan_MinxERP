@@ -1,0 +1,275 @@
+﻿.icon-key {
+    background-image: url(../../images/app/key.png) !important;
+}
+.icon-accept {
+    background-image: url(../../images/app/approve.png) !important;
+}
+.icon-add {
+    background-image: url(../../images/app/add.png) !important;
+}
+.icon-edit {
+    background-image: url(../../images/app/edit.png) !important;
+}
+.icon-delete {
+    background-image: url(../../images/app/delete.png) !important;
+}
+.icon-transfer {
+    background-image: url(../../images/app/transfer.png) !important;
+}
+.icon-evaluation {
+    background-image: url(../../images/app/evaluation.png) !important;
+}
+.icon-save {
+    background-image: url(../../images/app/save.png) !important;
+}
+.icon-exit {
+    background-image: url(../../images/app/close.png) !important;
+}
+
+.icon-upload {
+    background-image: url(../../images/app/image_add.png) !important;
+}
+
+.icon-home {
+    background-image: url(../../images/app/home.png) !important;
+}
+
+.icon-module {
+    background-image: url(../../images/app/module.png) !important;
+}
+
+.icon-operation {
+    background-image: url(../../images/app/operation.png) !important;
+}
+
+.icon-menu {
+    background-image: url(../../images/app/menu.png) !important;
+}
+
+.icon-member {
+    background-image: url(../../images/app/member.png) !important;
+}
+
+.icon-permission {
+    background-image: url(../../images/app/permission.png) !important;
+}
+
+.icon-role {
+    background-image: url(../../images/app/role.png) !important;
+}
+
+.icon-subsystem {
+    background-image: url(../../images/app/subsystem.png) !important;
+}
+
+.icon-hierarchy {
+    background-image: url(../../images/app/hierarchy.png) !important;
+}
+
+.icon-filter {
+    background-image: url(../../images/app/filter.png) !important;
+}
+
+.icon-information {
+    background-image: url(../../images/app/information.png) !important;
+}
+
+.icon-unit {
+    background-image: url(../../images/app/folder-vertical.png) !important;
+}
+
+.icon-jobgrade {
+    background-image: url(../../images/app/jobgrade.png) !important;
+}
+
+.icon-salaryscale {
+    background-image: url(../../images/app/salaryscale.png) !important;
+}
+
+.icon-positionclass {
+    background-image: url(../../images/app/positionclass.png) !important;
+}
+
+.icon-position {
+    background-image: url(../../images/app/position.png) !important;
+}
+
+.icon-professioncategory {
+    background-image: url(../../images/app/professioncategory.png) !important;
+}
+
+.icon-payrollitem {
+    background-image: url(../../images/app/payrollitem.png) !important;
+}
+
+.icon-expand-all {
+    background-image: url(../../images/app/expand-all.gif) !important;
+}
+
+.icon-collapse-all {
+    background-image: url(../../images/app/collapse-all.gif) !important;
+}
+
+.icon-benefit {
+    background-image: url(../../images/app/benefit.png) !important;
+}
+
+.icon-education {
+    background-image: url(../../images/app/education.png) !important;
+}
+
+.icon-experience {
+    background-image: url(../../images/app/experience.png) !important;
+}
+
+.icon-adjustment {
+    background-image: url(../../images/app/adjustment.png) !important;
+}
+
+.icon-green-bullet {
+    background-image: url(../../images/app/bullet-green.png) !important;
+}
+.x-tree-node-collapsed .x-tree-node-icon 
+{ 
+    background-image: url(../../images/app/folder_go.png) !important; 
+    background-repeat: no-repeat; 
+} 
+
+.x-tree-node-expanded .x-tree-node-icon 
+{ 
+    background-image: url(../../images/app/folder.png) !important; 
+    background-repeat: no-repeat; 
+}
+
+.icon-printer {
+    background-image: url(../../images/app/printer.png) !important;
+}
+
+.icon-first {
+    background-image: url(../../images/app/resultset_first.png) !important;
+}
+
+.icon-prev {
+    background-image: url(../../images/app/resultset_previous.png) !important;
+}
+
+.icon-last {
+    background-image: url(../../images/app/resultset_last.png) !important;
+}
+
+.icon-next {
+    background-image: url(../../images/app/resultset_next.png) !important;
+}
+
+.icon-cancel {
+    background-image: url(../../images/app/cancel.png) !important;
+}
+
+.icon-select {
+    background-image: url(../../images/app/select.png) !important;
+}
+
+.icon-refresh {
+    background-image: url(../../images/app/refresh.gif) !important;
+}
+
+.icon-preview {
+    background-image: url(../../images/app/preview.png) !important;
+}
+.icon-excel {
+    background-image: url(../../images/app/excel.png) !important;
+}
+.icon-change {
+    background-image: url(../../images/app/change.png) !important;
+}
+.icon-document {
+    background-image: url(../../images/app/document.png) !important;
+}
+.icon-barcode {
+    background-image: url(../../images/app/barcode.png) !important;
+}
+.icon-unit {
+    background-image: url(../../images/app/unit.png) !important;
+}
+.icon-picker {
+    background-image: url(../../images/app/filter.png) !important;
+}
+.icon-store {
+    background-image: url(../../images/app/store.png) !important;
+}
+.icon-category {
+    background-image: url(../../images/app/category.png) !important;
+}
+.icon-item {
+    background-image: url(../../images/app/item.png) !important;
+}
+.icon-itemstore {
+    background-image: url(../../images/app/itemstore.png) !important;
+}
+.icon-inventory {
+    background-image: url(../../images/app/inventory.png) !important;
+}
+.icon-bincard {
+    background-image: url(../../images/app/bincard.png) !important;
+}
+.icon-stockcard {
+    background-image: url(../../images/app/stockcard.png) !important;
+}
+.icon-request {
+    background-image: url(../../images/app/request.png) !important;
+}
+.icon-issue {
+    background-image: url(../../images/app/issue.png) !important;
+
+}
+.icon-in {
+    background-image: url(../../images/app/in.png) !important;
+}
+.icon-out {
+    background-image: url(../../images/app/out.png) !important;
+}
+.icon-receive {
+    background-image: url(../../images/app/receive.png) !important;
+}
+.icon-return {
+    background-image: url(../../images/app/return.png) !important;
+}
+.icon-disposal {
+    background-image: url(../../images/app/disposal.png) !important;
+}
+.icon-adjustment {
+    background-image: url(../../images/app/adjustment.png) !important;
+}
+.icon-operation {
+    background-image: url(../../images/app/operation.png) !important;
+}
+.icon-job {
+    background-image: url(../../images/app/job.png) !important;
+}
+.icon-status {
+    background-image: url(../../images/app/status.png) !important;
+}
+.icon-order {
+    background-image: url(../../images/app/order.png) !important;
+}
+.icon-plan {
+    background-image: url(../../images/app/plan.png) !important;
+}
+.icon-holiday {
+    background-image: url(../../images/app/holiday.png) !important;
+}
+.icon-report {
+    background-image: url(../../images/app/report.png) !important;
+}
+.icon-delivery {
+    background-image: url(../../images/app/delivery.png) !important;
+}
+.icon-bill {
+    background-image: url(../../images/app/bill.png) !important;
+}
+.icon-station {
+    background-image: url(../../images/app/station.png) !important;
+}
+.icon-department {
+    background-image: url(../../images/app/department.png) !important;
+}

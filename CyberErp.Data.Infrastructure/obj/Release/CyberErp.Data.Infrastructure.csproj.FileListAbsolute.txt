@@ -1,0 +1,80 @@
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+D:\TFS\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+F:\Meftuh Project\PAG\IFFS\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+H:\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+H:\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+H:\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+H:\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+E:\New folder\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+E:\New folder\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+E:\New folder\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+E:\New folder\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll.config
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.xml
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Infrastructure\obj\Release\CyberErp.Data.Infrastructure.pdb

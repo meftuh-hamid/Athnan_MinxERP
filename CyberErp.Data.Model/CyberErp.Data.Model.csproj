@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73F4BC32-7EB4-40F1-8A1E-BC500E663813}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyberErp.Data.Model</RootNamespace>
+    <AssemblyName>CyberErp.Data.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="coreFiscalYear.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreModule.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreOperation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="corePeriod.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreRole.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreRolePermission.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreSubsystem.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreUnit.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreUser.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreUserRole.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreUserSubsystem.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="coreVoucherWorkFlow.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Erp.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Erp.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Erp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Erp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Erp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ErpEntities.partial.cs" />
+    <Compile Include="lupAdjustmentType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupConsumerType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupDisposalType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupItemCategoryType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupItemType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupMeasurementUnit.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupPriceGroup.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupPurchaseOrderType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupPurchaseRequestType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupReceiveType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupRequestPurpose.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupReturnType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupSalesType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupStoreType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupSupplierCategory.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupVoucherStatus.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lupVoucherType.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterModel.cs" />
+    <Compile Include="ItemCostModel.cs" />
+    <Compile Include="PRBillofMaterialDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRBillofMaterialHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRBillofMaterialOperationDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRDocumentNoSetting.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRHoliday.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRNotification.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROperation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRProductionCenter.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionOrderDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionOrderHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanBOMDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanDeliveryDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanDeliveryHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanJobCardDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanJobCardResultDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRProductionPlanJobCardTeamDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRSetting.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRWorkStation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRWorkStationWorkingHour.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsAdjustmentDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsAdjustmentHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsApprover.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsBinCard.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsCustodian_.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDelivery.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDeliveryOrderDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDeliveryOrderHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDisposalDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDisposalHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsDocumentNoSetting.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsFreightOrder.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsInventoryRecord.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsIssueDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsIssueHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItem.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemAlternative.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemCategory.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemLocation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemLocationTransaction.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemLOT.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemLOTTransaction.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemPackage.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemSerial.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemSerialTransaction.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsItemUnit.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsNotification.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsPurchaseOrderATCDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsPurchaseOrderDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsPurchaseOrderHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsPurchaseRequestDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsPurchaseRequestHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsReceiveDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsReceiveHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsRequestOrderDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsRequestOrderHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsReturnDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsReturnHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsSetting.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStore.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStoreLocation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStoreLocationBin.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStorePermission.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStoreRequisitionDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsStoreRequisitionHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsSupplier.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsSupplierCredit.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsSupplierSettlementDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsSupplierSettlementHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTaxRate.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTransferIssueDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTransferIssueHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTransferReceiveDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTransferReceiveHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsTransportation.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psmsVoucherStatusTransaction.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsCustomer.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsCustomerCategory.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsCustomerCredit.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsDailySales.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsItemPrice.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsPriceCategory.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsProformaDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsProformaHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsSalesArea.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsSalesDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsSalesHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsSettlementDetail.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slmsSettlementHeader.cs">
+      <DependentUpon>Erp.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Erp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Erp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Erp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Erp.edmx</DependentUpon>
+      <LastGenOutput>Erp.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Erp.edmx.diagram">
+      <DependentUpon>Erp.edmx</DependentUpon>
+    </None>
+    <None Include="Erp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Erp.edmx</DependentUpon>
+      <LastGenOutput>Erp.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

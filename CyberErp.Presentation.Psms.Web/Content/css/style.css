@@ -1,0 +1,171 @@
+﻿*
+{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+body
+{
+    font-family: Tahoma, Sans-Serif;
+    font-weight: lighter;    
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight:lighter;
+}
+
+#wrapper
+{
+    width: 1024px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#header
+{
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #2e3092;
+}
+
+
+#header h1
+{
+   margin-bottom: -5px; 
+}
+
+#header span
+{
+    font-size: .8em;
+}
+
+
+#highlight
+{
+    color: #ffffff;
+    background-image: url('../Images/highlight_bg.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 326px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+}
+
+#highlight ul
+{
+    list-style: none;
+    display: inline-block;
+    font-size: 17px;    
+}
+
+#highlight ul li
+{
+    margin-bottom: 15px;        
+}
+
+
+#highlight-links
+{
+    float: left;
+    width: 482px;
+}
+
+#highlight-content
+{
+    float: left;
+    width: 471px;
+}
+
+#highlight-content h1
+{
+    font-size:22px;
+    margin-bottom: 20px;    
+}
+
+#highlight-content p
+{
+    font-size: .9em;
+    line-height: 1.2;
+   
+}
+
+#content
+{
+    clear: both;
+    margin-left: 10px;
+}
+
+#content-left
+{
+    float: left;
+    width: 506px;
+    color: #2e3092;
+}
+
+#content-left img
+{
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+#content-right
+{
+    float: left;
+    width: 472px;
+    color: #2e3092;
+}
+
+#content-right h2
+{
+    margin-bottom: 15px;    
+}
+
+#content-right p
+{
+    margin-bottom: 10px;
+    font-size: .9em;    
+   
+}
+
+#content-left p
+{
+    margin-bottom: 10px;
+    font-size: .8em;    
+    line-height: 1.2;
+}
+
+#footer
+{
+    clear: both;
+    background-color: #3803ff;
+    padding: 10px 40px 10px 40px;
+    color: #ffffff;
+    font-size: .8em;
+}
+
+#footer ul
+{
+    display: inline;
+    list-style: none;
+}
+
+#footer ul li
+{
+    display: inline;
+    border-right: solid 1px #ffffff;    
+    padding: 0 10px 0 10px;
+}
+
+#footer ul li.last-link
+{
+    border-right: none;    
+}
+
+#footer p
+{
+    float: right;    
+}

@@ -1,0 +1,88 @@
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+C:\Users\meftuh-pc\Documents\cyber poject\Tollroad\New Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+F:\Meftuh Project\TodRoad\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+E:\Projects\ETRE\Code\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+E:\Project\East Africa\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+D:\meftu2\1 NTFS\LostFiles2\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+E:\Projects\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+D:\EATH\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+D:\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+D:\EATH\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+D:\Projects\Taju\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
+D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache

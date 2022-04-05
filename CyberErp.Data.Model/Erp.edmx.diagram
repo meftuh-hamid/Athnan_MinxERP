@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c8f1075fedb42fca4a4ef0c43ec5c5a" Name="Diagram1" ZoomLevel="10">
+        <AssociationConnector Association="ErpModel.FK_iffsQuotationDetail_iffsLupCommodityType" />
+        <AssociationConnector Association="ErpModel.FK_iffsQuotationDetail_iffsLupContainerType" />
+        <AssociationConnector Association="ErpModel.FK_iffsQuotationDetail_iffsLupPOE" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_slmsSalesHeader" />
+        <EntityTypeShape EntityType="ErpModel.coreModule" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.coreOperation" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="ErpModel.corePeriod" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.coreRole" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="ErpModel.coreRolePermission" Width="1.5" PointX="5.25" PointY="6.75" />
+        <EntityTypeShape EntityType="ErpModel.coreSubsystem" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="ErpModel.coreUnit" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="ErpModel.FK_coreModule_coreSubsystem" />
+        <AssociationConnector Association="ErpModel.FK_coreOperation_coreModule" />
+        <AssociationConnector Association="ErpModel.FK_coreRolePermission_coreOperation" />
+        <AssociationConnector Association="ErpModel.FK_coreRolePermission_coreRole" />
+        <AssociationConnector Association="ErpModel.FK_coreUnit_coreUnit" />
+        <EntityTypeShape EntityType="ErpModel.coreFiscalYear" Width="1.5" PointX="3.125" PointY="14.75" />
+        <EntityTypeShape EntityType="ErpModel.coreUser" Width="1.5" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="ErpModel.FK_corePeriod_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_coreUser_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_coreUser_coreUser1" />
+        <EntityTypeShape EntityType="ErpModel.coreUserRole" Width="1.5" PointX="10" PointY="3.125" />
+        <EntityTypeShape EntityType="ErpModel.coreUserSubsystem" Width="1.5" PointX="9.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ErpModel.coreVoucherWorkFlow" Width="1.5" PointX="10" PointY="7" />
+        <EntityTypeShape EntityType="ErpModel.lupAdjustmentType" Width="1.5" PointX="11.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ErpModel.lupConsumerType" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.lupDisposalType" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ErpModel.lupItemCategoryType" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ErpModel.lupItemType" Width="1.5" PointX="13.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ErpModel.lupMeasurementUnit" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.lupPriceGroup" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ErpModel.lupPurchaseOrderType" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ErpModel.lupPurchaseRequestType" Width="1.5" PointX="5.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ErpModel.lupReceiveType" Width="1.5" PointX="7.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ErpModel.lupRequestPurpose" Width="1.5" PointX="15.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ErpModel.lupReturnType" Width="1.5" PointX="9.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ErpModel.lupSalesType" Width="1.5" PointX="11.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ErpModel.lupStoreType" Width="1.5" PointX="15.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ErpModel.lupSupplierCategory" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.lupVoucherStatus" Width="1.5" PointX="7.75" PointY="11.5" />
+        <EntityTypeShape EntityType="ErpModel.lupVoucherType" Width="1.5" PointX="7.75" PointY="7.25" />
+        <AssociationConnector Association="ErpModel.FK_coreUserRole_coreRole" />
+        <AssociationConnector Association="ErpModel.FK_coreUserRole_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_coreUserSubsystem_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_coreVoucherWorkFlow_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_coreVoucherWorkFlow_lupVoucherType" />
+        <EntityTypeShape EntityType="ErpModel.PRBillofMaterialDetail" Width="1.5" PointX="23.625" PointY="17.875" />
+        <EntityTypeShape EntityType="ErpModel.PRBillofMaterialHeader" Width="1.5" PointX="18.375" PointY="31.625" />
+        <EntityTypeShape EntityType="ErpModel.PRDocumentNoSetting" Width="1.5" PointX="0.75" PointY="22.875" />
+        <EntityTypeShape EntityType="ErpModel.PRHoliday" Width="1.5" PointX="2.75" PointY="22.875" />
+        <EntityTypeShape EntityType="ErpModel.PRNotification" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpModel.PROperation" Width="1.5" PointX="18.375" PointY="22.375" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionCenter" Width="1.5" PointX="6" PointY="22.75" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionOrderDetail" Width="1.5" PointX="23.625" PointY="12" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionOrderHeader" Width="1.5" PointX="18.375" PointY="15" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanBOMDetail" Width="1.5" PointX="20.625" PointY="6.875" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanDeliveryDetail" Width="1.5" PointX="28.875" PointY="12.875" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanDeliveryHeader" Width="1.5" PointX="23.625" PointY="7.125" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanDetail" Width="1.5" PointX="28.875" PointY="8.125" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanHeader" Width="1.5" PointX="18.375" PointY="7.875" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanJobCardTeamDetail" Width="1.5" PointX="25.875" PointY="9.375" />
+        <EntityTypeShape EntityType="ErpModel.PRSetting" Width="1.5" PointX="8.75" PointY="22.875" />
+        <EntityTypeShape EntityType="ErpModel.PRWorkStation" Width="1.5" PointX="16.125" PointY="21.875" />
+        <EntityTypeShape EntityType="ErpModel.PRWorkStationWorkingHour" Width="1.5" PointX="18.375" PointY="27.5" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionCenter_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_PRNotification_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderPlanHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDeliveryHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDetail_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardTeamDetail_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderBOMDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_PRNotification_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderPlanDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_PRNotification_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialDetail_PRBillofMaterialHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialDetail_PRBillofMaterialHeader1" />
+        <AssociationConnector Association="ErpModel.FK_PROperation_PRWorkStation" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderDetail_PRProductionOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDeliveryDetail_PRProductionOrderDetail" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDetail_PRProductionOrderDetail" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanBOMDetail_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDeliveryDetail_PRProductionPlanDeliveryHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDeliveryHeader_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanDetail_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRWorkStationWorkingHour_PRWorkStation" />
+        <EntityTypeShape EntityType="ErpModel.psmsAdjustmentDetail" Width="1.5" PointX="33.5" PointY="16.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsApprover" Width="1.5" PointX="23.25" PointY="23.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsBinCard" Width="1.5" PointX="27.25" PointY="36.5" />
+        <EntityTypeShape EntityType="ErpModel.psmsCustodian_" Width="1.5" PointX="31.25" PointY="13.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsDeliveryOrderDetail" Width="1.5" PointX="26.5" PointY="13.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsDeliveryOrderHeader" Width="1.5" PointX="24.25" PointY="32.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsDisposalDetail" Width="1.5" PointX="34.5" PointY="29.5" />
+        <EntityTypeShape EntityType="ErpModel.psmsDisposalHeader" Width="1.5" PointX="29.25" PointY="30.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsDocumentNoSetting" Width="1.5" PointX="23.25" PointY="41.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsInventoryRecord" Width="1.5" PointX="30.25" PointY="36.875" />
+        <EntityTypeShape EntityType="ErpModel.psmsIssueDetail" Width="1.5" PointX="35.75" PointY="12.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsItem" Width="1.5" PointX="18.375" PointY="52.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemAlternative" Width="1.5" PointX="20.625" PointY="74.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemCategory" Width="1.5" PointX="16.125" PointY="56.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemLocation" Width="1.5" PointX="24.75" PointY="96.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemLocationTransaction" Width="1.5" PointX="27" PointY="52.25" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemLOT" Width="1.5" PointX="20.25" PointY="46.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemLOTTransaction" Width="1.5" PointX="22.5" PointY="52.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemPackage" Width="1.5" PointX="32.625" PointY="44" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemSerial" Width="1.5" PointX="23.25" PointY="46.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemSerialTransaction" Width="1.5" PointX="25.5" PointY="47.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsItemUnit" Width="1.5" PointX="26.625" PointY="32.25" />
+        <EntityTypeShape EntityType="ErpModel.psmsNotification" Width="1.5" PointX="11" PointY="19.5" />
+        <EntityTypeShape EntityType="ErpModel.psmsPurchaseOrderDetail" Width="1.5" PointX="33" PointY="7.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsPurchaseOrderHeader" Width="1.5" PointX="30.75" PointY="21.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsPurchaseRequestDetail" Width="1.5" PointX="35.75" PointY="6.625" />
+        <EntityTypeShape EntityType="ErpModel.psmsPurchaseRequestHeader" Width="1.5" PointX="28.5" PointY="20.875" />
+        <EntityTypeShape EntityType="ErpModel.psmsReceiveDetail" Width="1.5" PointX="41.25" PointY="12" />
+        <EntityTypeShape EntityType="ErpModel.psmsRequestOrderDetail" Width="1.5" PointX="38.5" PointY="14.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsRequestOrderHeader" Width="1.5" PointX="26.25" PointY="26.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsReturnDetail" Width="1.5" PointX="41" PointY="18.125" />
+        <EntityTypeShape EntityType="ErpModel.psmsReturnHeader" Width="1.5" PointX="35.75" PointY="20.875" />
+        <EntityTypeShape EntityType="ErpModel.psmsSetting" Width="1.5" PointX="14.375" PointY="17" />
+        <EntityTypeShape EntityType="ErpModel.psmsStore" Width="1.5" PointX="18" PointY="38" />
+        <EntityTypeShape EntityType="ErpModel.psmsStoreLocation" Width="1.5" PointX="20.25" PointY="154.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsStoreLocationBin" Width="1.5" PointX="22.5" PointY="155" />
+        <EntityTypeShape EntityType="ErpModel.psmsStorePermission" Width="1.5" PointX="21.25" PointY="29.25" />
+        <EntityTypeShape EntityType="ErpModel.psmsStoreRequisitionDetail" Width="1.5" PointX="37.5" PointY="30.25" />
+        <EntityTypeShape EntityType="ErpModel.psmsSupplier" Width="1.5" PointX="33.5" PointY="1" />
+        <EntityTypeShape EntityType="ErpModel.psmsTaxRate" Width="1.5" PointX="13.375" PointY="21" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransferIssueDetail" Width="1.5" PointX="40.75" PointY="24" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransferIssueHeader" Width="1.5" PointX="31.5" PointY="29.5" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransferReceiveDetail" Width="1.5" PointX="46" PointY="21.375" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransferReceiveHeader" Width="1.5" PointX="40.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsVoucherStatusTransaction" Width="1.5" PointX="19" PointY="1.375" />
+        <EntityTypeShape EntityType="ErpModel.slmsCustomerCategory" Width="1.5" PointX="13.875" PointY="27.625" />
+        <EntityTypeShape EntityType="ErpModel.slmsPriceCategory" Width="1.5" PointX="13.875" PointY="31.5" />
+        <EntityTypeShape EntityType="ErpModel.slmsProformaDetail" Width="1.5" PointX="43.75" PointY="16.625" />
+        <EntityTypeShape EntityType="ErpModel.slmsProformaHeader" Width="1.5" PointX="34.5" PointY="35.25" />
+        <EntityTypeShape EntityType="ErpModel.slmsSalesDetail" Width="1.5" PointX="46" PointY="14.375" />
+        <AssociationConnector Association="ErpModel.FK_psmsBinCard_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsInventoryRecord_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsApprover_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsApprover_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_coreUser2" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_coreUser2" />
+        <AssociationConnector Association="ErpModel.FK_psmsStorePermission_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_coreUser2" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsVoucherStatusTransaction_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_slmsProformaHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_slmsProformaHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__lupConsumerType" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_lupConsumerType" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_lupConsumerType" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_lupDisposalType" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemCategory_lupItemCategoryType" />
+        <AssociationConnector Association="ErpModel.FK_psmsItem_lupItemType" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsItem_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemPackage_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemUnit_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_lupPurchaseOrderType" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_lupPurchaseRequestType" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_lupReturnType" />
+        <AssociationConnector Association="ErpModel.FK_psmsStore_lupStoreType" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplier_lupSupplierCategory" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentedetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsApprover_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsNotification_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnedetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsApprover_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_psmsBinCard_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocationTransaction_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_psmsNotification_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_psmsVooucherStatusTransaction_lupVoucherType" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialDetail_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialHeader_PRBillofMaterialHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialHeader_psmsItemCategory" />
+        <AssociationConnector Association="ErpModel.FK_PRDocumentNoSetting_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionCenter_psmsItemCategory" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderBOMDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderBOMDetail_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentedetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsApprover_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsBinCard_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsBinCard_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__psmsItemSerial" />
+        <AssociationConnector Association="ErpModel.FK_psmsCustodian__psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderDetail_psmsDeliveryOrderDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalDetail_psmsDisposalDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsDocumentNoSetting_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsDocumentSetting_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsInventoryRecord_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsInventoryRecord_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItem_psmsItemCategory" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemAlternative_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemAlternative_psmsItem1" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLOT_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemPackage_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemPackage_psmsItem1" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemSerial_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemUnit_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnedetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemCategory_psmsItemCategory" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsStoreLocation" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsStoreLocationBin" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLocationTransaction_psmsItemLocation" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLOT_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemLOTTransaction_psmsItemLOT" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemSerial_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsItemSerialTransaction_psmsItemSerial" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderDetail_psmsPurchaseOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_psmsPurchaseRequestHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestDetail_psmsPurchaseRequestHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_psmsRequestOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderDetail_psmsRequestOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_psmsRequestOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnedetail_psmsReturnHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsStore_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreLocation_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsStorePermission_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreLocationBin_psmsStoreLocation" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferIssueDetail_psmsTransferIssueDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_psmsTransferIssueHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_psmsTransferReceiveDetail" />
+        <AssociationConnector Association="ErpModel.FK_slmsCustomerCategory_slmsCustomerCategory1" />
+        <AssociationConnector Association="ErpModel.FK_slmsProformaHeader_slmsPriceCategory" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanJobCardResultDetail" Width="1.5" PointX="27.875" PointY="45" />
+        <EntityTypeShape EntityType="ErpModel.psmsIssueHeader" Width="1.5" PointX="33.5" PointY="21.625" />
+        <EntityTypeShape EntityType="ErpModel.psmsReceiveHeader" Width="1.5" PointX="46.75" PointY="26.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsStoreRequisitionHeader" Width="1.5" PointX="38.625" PointY="5.125" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_coreUnit" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_coreUser2" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_coreUser2" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_lupConsumerType" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_lupReceiveType" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_lupRequestPurpose" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_PRProductionOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_PRProductionOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_PRProductionPlanDeliveryDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardResultDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueDetail_psmsIssueDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_psmsRequestOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsIssueHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_psmsIssueHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_psmsPurchaseOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_psmsPurchaseRequestHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_psmsReceiveHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsReceiveHeader_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsRequestOrderHeader_psmsStoreRequisitionHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionHeader_psmsStore1" />
+        <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_psmsStoreRequisitionHeader" />
+        <EntityTypeShape EntityType="ErpModel.PRProductionPlanJobCardDetail" Width="1.5" PointX="20.625" PointY="12.75" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderJobCardDetail_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderJobCardDetail_PRProductionOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardDetail_PRProductionPlanHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderJobCardDetail_PRWorkStation" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardResultDetail_PRProductionPlanJobCardDetail" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionPlanJobCardTeamDetail_PRProductionPlanJobCardDetail" />
+        <EntityTypeShape EntityType="ErpModel.PRBillofMaterialOperationDetail" Width="1.5" PointX="20.625" PointY="24.125" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialOperationDetail_PRBillofMaterialHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialOperationDetail_PROperation" />
+        <AssociationConnector Association="ErpModel.FK_PRBillofMaterialOperationDetail_PRWorkStation" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_PRProductionOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_PRProductionPlanHeader" />
+        <EntityTypeShape EntityType="ErpModel.psmsAdjustmentHeader" Width="1.5" PointX="26.25" PointY="19.875" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_coreFiscalYear" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_lupAdjustmentType" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentedetail_psmsAdjustmentHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsAdjustmentHeader_psmsStore" />
+        <EntityTypeShape EntityType="ErpModel.slmsCustomerCredit" Width="1.5" PointX="18.375" PointY="66.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsSupplierCredit" Width="1.5" PointX="35.75" PointY="2.75" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplierCredit_psmsSupplier" />
+        <EntityTypeShape EntityType="ErpModel.slmsDailySales" Width="1.5" PointX="20.25" PointY="79.125" />
+        <AssociationConnector Association="ErpModel.FK_slmsDailySales_psmsStore" />
+        <EntityTypeShape EntityType="ErpModel.slmsSettlementDetail" Width="1.5" PointX="46" PointY="46.25" />
+        <EntityTypeShape EntityType="ErpModel.slmsSettlementHeader" Width="1.5" PointX="43.75" PointY="46.5" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsCustomerCredit" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsSettlementHeader" />
+        <EntityTypeShape EntityType="ErpModel.psmsSupplierSettlementDetail" Width="1.5" PointX="38" PointY="19.75" />
+        <EntityTypeShape EntityType="ErpModel.psmsSupplierSettlementHeader" Width="1.5" PointX="35.75" PointY="54" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplierSettlementDetail_psmsPurchaseOrderHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplierSettlementHeader_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplierSettlementDetail_psmsSupplierCredit" />
+        <AssociationConnector Association="ErpModel.FK_psmsSupplierSettlementDetail_psmsSupplierSettlementHeader" />
+        <EntityTypeShape EntityType="ErpModel.psmsDelivery" Width="1.5" PointX="49.75" PointY="25" />
+        <EntityTypeShape EntityType="ErpModel.psmsFreightOrder" Width="1.5" PointX="42.5" PointY="36.875" />
+        <EntityTypeShape EntityType="ErpModel.psmsPurchaseOrderATCDetail" Width="1.5" PointX="38.25" PointY="25.25" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransportation" Width="1.5" PointX="39.75" PointY="36.5" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsDelivery" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsFreightOrder" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsTransportation" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsFreightOrder" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsPurchaseOrderATCDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderATCDetail_psmsPurchaseOrderDetail" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsSupplier" />
+        <EntityTypeShape EntityType="ErpModel.slmsCustomer" Width="1.5" PointX="16.125" PointY="28.125" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_psmsDelivery_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderATCDetail_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_slmsCustomer_slmsCustomerCategory" />
+        <AssociationConnector Association="ErpModel.FK_slmsCustomer_slmsPriceCategory" />
+        <AssociationConnector Association="ErpModel.FK_slmsCustomerCredit_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_SlmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementHeader_slmsCustomer" />
+        <EntityTypeShape EntityType="ErpModel.slmsSalesHeader" Width="1.5" PointX="43.75" PointY="23.5" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_coreUser" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_lupSalesType" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsSalesHeader" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_slmsSalesHeader" />
+        <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_SlmsSalesHeader" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_slmsPriceCategory" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsProformaHeader" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsSalesHeader" />
+        <EntityTypeShape EntityType="ErpModel.slmsItemPrice" Width="1.5" PointX="20.625" PointY="34.25" />
+        <AssociationConnector Association="ErpModel.FK_SalesItemPrice_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SalesItemPrice_lupPriceGroup" />
+        <AssociationConnector Association="ErpModel.FK_SalesItemPrice_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_slmsItemPrice_slmsPriceCategory" />
+        <EntityTypeShape EntityType="ErpModel.slmsSalesArea" Width="1.5" PointX="20.25" PointY="40.5" />
+        <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_slmsSalesArea" />
+        <AssociationConnector Association="ErpModel.FK_SlmsArea_psmsStore" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_SlmsArea" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsArea" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
