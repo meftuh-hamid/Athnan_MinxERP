@@ -306,7 +306,8 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                         item.UnitPrice,
                         item.IsTaxable,
                         item.PriceGroupId,
-                        PriceGroup = item.lupPriceGroup.Name,                       
+                        WithHoldingTax = item.WithholdableUnitPrice,
+                        PriceGroup = item.PriceGroupId.HasValue ? item.lupPriceGroup.Name : "",                       
                         Status = item.lupVoucherStatus.Name,
                         MeasurementUnit = item.UnitId != null ? item.lupMeasurementUnit.Name : item.psmsItem.lupMeasurementUnit.Name,
                         item.Quantity,
@@ -503,7 +504,8 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 item.UnitPrice,
                 item.PriceGroupId,
                 item.IsTaxable,
-                PriceGroup = item.lupPriceGroup.Name,
+                WithHoldingTax=item.WithholdableUnitPrice,
+                PriceGroup =item.PriceGroupId.HasValue? item.lupPriceGroup.Name:"",
                 Status = item.lupVoucherStatus.Name,
                 MeasurementUnit = item.UnitId != null ? item.lupMeasurementUnit.Name : item.psmsItem.lupMeasurementUnit.Name,
                 item.Quantity,
@@ -522,7 +524,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
             IList<string> salesDetails = salesDetailsString.Split(new[] { ';' }).ToList();
             IList<slmsSalesDetail> salesDetailList = new List<slmsSalesDetail>();
             var oldsSalesDetailList = _salesDetail.GetAll().AsQueryable().Where(o => o.SalesHeaderId == salesHeader.Id).ToList();
-            var id = Guid.Empty;
+            var id = Guid.Empty; decimal amount = 0;
             for (var i = 0; i < salesDetails.Count(); i++)
             {
                 var salesDetail = salesDetails[i].Split(new[] { ':' });
@@ -548,6 +550,8 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 }
                 if (bool.TryParse(salesDetail[8].ToString(),out istTaxable))
                     objSalesDetail.IsTaxable = istTaxable;
+                if (decimal.TryParse(salesDetail[9].ToString(), out amount))
+                    objSalesDetail.WithholdableUnitPrice = amount;
               
                 objSalesDetail.UpdatedAt = DateTime.Now;                
                 if (salesDetailId == Guid.Empty)
@@ -612,15 +616,30 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
         {
             var salesArea = _salesArea.Get(o => o.Id == salesAreaId);
             var model = new ParameterModel { VoucherId = salesDetail.SalesHeaderId, VoucherTypeId = salesVoucherType, VoucherNo = voucherNo, ItemId = salesDetail.ItemId, StoreId = salesArea.StoreId.Value, FiscalYearId = fiscalYearId, TransactionDate = date, Quantity =(double) salesDetail.Quantity, DamagedQuantity = 0,Remark="" };
-            
-            var unitCost = _inventoryRecord.IssueInventoryUpdate(model);
-            salesDetail.UnitCost = unitCost;
+            if (salesArea.IsSalesOrderCommited)
+            {
+                _inventoryRecord.CommiteInventoryUpdate(model, model.Quantity);
+         
+            }
+            else
+            {
+                var unitCost = _inventoryRecord.IssueInventoryUpdate(model);
+                salesDetail.UnitCost = unitCost;
+   
+            }
         }
         private void UpdateInventoryFromVoidedT(slmsSalesDetail salesDetail, Guid storeId, Guid fiscalYearId, decimal updateQuantity, string voucherNo, DateTime date)
         {
             var model = new ParameterModel { VoucherId = salesDetail.SalesHeaderId, VoucherTypeId = salesVoucherType, VoucherNo = voucherNo, ItemId = salesDetail.ItemId, StoreId = storeId, FiscalYearId = fiscalYearId, TransactionDate = date, Quantity =(double) salesDetail.Quantity, DamagedQuantity = 0 };
-         
-            _inventoryRecord.IssueInventoryUpdateFromVoidedT(model);
+            if (salesDetail.slmsSalesHeader.slmsSalesArea.IsSalesOrderCommited)
+            {
+                _inventoryRecord.CommiteInventoryUpdateForVoidT(model, model.Quantity);
+            }
+            else
+            {
+                _inventoryRecord.IssueInventoryUpdateFromVoidedT(model);
+       
+            }
         }     
     
         private IQueryable<slmsSalesHeader> SearchTransaction(string mode, Hashtable ht, IQueryable<slmsSalesHeader> filtered)

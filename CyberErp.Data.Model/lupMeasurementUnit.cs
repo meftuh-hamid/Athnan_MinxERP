@@ -29,12 +29,12 @@ namespace CyberErp.Data.Model
             this.psmsReceiveDetail = new HashSet<psmsReceiveDetail>();
             this.psmsRequestOrderDetail = new HashSet<psmsRequestOrderDetail>();
             this.psmsStoreRequisitionDetail = new HashSet<psmsStoreRequisitionDetail>();
-            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
-            this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
             this.psmsDelivery = new HashSet<psmsDelivery>();
             this.psmsFreightOrder = new HashSet<psmsFreightOrder>();
             this.psmsTransportation = new HashSet<psmsTransportation>();
             this.slmsItemPrice = new HashSet<slmsItemPrice>();
+            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
+            this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
         }
     
         public System.Guid Id { get; set; }
@@ -58,11 +58,11 @@ namespace CyberErp.Data.Model
         public virtual ICollection<psmsReceiveDetail> psmsReceiveDetail { get; set; }
         public virtual ICollection<psmsRequestOrderDetail> psmsRequestOrderDetail { get; set; }
         public virtual ICollection<psmsStoreRequisitionDetail> psmsStoreRequisitionDetail { get; set; }
-        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
-        public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
         public virtual ICollection<psmsDelivery> psmsDelivery { get; set; }
         public virtual ICollection<psmsFreightOrder> psmsFreightOrder { get; set; }
         public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
         public virtual ICollection<slmsItemPrice> slmsItemPrice { get; set; }
+        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
+        public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
     }
 }

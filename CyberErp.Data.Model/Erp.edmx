@@ -2065,8 +2065,9 @@
           <Property Name="ProformaHeaderId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UnitId" Type="uniqueidentifier" />
           <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PriceGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PriceGroupId" Type="uniqueidentifier" />
           <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WithholdableUnitPrice" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IsTaxable" Type="bit" />
           <Property Name="RemainingQuantity" Type="decimal" Precision="18" Scale="2" />
@@ -2131,9 +2132,10 @@
           <Property Name="SalesHeaderId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UnitId" Type="uniqueidentifier" />
           <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PriceGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PriceGroupId" Type="uniqueidentifier" />
           <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WithholdableUnitPrice" Type="decimal" Precision="18" Scale="2" />
           <Property Name="SoldQuantity" Type="decimal" Precision="18" Scale="2" />
           <Property Name="RemainingQuantity" Type="decimal" Precision="18" Scale="2" />
           <Property Name="StatusId" Type="uniqueidentifier" Nullable="false" />
@@ -5886,7 +5888,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SlmsProformaDetail_lupPriceGroup">
-          <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="1" />
+          <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="0..1" />
           <End Role="slmsProformaDetail" Type="Self.slmsProformaDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="lupPriceGroup">
@@ -6042,7 +6044,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SlmsSalesDetail_lupPriceGroup">
-          <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="1" />
+          <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="0..1" />
           <End Role="slmsSalesDetail" Type="Self.slmsSalesDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="lupPriceGroup">
@@ -7953,9 +7955,7 @@
           <EntitySet Name="psmsVoucherStatusTransaction" EntityType="ErpModel.psmsVoucherStatusTransaction" />
           <EntitySet Name="slmsCustomerCategory" EntityType="ErpModel.slmsCustomerCategory" />
           <EntitySet Name="slmsPriceCategory" EntityType="ErpModel.slmsPriceCategory" />
-          <EntitySet Name="slmsProformaDetail" EntityType="ErpModel.slmsProformaDetail" />
           <EntitySet Name="slmsProformaHeader" EntityType="ErpModel.slmsProformaHeader" />
-          <EntitySet Name="slmsSalesDetail" EntityType="ErpModel.slmsSalesDetail" />
           <AssociationSet Name="FK_psmsBinCard_coreFiscalYear" Association="ErpModel.FK_psmsBinCard_coreFiscalYear">
             <End Role="coreFiscalYear" EntitySet="coreFiscalYear" />
             <End Role="psmsBinCard" EntitySet="psmsBinCard" />
@@ -8184,22 +8184,6 @@
             <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
             <End Role="psmsStoreRequisitionDetail" EntitySet="psmsStoreRequisitionDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_SlmsProformaDetail_lupMeasurementUnit" Association="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit">
-            <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
-            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsSalesDetail_lupMeasurementUnit" Association="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit">
-            <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
-            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsProformaDetail_lupPriceGroup" Association="ErpModel.FK_SlmsProformaDetail_lupPriceGroup">
-            <End Role="lupPriceGroup" EntitySet="lupPriceGroup" />
-            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsSalesDetail_lupPriceGroup" Association="ErpModel.FK_SlmsSalesDetail_lupPriceGroup">
-            <End Role="lupPriceGroup" EntitySet="lupPriceGroup" />
-            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_psmsPurchaseOrderHeader_lupPurchaseOrderType" Association="ErpModel.FK_psmsPurchaseOrderHeader_lupPurchaseOrderType">
             <End Role="lupPurchaseOrderType" EntitySet="lupPurchaseOrderType" />
             <End Role="psmsPurchaseOrderHeader" EntitySet="psmsPurchaseOrderHeader" />
@@ -8308,17 +8292,9 @@
             <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
             <End Role="psmsTransferReceiveHeader" EntitySet="psmsTransferReceiveHeader" />
           </AssociationSet>
-          <AssociationSet Name="FK_SlmsProformaDetail_lupVoucherStatus" Association="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus">
-            <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
-            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_SlmsProformaHeader_lupVoucherStatus" Association="ErpModel.FK_SlmsProformaHeader_lupVoucherStatus">
             <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
             <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsSalesDetail_lupVoucherStatus" Association="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus">
-            <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
-            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_psmsApprover_lupVoucherType" Association="ErpModel.FK_psmsApprover_lupVoucherType">
             <End Role="lupVoucherType" EntitySet="lupVoucherType" />
@@ -8520,14 +8496,6 @@
             <End Role="psmsItem" EntitySet="psmsItem" />
             <End Role="psmsTransferReceiveDetail" EntitySet="psmsTransferReceiveDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_SlmsProformaDetail_psmsItem" Association="ErpModel.FK_SlmsProformaDetail_psmsItem">
-            <End Role="psmsItem" EntitySet="psmsItem" />
-            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsSalesDetail_psmsItem" Association="ErpModel.FK_SlmsSalesDetail_psmsItem">
-            <End Role="psmsItem" EntitySet="psmsItem" />
-            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_psmsItemCategory_psmsItemCategory" Association="ErpModel.FK_psmsItemCategory_psmsItemCategory">
             <End Role="psmsItemCategory" EntitySet="psmsItemCategory" />
             <End Role="psmsItemCategory1" EntitySet="psmsItemCategory" />
@@ -8675,10 +8643,6 @@
           <AssociationSet Name="FK_slmsProformaHeader_slmsPriceCategory" Association="ErpModel.FK_slmsProformaHeader_slmsPriceCategory">
             <End Role="slmsPriceCategory" EntitySet="slmsPriceCategory" />
             <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SlmsProformaDetail_SlmsProformaHeader" Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader">
-            <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
-            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
           </AssociationSet>
           <EntitySet Name="PRProductionPlanJobCardResultDetail" EntityType="ErpModel.PRProductionPlanJobCardResultDetail" />
           <EntitySet Name="psmsIssueHeader" EntityType="ErpModel.psmsIssueHeader" />
@@ -9112,10 +9076,6 @@
             <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
             <End Role="slmsSalesHeader" EntitySet="slmsSalesHeader" />
           </AssociationSet>
-          <AssociationSet Name="FK_SlmsSalesDetail_SlmsSalesDetail" Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail">
-            <End Role="slmsSalesHeader" EntitySet="slmsSalesHeader" />
-            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_slmsSettlementDetail_slmsSalesHeader" Association="ErpModel.FK_slmsSettlementDetail_slmsSalesHeader">
             <End Role="slmsSalesHeader" EntitySet="slmsSalesHeader" />
             <End Role="slmsSettlementDetail" EntitySet="slmsSettlementDetail" />
@@ -9146,10 +9106,6 @@
             <End Role="psmsStore" EntitySet="psmsStore" />
             <End Role="slmsSalesArea" EntitySet="slmsSalesArea" />
           </AssociationSet>
-          <AssociationSet Name="FK_slmsSalesArea_slmsPriceCategory" Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory">
-            <End Role="slmsPriceCategory" EntitySet="slmsPriceCategory" />
-            <End Role="slmsSalesArea" EntitySet="slmsSalesArea" />
-          </AssociationSet>
           <AssociationSet Name="FK_SlmsProformaHeader_SlmsArea" Association="ErpModel.FK_SlmsProformaHeader_SlmsArea">
             <End Role="slmsSalesArea" EntitySet="slmsSalesArea" />
             <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
@@ -9157,6 +9113,52 @@
           <AssociationSet Name="FK_SlmsSalesHeader_SlmsArea" Association="ErpModel.FK_SlmsSalesHeader_SlmsArea">
             <End Role="slmsSalesArea" EntitySet="slmsSalesArea" />
             <End Role="slmsSalesHeader" EntitySet="slmsSalesHeader" />
+          </AssociationSet>
+          <EntitySet Name="slmsProformaDetail" EntityType="ErpModel.slmsProformaDetail" />
+          <EntitySet Name="slmsSalesDetail" EntityType="ErpModel.slmsSalesDetail" />
+          <AssociationSet Name="FK_SlmsProformaDetail_lupMeasurementUnit" Association="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit">
+            <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
+            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsSalesDetail_lupMeasurementUnit" Association="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit">
+            <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
+            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsProformaDetail_lupPriceGroup" Association="ErpModel.FK_SlmsProformaDetail_lupPriceGroup">
+            <End Role="lupPriceGroup" EntitySet="lupPriceGroup" />
+            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsSalesDetail_lupPriceGroup" Association="ErpModel.FK_SlmsSalesDetail_lupPriceGroup">
+            <End Role="lupPriceGroup" EntitySet="lupPriceGroup" />
+            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsProformaDetail_lupVoucherStatus" Association="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus">
+            <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
+            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsSalesDetail_lupVoucherStatus" Association="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus">
+            <End Role="lupVoucherStatus" EntitySet="lupVoucherStatus" />
+            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsProformaDetail_psmsItem" Association="ErpModel.FK_SlmsProformaDetail_psmsItem">
+            <End Role="psmsItem" EntitySet="psmsItem" />
+            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsSalesDetail_psmsItem" Association="ErpModel.FK_SlmsSalesDetail_psmsItem">
+            <End Role="psmsItem" EntitySet="psmsItem" />
+            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_slmsSalesArea_slmsPriceCategory" Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory">
+            <End Role="slmsPriceCategory" EntitySet="slmsPriceCategory" />
+            <End Role="slmsSalesArea" EntitySet="slmsSalesArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsProformaDetail_SlmsProformaHeader" Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader">
+            <End Role="slmsProformaHeader" EntitySet="slmsProformaHeader" />
+            <End Role="slmsProformaDetail" EntitySet="slmsProformaDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SlmsSalesDetail_SlmsSalesDetail" Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail">
+            <End Role="slmsSalesHeader" EntitySet="slmsSalesHeader" />
+            <End Role="slmsSalesDetail" EntitySet="slmsSalesDetail" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="coreModule">
@@ -9624,12 +9626,12 @@
           <NavigationProperty Name="psmsReceiveDetail" Relationship="ErpModel.FK_psmsReceiveDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="psmsReceiveDetail" />
           <NavigationProperty Name="psmsRequestOrderDetail" Relationship="ErpModel.FK_psmsRequestOrderDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="psmsRequestOrderDetail" />
           <NavigationProperty Name="psmsStoreRequisitionDetail" Relationship="ErpModel.FK_psmsStoreRequisitionDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="psmsStoreRequisitionDetail" />
-          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="slmsProformaDetail" />
-          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="slmsSalesDetail" />
           <NavigationProperty Name="psmsDelivery" Relationship="ErpModel.FK_psmsDelivery_psmsDelivery" FromRole="lupMeasurementUnit" ToRole="psmsDelivery" />
           <NavigationProperty Name="psmsFreightOrder" Relationship="ErpModel.FK_psmsFreightOrder_psmsFreightOrder" FromRole="lupMeasurementUnit" ToRole="psmsFreightOrder" />
           <NavigationProperty Name="psmsTransportation" Relationship="ErpModel.FK_psmsTransportation_psmsTransportation" FromRole="lupMeasurementUnit" ToRole="psmsTransportation" />
           <NavigationProperty Name="slmsItemPrice" Relationship="ErpModel.FK_SalesItemPrice_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="slmsItemPrice" />
+          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="slmsProformaDetail" />
+          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" FromRole="lupMeasurementUnit" ToRole="slmsSalesDetail" />
         </EntityType>
         <EntityType Name="lupPriceGroup">
           <Key>
@@ -9642,9 +9644,9 @@
           <Property Name="LastUpdated" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="slmsItemPrice" Relationship="ErpModel.FK_SalesItemPrice_lupPriceGroup" FromRole="lupPriceGroup" ToRole="slmsItemPrice" />
           <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" FromRole="lupPriceGroup" ToRole="slmsProformaDetail" />
           <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" FromRole="lupPriceGroup" ToRole="slmsSalesDetail" />
-          <NavigationProperty Name="slmsItemPrice" Relationship="ErpModel.FK_SalesItemPrice_lupPriceGroup" FromRole="lupPriceGroup" ToRole="slmsItemPrice" />
         </EntityType>
         <EntityType Name="lupPurchaseOrderType">
           <Key>
@@ -9788,9 +9790,7 @@
           <NavigationProperty Name="psmsTransferIssueHeader" Relationship="ErpModel.FK_psmsTransferIssueHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsTransferIssueHeader" />
           <NavigationProperty Name="psmsTransferReceiveDetail" Relationship="ErpModel.FK_psmsTransferReceiveDetail_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsTransferReceiveDetail" />
           <NavigationProperty Name="psmsTransferReceiveHeader" Relationship="ErpModel.FK_psmsTransferReceiveHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsTransferReceiveHeader" />
-          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="slmsProformaDetail" />
           <NavigationProperty Name="slmsProformaHeader" Relationship="ErpModel.FK_SlmsProformaHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="slmsProformaHeader" />
-          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="slmsSalesDetail" />
           <NavigationProperty Name="psmsIssueHeader" Relationship="ErpModel.FK_psmsIssueHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsIssueHeader" />
           <NavigationProperty Name="psmsReceiveHeader" Relationship="ErpModel.FK_psmsReceiveHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsReceiveHeader" />
           <NavigationProperty Name="psmsStoreRequisitionHeader" Relationship="ErpModel.FK_psmsStoreRequisitionHeader_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsStoreRequisitionHeader" />
@@ -9800,6 +9800,8 @@
           <NavigationProperty Name="psmsFreightOrder" Relationship="ErpModel.FK_psmsFreightOrder_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsFreightOrder" />
           <NavigationProperty Name="psmsTransportation" Relationship="ErpModel.FK_psmsTransportation_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="psmsTransportation" />
           <NavigationProperty Name="slmsSalesHeader" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsSalesHeader" FromRole="lupVoucherStatus" ToRole="slmsSalesHeader" />
+          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="slmsProformaDetail" />
+          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" FromRole="lupVoucherStatus" ToRole="slmsSalesDetail" />
         </EntityType>
         <EntityType Name="lupVoucherType">
           <Key>
@@ -10937,13 +10939,13 @@
           <NavigationProperty Name="psmsStoreRequisitionDetail" Relationship="ErpModel.FK_psmsStoreRequisitionDetail_psmsItem" FromRole="psmsItem" ToRole="psmsStoreRequisitionDetail" />
           <NavigationProperty Name="psmsTransferIssueDetail" Relationship="ErpModel.FK_psmsTransferIssueDetail_psmsItem" FromRole="psmsItem" ToRole="psmsTransferIssueDetail" />
           <NavigationProperty Name="psmsTransferReceiveDetail" Relationship="ErpModel.FK_psmsTransferReceiveDetail_psmsItem" FromRole="psmsItem" ToRole="psmsTransferReceiveDetail" />
-          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_psmsItem" FromRole="psmsItem" ToRole="slmsProformaDetail" />
-          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_psmsItem" FromRole="psmsItem" ToRole="slmsSalesDetail" />
           <NavigationProperty Name="PRProductionPlanJobCardResultDetail" Relationship="ErpModel.FK_PRProductionPlanJobCardResultDetail_psmsItem" FromRole="psmsItem" ToRole="PRProductionPlanJobCardResultDetail" />
           <NavigationProperty Name="psmsDelivery" Relationship="ErpModel.FK_psmsDelivery_psmsItem" FromRole="psmsItem" ToRole="psmsDelivery" />
           <NavigationProperty Name="psmsFreightOrder" Relationship="ErpModel.FK_psmsFreightOrder_psmsItem" FromRole="psmsItem" ToRole="psmsFreightOrder" />
           <NavigationProperty Name="psmsTransportation" Relationship="ErpModel.FK_psmsTransportation_psmsItem" FromRole="psmsItem" ToRole="psmsTransportation" />
           <NavigationProperty Name="slmsItemPrice" Relationship="ErpModel.FK_SalesItemPrice_psmsItem" FromRole="psmsItem" ToRole="slmsItemPrice" />
+          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_psmsItem" FromRole="psmsItem" ToRole="slmsProformaDetail" />
+          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_psmsItem" FromRole="psmsItem" ToRole="slmsSalesDetail" />
         </EntityType>
         <EntityType Name="psmsItemAlternative">
           <Key>
@@ -11799,31 +11801,6 @@
           <NavigationProperty Name="slmsItemPrice" Relationship="ErpModel.FK_slmsItemPrice_slmsPriceCategory" FromRole="slmsPriceCategory" ToRole="slmsItemPrice" />
           <NavigationProperty Name="slmsSalesArea" Relationship="ErpModel.FK_slmsSalesArea_slmsPriceCategory" FromRole="slmsPriceCategory" ToRole="slmsSalesArea" />
         </EntityType>
-        <EntityType Name="slmsProformaDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="ProformaHeaderId" Type="Guid" Nullable="false" />
-          <Property Name="UnitId" Type="Guid" />
-          <Property Name="ItemId" Type="Guid" Nullable="false" />
-          <Property Name="PriceGroupId" Type="Guid" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="IsTaxable" Type="Boolean" />
-          <Property Name="RemainingQuantity" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="StatusId" Type="Guid" Nullable="false" />
-          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="LastUpdated" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
-          <NavigationProperty Name="lupMeasurementUnit" Relationship="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" FromRole="slmsProformaDetail" ToRole="lupMeasurementUnit" />
-          <NavigationProperty Name="lupPriceGroup" Relationship="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" FromRole="slmsProformaDetail" ToRole="lupPriceGroup" />
-          <NavigationProperty Name="lupVoucherStatus" Relationship="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" FromRole="slmsProformaDetail" ToRole="lupVoucherStatus" />
-          <NavigationProperty Name="psmsItem" Relationship="ErpModel.FK_SlmsProformaDetail_psmsItem" FromRole="slmsProformaDetail" ToRole="psmsItem" />
-          <NavigationProperty Name="slmsProformaHeader" Relationship="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" FromRole="slmsProformaDetail" ToRole="slmsProformaHeader" />
-        </EntityType>
         <EntityType Name="slmsProformaHeader">
           <Key>
             <PropertyRef Name="Id" />
@@ -11859,37 +11836,10 @@
           <NavigationProperty Name="coreUser1" Relationship="ErpModel.FK_slmsProformaHeader_coreUser1" FromRole="slmsProformaHeader" ToRole="coreUser" />
           <NavigationProperty Name="lupVoucherStatus" Relationship="ErpModel.FK_SlmsProformaHeader_lupVoucherStatus" FromRole="slmsProformaHeader" ToRole="lupVoucherStatus" />
           <NavigationProperty Name="slmsPriceCategory" Relationship="ErpModel.FK_slmsProformaHeader_slmsPriceCategory" FromRole="slmsProformaHeader" ToRole="slmsPriceCategory" />
-          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" FromRole="slmsProformaHeader" ToRole="slmsProformaDetail" />
           <NavigationProperty Name="slmsCustomer" Relationship="ErpModel.FK_SlmsProformaHeader_SlmsCustomer" FromRole="slmsProformaHeader" ToRole="slmsCustomer" />
           <NavigationProperty Name="slmsSalesHeader" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsProformaHeader" FromRole="slmsProformaHeader" ToRole="slmsSalesHeader" />
           <NavigationProperty Name="slmsSalesArea" Relationship="ErpModel.FK_SlmsProformaHeader_SlmsArea" FromRole="slmsProformaHeader" ToRole="slmsSalesArea" />
-        </EntityType>
-        <EntityType Name="slmsSalesDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="SalesHeaderId" Type="Guid" Nullable="false" />
-          <Property Name="UnitId" Type="Guid" />
-          <Property Name="ItemId" Type="Guid" Nullable="false" />
-          <Property Name="PriceGroupId" Type="Guid" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="SoldQuantity" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RemainingQuantity" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="StatusId" Type="Guid" Nullable="false" />
-          <Property Name="UnitCost" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IsTaxable" Type="Boolean" />
-          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="LastUpdated" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
-          <NavigationProperty Name="lupMeasurementUnit" Relationship="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" FromRole="slmsSalesDetail" ToRole="lupMeasurementUnit" />
-          <NavigationProperty Name="lupPriceGroup" Relationship="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" FromRole="slmsSalesDetail" ToRole="lupPriceGroup" />
-          <NavigationProperty Name="lupVoucherStatus" Relationship="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" FromRole="slmsSalesDetail" ToRole="lupVoucherStatus" />
-          <NavigationProperty Name="psmsItem" Relationship="ErpModel.FK_SlmsSalesDetail_psmsItem" FromRole="slmsSalesDetail" ToRole="psmsItem" />
-          <NavigationProperty Name="slmsSalesHeader" Relationship="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" FromRole="slmsSalesDetail" ToRole="slmsSalesHeader" />
+          <NavigationProperty Name="slmsProformaDetail" Relationship="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" FromRole="slmsProformaHeader" ToRole="slmsProformaDetail" />
         </EntityType>
         <Association Name="FK_psmsBinCard_coreFiscalYear">
           <End Type="ErpModel.coreFiscalYear" Role="coreFiscalYear" Multiplicity="1" />
@@ -12575,54 +12525,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SlmsProformaDetail_lupMeasurementUnit">
-          <End Type="ErpModel.lupMeasurementUnit" Role="lupMeasurementUnit" Multiplicity="0..1" />
-          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupMeasurementUnit">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsProformaDetail">
-              <PropertyRef Name="UnitId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsSalesDetail_lupMeasurementUnit">
-          <End Type="ErpModel.lupMeasurementUnit" Role="lupMeasurementUnit" Multiplicity="0..1" />
-          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupMeasurementUnit">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesDetail">
-              <PropertyRef Name="UnitId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsProformaDetail_lupPriceGroup">
-          <End Type="ErpModel.lupPriceGroup" Role="lupPriceGroup" Multiplicity="1" />
-          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupPriceGroup">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsProformaDetail">
-              <PropertyRef Name="PriceGroupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsSalesDetail_lupPriceGroup">
-          <End Type="ErpModel.lupPriceGroup" Role="lupPriceGroup" Multiplicity="1" />
-          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupPriceGroup">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesDetail">
-              <PropertyRef Name="PriceGroupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_psmsPurchaseOrderHeader_lupPurchaseOrderType">
           <End Type="ErpModel.lupPurchaseOrderType" Role="lupPurchaseOrderType" Multiplicity="1" />
           <End Type="ErpModel.psmsPurchaseOrderHeader" Role="psmsPurchaseOrderHeader" Multiplicity="*" />
@@ -12947,18 +12849,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SlmsProformaDetail_lupVoucherStatus">
-          <End Type="ErpModel.lupVoucherStatus" Role="lupVoucherStatus" Multiplicity="1" />
-          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupVoucherStatus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsProformaDetail">
-              <PropertyRef Name="StatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SlmsProformaHeader_lupVoucherStatus">
           <End Type="ErpModel.lupVoucherStatus" Role="lupVoucherStatus" Multiplicity="1" />
           <End Type="ErpModel.slmsProformaHeader" Role="slmsProformaHeader" Multiplicity="*" />
@@ -12967,18 +12857,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="slmsProformaHeader">
-              <PropertyRef Name="StatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsSalesDetail_lupVoucherStatus">
-          <End Type="ErpModel.lupVoucherStatus" Role="lupVoucherStatus" Multiplicity="1" />
-          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="lupVoucherStatus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesDetail">
               <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
@@ -13583,30 +13461,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SlmsProformaDetail_psmsItem">
-          <End Type="ErpModel.psmsItem" Role="psmsItem" Multiplicity="1" />
-          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="psmsItem">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsProformaDetail">
-              <PropertyRef Name="ItemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsSalesDetail_psmsItem">
-          <End Type="ErpModel.psmsItem" Role="psmsItem" Multiplicity="1" />
-          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="psmsItem">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesDetail">
-              <PropertyRef Name="ItemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_psmsItemCategory_psmsItemCategory">
           <End Type="ErpModel.psmsItemCategory" Role="psmsItemCategory" Multiplicity="0..1" />
           <End Type="ErpModel.psmsItemCategory" Role="psmsItemCategory1" Multiplicity="*" />
@@ -14048,18 +13902,6 @@
             </Principal>
             <Dependent Role="slmsProformaHeader">
               <PropertyRef Name="PriceCategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SlmsProformaDetail_SlmsProformaHeader">
-          <End Type="ErpModel.slmsProformaHeader" Role="slmsProformaHeader" Multiplicity="1" />
-          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="slmsProformaHeader">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsProformaDetail">
-              <PropertyRef Name="ProformaHeaderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -15770,9 +15612,9 @@
           <NavigationProperty Name="slmsCustomer" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsCustomer" FromRole="slmsSalesHeader" ToRole="slmsCustomer" />
           <NavigationProperty Name="slmsPriceCategory" Relationship="ErpModel.FK_slmsSalesHeader_slmsPriceCategory" FromRole="slmsSalesHeader" ToRole="slmsPriceCategory" />
           <NavigationProperty Name="slmsProformaHeader" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsProformaHeader" FromRole="slmsSalesHeader" ToRole="slmsProformaHeader" />
-          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" FromRole="slmsSalesHeader" ToRole="slmsSalesDetail" />
           <NavigationProperty Name="slmsSettlementDetail" Relationship="ErpModel.FK_slmsSettlementDetail_slmsSalesHeader" FromRole="slmsSalesHeader" ToRole="slmsSettlementDetail" />
           <NavigationProperty Name="slmsSalesArea" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsArea" FromRole="slmsSalesHeader" ToRole="slmsSalesArea" />
+          <NavigationProperty Name="slmsSalesDetail" Relationship="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" FromRole="slmsSalesHeader" ToRole="slmsSalesDetail" />
         </EntityType>
         <Association Name="FK_slmsSalesHeader_coreUser">
           <End Type="ErpModel.coreUser" Role="coreUser" Multiplicity="1" />
@@ -15882,18 +15724,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SlmsSalesDetail_SlmsSalesDetail">
-          <End Type="ErpModel.slmsSalesHeader" Role="slmsSalesHeader" Multiplicity="1" />
-          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="slmsSalesHeader">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesDetail">
-              <PropertyRef Name="SalesHeaderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_slmsSettlementDetail_slmsSalesHeader">
           <End Type="ErpModel.slmsSalesHeader" Role="slmsSalesHeader" Multiplicity="0..1" />
           <End Type="ErpModel.slmsSettlementDetail" Role="slmsSettlementDetail" Multiplicity="*" />
@@ -15993,9 +15823,9 @@
           <Property Name="IsSalesOrderCommited" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PRProductionOrderHeader" Relationship="ErpModel.FK_PRProductionOrderHeader_slmsSalesArea" FromRole="slmsSalesArea" ToRole="PRProductionOrderHeader" />
           <NavigationProperty Name="psmsStore" Relationship="ErpModel.FK_SlmsArea_psmsStore" FromRole="slmsSalesArea" ToRole="psmsStore" />
-          <NavigationProperty Name="slmsPriceCategory" Relationship="ErpModel.FK_slmsSalesArea_slmsPriceCategory" FromRole="slmsSalesArea" ToRole="slmsPriceCategory" />
           <NavigationProperty Name="slmsProformaHeader" Relationship="ErpModel.FK_SlmsProformaHeader_SlmsArea" FromRole="slmsSalesArea" ToRole="slmsProformaHeader" />
           <NavigationProperty Name="slmsSalesHeader" Relationship="ErpModel.FK_SlmsSalesHeader_SlmsArea" FromRole="slmsSalesArea" ToRole="slmsSalesHeader" />
+          <NavigationProperty Name="slmsPriceCategory" Relationship="ErpModel.FK_slmsSalesArea_slmsPriceCategory" FromRole="slmsSalesArea" ToRole="slmsPriceCategory" />
         </EntityType>
         <Association Name="FK_PRProductionOrderHeader_slmsSalesArea">
           <End Type="ErpModel.slmsSalesArea" Role="slmsSalesArea" Multiplicity="1" />
@@ -16021,18 +15851,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_slmsSalesArea_slmsPriceCategory">
-          <End Type="ErpModel.slmsPriceCategory" Role="slmsPriceCategory" Multiplicity="0..1" />
-          <End Type="ErpModel.slmsSalesArea" Role="slmsSalesArea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="slmsPriceCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="slmsSalesArea">
-              <PropertyRef Name="PriceCategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SlmsProformaHeader_SlmsArea">
           <End Type="ErpModel.slmsSalesArea" Role="slmsSalesArea" Multiplicity="1" />
           <End Type="ErpModel.slmsProformaHeader" Role="slmsProformaHeader" Multiplicity="*" />
@@ -16054,6 +15872,192 @@
             </Principal>
             <Dependent Role="slmsSalesHeader">
               <PropertyRef Name="SalesAreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="slmsProformaDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ProformaHeaderId" Type="Guid" Nullable="false" />
+          <Property Name="UnitId" Type="Guid" />
+          <Property Name="ItemId" Type="Guid" Nullable="false" />
+          <Property Name="PriceGroupId" Type="Guid" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="WithholdableUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IsTaxable" Type="Boolean" />
+          <Property Name="RemainingQuantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StatusId" Type="Guid" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LastUpdated" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="lupMeasurementUnit" Relationship="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" FromRole="slmsProformaDetail" ToRole="lupMeasurementUnit" />
+          <NavigationProperty Name="lupPriceGroup" Relationship="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" FromRole="slmsProformaDetail" ToRole="lupPriceGroup" />
+          <NavigationProperty Name="lupVoucherStatus" Relationship="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" FromRole="slmsProformaDetail" ToRole="lupVoucherStatus" />
+          <NavigationProperty Name="psmsItem" Relationship="ErpModel.FK_SlmsProformaDetail_psmsItem" FromRole="slmsProformaDetail" ToRole="psmsItem" />
+          <NavigationProperty Name="slmsProformaHeader" Relationship="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" FromRole="slmsProformaDetail" ToRole="slmsProformaHeader" />
+        </EntityType>
+        <EntityType Name="slmsSalesDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SalesHeaderId" Type="Guid" Nullable="false" />
+          <Property Name="UnitId" Type="Guid" />
+          <Property Name="ItemId" Type="Guid" Nullable="false" />
+          <Property Name="PriceGroupId" Type="Guid" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="WithholdableUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoldQuantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RemainingQuantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StatusId" Type="Guid" Nullable="false" />
+          <Property Name="UnitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsTaxable" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LastUpdated" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="lupMeasurementUnit" Relationship="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" FromRole="slmsSalesDetail" ToRole="lupMeasurementUnit" />
+          <NavigationProperty Name="lupPriceGroup" Relationship="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" FromRole="slmsSalesDetail" ToRole="lupPriceGroup" />
+          <NavigationProperty Name="lupVoucherStatus" Relationship="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" FromRole="slmsSalesDetail" ToRole="lupVoucherStatus" />
+          <NavigationProperty Name="psmsItem" Relationship="ErpModel.FK_SlmsSalesDetail_psmsItem" FromRole="slmsSalesDetail" ToRole="psmsItem" />
+          <NavigationProperty Name="slmsSalesHeader" Relationship="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" FromRole="slmsSalesDetail" ToRole="slmsSalesHeader" />
+        </EntityType>
+        <Association Name="FK_SlmsProformaDetail_lupMeasurementUnit">
+          <End Type="ErpModel.lupMeasurementUnit" Role="lupMeasurementUnit" Multiplicity="0..1" />
+          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupMeasurementUnit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsProformaDetail">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsSalesDetail_lupMeasurementUnit">
+          <End Type="ErpModel.lupMeasurementUnit" Role="lupMeasurementUnit" Multiplicity="0..1" />
+          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupMeasurementUnit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesDetail">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsProformaDetail_lupPriceGroup">
+          <End Type="ErpModel.lupPriceGroup" Role="lupPriceGroup" Multiplicity="0..1" />
+          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupPriceGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsProformaDetail">
+              <PropertyRef Name="PriceGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsSalesDetail_lupPriceGroup">
+          <End Type="ErpModel.lupPriceGroup" Role="lupPriceGroup" Multiplicity="0..1" />
+          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupPriceGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesDetail">
+              <PropertyRef Name="PriceGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsProformaDetail_lupVoucherStatus">
+          <End Type="ErpModel.lupVoucherStatus" Role="lupVoucherStatus" Multiplicity="1" />
+          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupVoucherStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsProformaDetail">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsSalesDetail_lupVoucherStatus">
+          <End Type="ErpModel.lupVoucherStatus" Role="lupVoucherStatus" Multiplicity="1" />
+          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lupVoucherStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesDetail">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsProformaDetail_psmsItem">
+          <End Type="ErpModel.psmsItem" Role="psmsItem" Multiplicity="1" />
+          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="psmsItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsProformaDetail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsSalesDetail_psmsItem">
+          <End Type="ErpModel.psmsItem" Role="psmsItem" Multiplicity="1" />
+          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="psmsItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesDetail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_slmsSalesArea_slmsPriceCategory">
+          <End Type="ErpModel.slmsPriceCategory" Role="slmsPriceCategory" Multiplicity="0..1" />
+          <End Type="ErpModel.slmsSalesArea" Role="slmsSalesArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="slmsPriceCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesArea">
+              <PropertyRef Name="PriceCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsProformaDetail_SlmsProformaHeader">
+          <End Type="ErpModel.slmsProformaHeader" Role="slmsProformaHeader" Multiplicity="1" />
+          <End Type="ErpModel.slmsProformaDetail" Role="slmsProformaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="slmsProformaHeader">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsProformaDetail">
+              <PropertyRef Name="ProformaHeaderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SlmsSalesDetail_SlmsSalesDetail">
+          <End Type="ErpModel.slmsSalesHeader" Role="slmsSalesHeader" Multiplicity="1" />
+          <End Type="ErpModel.slmsSalesDetail" Role="slmsSalesDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="slmsSalesHeader">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="slmsSalesDetail">
+              <PropertyRef Name="SalesHeaderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -17790,27 +17794,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="slmsProformaDetail">
-            <EntityTypeMapping TypeName="ErpModel.slmsProformaDetail">
-              <MappingFragment StoreEntitySet="slmsProformaDetail">
-                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
-                <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
-                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-                <ScalarProperty Name="ProformaHeaderId" ColumnName="ProformaHeaderId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="slmsProformaHeader">
             <EntityTypeMapping TypeName="ErpModel.slmsProformaHeader">
               <MappingFragment StoreEntitySet="slmsProformaHeader">
@@ -17839,29 +17822,6 @@
                 <ScalarProperty Name="FiscalYearId" ColumnName="FiscalYearId" />
                 <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
                 <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="slmsSalesDetail">
-            <EntityTypeMapping TypeName="ErpModel.slmsSalesDetail">
-              <MappingFragment StoreEntitySet="slmsSalesDetail">
-                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
-                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
-                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
-                <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
-                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-                <ScalarProperty Name="SalesHeaderId" ColumnName="SalesHeaderId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -18384,6 +18344,52 @@
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="slmsProformaDetail">
+            <EntityTypeMapping TypeName="ErpModel.slmsProformaDetail">
+              <MappingFragment StoreEntitySet="slmsProformaDetail">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="WithholdableUnitPrice" ColumnName="WithholdableUnitPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="ProformaHeaderId" ColumnName="ProformaHeaderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="slmsSalesDetail">
+            <EntityTypeMapping TypeName="ErpModel.slmsSalesDetail">
+              <MappingFragment StoreEntitySet="slmsSalesDetail">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+                <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+                <ScalarProperty Name="WithholdableUnitPrice" ColumnName="WithholdableUnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="SalesHeaderId" ColumnName="SalesHeaderId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

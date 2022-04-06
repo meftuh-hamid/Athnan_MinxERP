@@ -16,9 +16,9 @@ namespace CyberErp.Data.Model
     {
         public lupPriceGroup()
         {
+            this.slmsItemPrice = new HashSet<slmsItemPrice>();
             this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
             this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
-            this.slmsItemPrice = new HashSet<slmsItemPrice>();
         }
     
         public System.Guid Id { get; set; }
@@ -29,8 +29,8 @@ namespace CyberErp.Data.Model
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
     
+        public virtual ICollection<slmsItemPrice> slmsItemPrice { get; set; }
         public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
-        public virtual ICollection<slmsItemPrice> slmsItemPrice { get; set; }
     }
 }

@@ -1728,27 +1728,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="slmsProformaDetail">
-      <EntityTypeMapping TypeName="ErpModel.slmsProformaDetail">
-        <MappingFragment StoreEntitySet="slmsProformaDetail">
-          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-          <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
-          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
-          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-          <ScalarProperty Name="ProformaHeaderId" ColumnName="ProformaHeaderId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="slmsProformaHeader">
       <EntityTypeMapping TypeName="ErpModel.slmsProformaHeader">
         <MappingFragment StoreEntitySet="slmsProformaHeader">
@@ -1777,29 +1756,6 @@
           <ScalarProperty Name="FiscalYearId" ColumnName="FiscalYearId" />
           <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
           <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="slmsSalesDetail">
-      <EntityTypeMapping TypeName="ErpModel.slmsSalesDetail">
-        <MappingFragment StoreEntitySet="slmsSalesDetail">
-          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
-          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
-          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
-          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-          <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
-          <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
-          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-          <ScalarProperty Name="SalesHeaderId" ColumnName="SalesHeaderId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -2322,6 +2278,52 @@
           <ScalarProperty Name="StoreId" ColumnName="StoreId" />
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="slmsProformaDetail">
+      <EntityTypeMapping TypeName="ErpModel.slmsProformaDetail">
+        <MappingFragment StoreEntitySet="slmsProformaDetail">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="WithholdableUnitPrice" ColumnName="WithholdableUnitPrice" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="ProformaHeaderId" ColumnName="ProformaHeaderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="slmsSalesDetail">
+      <EntityTypeMapping TypeName="ErpModel.slmsSalesDetail">
+        <MappingFragment StoreEntitySet="slmsSalesDetail">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="RemainingQuantity" ColumnName="RemainingQuantity" />
+          <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+          <ScalarProperty Name="WithholdableUnitPrice" ColumnName="WithholdableUnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="SalesHeaderId" ColumnName="SalesHeaderId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

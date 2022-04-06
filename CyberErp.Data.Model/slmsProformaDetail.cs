@@ -18,8 +18,9 @@ namespace CyberErp.Data.Model
         public System.Guid ProformaHeaderId { get; set; }
         public Nullable<System.Guid> UnitId { get; set; }
         public System.Guid ItemId { get; set; }
-        public System.Guid PriceGroupId { get; set; }
+        public Nullable<System.Guid> PriceGroupId { get; set; }
         public decimal UnitPrice { get; set; }
+        public Nullable<decimal> WithholdableUnitPrice { get; set; }
         public decimal Quantity { get; set; }
         public Nullable<bool> IsTaxable { get; set; }
         public Nullable<decimal> RemainingQuantity { get; set; }

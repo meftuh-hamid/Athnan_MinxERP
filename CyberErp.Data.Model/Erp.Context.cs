@@ -119,9 +119,7 @@ namespace CyberErp.Data.Model
         public virtual DbSet<psmsVoucherStatusTransaction> psmsVoucherStatusTransaction { get; set; }
         public virtual DbSet<slmsCustomerCategory> slmsCustomerCategory { get; set; }
         public virtual DbSet<slmsPriceCategory> slmsPriceCategory { get; set; }
-        public virtual DbSet<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual DbSet<slmsProformaHeader> slmsProformaHeader { get; set; }
-        public virtual DbSet<slmsSalesDetail> slmsSalesDetail { get; set; }
         public virtual DbSet<PRProductionPlanJobCardResultDetail> PRProductionPlanJobCardResultDetail { get; set; }
         public virtual DbSet<psmsIssueHeader> psmsIssueHeader { get; set; }
         public virtual DbSet<psmsReceiveHeader> psmsReceiveHeader { get; set; }
@@ -144,5 +142,7 @@ namespace CyberErp.Data.Model
         public virtual DbSet<slmsSalesHeader> slmsSalesHeader { get; set; }
         public virtual DbSet<slmsItemPrice> slmsItemPrice { get; set; }
         public virtual DbSet<slmsSalesArea> slmsSalesArea { get; set; }
+        public virtual DbSet<slmsProformaDetail> slmsProformaDetail { get; set; }
+        public virtual DbSet<slmsSalesDetail> slmsSalesDetail { get; set; }
     }
 }

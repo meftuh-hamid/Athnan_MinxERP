@@ -70,6 +70,7 @@ namespace CyberErp.Presentation.Psms.Web.Classes
         public const string Voucher_Type_DeliveryOrder = "6df74827-24b9-486c-ac23-fb41a362dceb";
         public const string Voucher_Type_sales = "6df74827-24b9-486c-ac23-fb42a3641ceb";
         public const string Voucher_Type_Manualsales = "6df74827-24b9-486c-ac23-fb42a3649ceb";
+        public const string Voucher_Type_proforma = "d10a9bb6-356c-4da8-b4c6-7bf46bb3d3a0";
       
         public const string Voucher_Type_CashSales = "a69e88a1-95bf-41ce-b153-02c115f2c0e6";
         public const string Voucher_Type_CreditSales = "a69e88a1-95bf-41ce-b153-02c11522c0e6";
@@ -79,6 +80,7 @@ namespace CyberErp.Presentation.Psms.Web.Classes
         public const string withholding_setting_Name = "Withholding";
         
         public const string priceGroup_setting_Name = "DefaultPriceGroup";
+        public const string licenseInformation_setting_Name = "LicenseInformation";
      
 
 

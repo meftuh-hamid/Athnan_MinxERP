@@ -2060,8 +2060,9 @@
     <Property Name="ProformaHeaderId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UnitId" Type="uniqueidentifier" />
     <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PriceGroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PriceGroupId" Type="uniqueidentifier" />
     <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="WithholdableUnitPrice" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="IsTaxable" Type="bit" />
     <Property Name="RemainingQuantity" Type="decimal" Precision="18" Scale="2" />
@@ -2126,9 +2127,10 @@
     <Property Name="SalesHeaderId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UnitId" Type="uniqueidentifier" />
     <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PriceGroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PriceGroupId" Type="uniqueidentifier" />
     <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="WithholdableUnitPrice" Type="decimal" Precision="18" Scale="2" />
     <Property Name="SoldQuantity" Type="decimal" Precision="18" Scale="2" />
     <Property Name="RemainingQuantity" Type="decimal" Precision="18" Scale="2" />
     <Property Name="StatusId" Type="uniqueidentifier" Nullable="false" />
@@ -5881,7 +5883,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SlmsProformaDetail_lupPriceGroup">
-    <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="1" />
+    <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="0..1" />
     <End Role="slmsProformaDetail" Type="Self.slmsProformaDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="lupPriceGroup">
@@ -6037,7 +6039,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SlmsSalesDetail_lupPriceGroup">
-    <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="1" />
+    <End Role="lupPriceGroup" Type="Self.lupPriceGroup" Multiplicity="0..1" />
     <End Role="slmsSalesDetail" Type="Self.slmsSalesDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="lupPriceGroup">

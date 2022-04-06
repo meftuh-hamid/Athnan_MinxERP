@@ -222,3 +222,17 @@ D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\bin\Debug\EntityFr
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.dll
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.pdb
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.dll.config
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.pdb
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.pdb
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.pdb
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.xml
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.pdb

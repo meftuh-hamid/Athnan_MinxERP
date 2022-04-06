@@ -200,6 +200,9 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
         public bool ShowDetail { get; set; }
         public Guid SupplierId { get; set; }
         public Guid CustomerId { get; set; }
+        public Guid CustomerCategoryId { get; set; }
+        public Guid PriceCategoryId { get; set; }
+        public Guid SalesTypeId { get; set; }
         public string Supplier { get; set; }
         public string SupplierCode { get; set; }
         public Guid StatusId { get; set; }
