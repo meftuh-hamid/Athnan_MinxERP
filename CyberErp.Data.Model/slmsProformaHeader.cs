@@ -16,8 +16,8 @@ namespace CyberErp.Data.Model
     {
         public slmsProformaHeader()
         {
-            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
             this.slmsSalesHeader = new HashSet<slmsSalesHeader>();
+            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
         }
     
         public System.Guid Id { get; set; }
@@ -52,9 +52,9 @@ namespace CyberErp.Data.Model
         public virtual coreUser coreUser1 { get; set; }
         public virtual lupVoucherStatus lupVoucherStatus { get; set; }
         public virtual slmsPriceCategory slmsPriceCategory { get; set; }
-        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual slmsCustomer slmsCustomer { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
         public virtual slmsSalesArea slmsSalesArea { get; set; }
+        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
     }
 }

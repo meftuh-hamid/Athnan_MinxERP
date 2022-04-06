@@ -34,8 +34,8 @@ namespace CyberErp.Data.Model
     
         public virtual ICollection<PRProductionOrderHeader> PRProductionOrderHeader { get; set; }
         public virtual psmsStore psmsStore { get; set; }
-        public virtual slmsPriceCategory slmsPriceCategory { get; set; }
         public virtual ICollection<slmsProformaHeader> slmsProformaHeader { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
+        public virtual slmsPriceCategory slmsPriceCategory { get; set; }
     }
 }

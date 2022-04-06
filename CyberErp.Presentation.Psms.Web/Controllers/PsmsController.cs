@@ -1217,6 +1217,8 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 PriceGroupId = item.slmsItemPrice.Where(o =>  o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).Any() ? item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).FirstOrDefault().PriceGroupId : Guid.Empty,
                 IsTaxable = item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).Any() ? item.slmsItemPrice.Where(o =>  o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).FirstOrDefault().IsTaxable : true,
                 UnitPrice = item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).Any() ? item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).FirstOrDefault().UnitPrice : 0,
+                WithHoldingTax = item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).Any() ? item.slmsItemPrice.Where(o => o.PriceCategoryId == priceCategoryId && o.lupPriceGroup.Name == defaultPriceGroup).FirstOrDefault().WithHoldingTax : 0,
+          
                 PriceGroup = defaultPriceGroup,
             }).ToList();
 
@@ -1238,6 +1240,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
             {
                 total = 0,
                 data = records != null ? records.UnitPrice : 0,
+                WithHoldingTax = records != null ? records.WithHoldingTax : 0,
                 IsTaxable = records != null ? records.IsTaxable : true
             };
             return this.Direct(result);
@@ -1700,6 +1703,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 PriceCategoryId = item.ItemPrice != null ? item.ItemPrice.PriceCategoryId : Guid.Empty,
                 PriceCategory = item.ItemPrice != null ? item.ItemPrice.slmsPriceCategory.Name : "",
                 ItemPriceId = item.ItemPrice != null ? item.ItemPrice.Id : Guid.Empty,
+                WithHoldingTax = item.ItemPrice != null ? item.ItemPrice.WithHoldingTax : 0,
              
 
 
@@ -1724,10 +1728,10 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
 
             var salesfiltered = _salesHeader.GetAll().AsQueryable();
             var beginningFilter =_customerCredit.GetAll().AsQueryable();
-
+            var creditSalesType = Guid.Parse(Constants.Voucher_Type_CreditSales);
             if (customerId != Guid.Empty)
             {
-                salesfiltered = salesfiltered.Where(o => o.CustomerId == customerId);
+                salesfiltered = salesfiltered.Where(o => o.CustomerId == customerId && o.SalesTypeId == creditSalesType);
                 beginningFilter = beginningFilter.Where(o => o.CustomerId == customerId);
             }
             var filtered = salesfiltered.Select(item => new
@@ -1812,7 +1816,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
 
             if (supplierId != Guid.Empty)
             {
-                purchasefiltered = purchasefiltered.Where(o => o.SupplierId == supplierId);
+                purchasefiltered = purchasefiltered.Where(o => o.SupplierId == supplierId && o.SalesType=="Credit");
                 beginningFilter = beginningFilter.Where(o => o.SupplierId == supplierId);
             }
             var filtered = purchasefiltered.Select(item => new

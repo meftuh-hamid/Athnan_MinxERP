@@ -43,9 +43,7 @@ namespace CyberErp.Data.Model
             this.psmsTransferIssueHeader = new HashSet<psmsTransferIssueHeader>();
             this.psmsTransferReceiveDetail = new HashSet<psmsTransferReceiveDetail>();
             this.psmsTransferReceiveHeader = new HashSet<psmsTransferReceiveHeader>();
-            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
             this.slmsProformaHeader = new HashSet<slmsProformaHeader>();
-            this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
             this.psmsIssueHeader = new HashSet<psmsIssueHeader>();
             this.psmsReceiveHeader = new HashSet<psmsReceiveHeader>();
             this.psmsStoreRequisitionHeader = new HashSet<psmsStoreRequisitionHeader>();
@@ -55,6 +53,8 @@ namespace CyberErp.Data.Model
             this.psmsFreightOrder = new HashSet<psmsFreightOrder>();
             this.psmsTransportation = new HashSet<psmsTransportation>();
             this.slmsSalesHeader = new HashSet<slmsSalesHeader>();
+            this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
+            this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
         }
     
         public System.Guid Id { get; set; }
@@ -92,9 +92,7 @@ namespace CyberErp.Data.Model
         public virtual ICollection<psmsTransferIssueHeader> psmsTransferIssueHeader { get; set; }
         public virtual ICollection<psmsTransferReceiveDetail> psmsTransferReceiveDetail { get; set; }
         public virtual ICollection<psmsTransferReceiveHeader> psmsTransferReceiveHeader { get; set; }
-        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual ICollection<slmsProformaHeader> slmsProformaHeader { get; set; }
-        public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
         public virtual ICollection<psmsIssueHeader> psmsIssueHeader { get; set; }
         public virtual ICollection<psmsReceiveHeader> psmsReceiveHeader { get; set; }
         public virtual ICollection<psmsStoreRequisitionHeader> psmsStoreRequisitionHeader { get; set; }
@@ -104,5 +102,7 @@ namespace CyberErp.Data.Model
         public virtual ICollection<psmsFreightOrder> psmsFreightOrder { get; set; }
         public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
+        public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
+        public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
     }
 }

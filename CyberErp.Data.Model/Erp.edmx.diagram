@@ -143,9 +143,7 @@
         <EntityTypeShape EntityType="ErpModel.psmsVoucherStatusTransaction" Width="1.5" PointX="19" PointY="1.375" />
         <EntityTypeShape EntityType="ErpModel.slmsCustomerCategory" Width="1.5" PointX="13.875" PointY="27.625" />
         <EntityTypeShape EntityType="ErpModel.slmsPriceCategory" Width="1.5" PointX="13.875" PointY="31.5" />
-        <EntityTypeShape EntityType="ErpModel.slmsProformaDetail" Width="1.5" PointX="43.75" PointY="16.625" />
         <EntityTypeShape EntityType="ErpModel.slmsProformaHeader" Width="1.5" PointX="34.5" PointY="35.25" />
-        <EntityTypeShape EntityType="ErpModel.slmsSalesDetail" Width="1.5" PointX="46" PointY="14.375" />
         <AssociationConnector Association="ErpModel.FK_psmsBinCard_coreFiscalYear" />
         <AssociationConnector Association="ErpModel.FK_psmsDeliveryOrderHeader_coreFiscalYear" />
         <AssociationConnector Association="ErpModel.FK_psmsDisposalHeader_coreFiscalYear" />
@@ -203,10 +201,6 @@
         <AssociationConnector Association="ErpModel.FK_psmsReceiveDetail_lupMeasurementUnit" />
         <AssociationConnector Association="ErpModel.FK_psmsRequestOrderDetail_lupMeasurementUnit" />
         <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_lupMeasurementUnit" />
-        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" />
-        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" />
-        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" />
-        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" />
         <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderHeader_lupPurchaseOrderType" />
         <AssociationConnector Association="ErpModel.FK_psmsPurchaseRequestHeader_lupPurchaseRequestType" />
         <AssociationConnector Association="ErpModel.FK_psmsReturnHeader_lupReturnType" />
@@ -234,9 +228,7 @@
         <AssociationConnector Association="ErpModel.FK_psmsTransferIssueHeader_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveHeader_lupVoucherStatus" />
-        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_lupVoucherStatus" />
-        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_psmsApprover_lupVoucherType" />
         <AssociationConnector Association="ErpModel.FK_psmsBinCard_lupVoucherType" />
         <AssociationConnector Association="ErpModel.FK_psmsCustodian__lupVoucherType" />
@@ -287,8 +279,6 @@
         <AssociationConnector Association="ErpModel.FK_psmsStoreRequisitionDetail_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsTransferIssueDetail_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_psmsItem" />
-        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_psmsItem" />
-        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsItemCategory_psmsItemCategory" />
         <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsStore" />
         <AssociationConnector Association="ErpModel.FK_psmsItemLocation_psmsStoreLocation" />
@@ -326,7 +316,6 @@
         <AssociationConnector Association="ErpModel.FK_psmsTransferReceiveDetail_psmsTransferReceiveDetail" />
         <AssociationConnector Association="ErpModel.FK_slmsCustomerCategory_slmsCustomerCategory1" />
         <AssociationConnector Association="ErpModel.FK_slmsProformaHeader_slmsPriceCategory" />
-        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" />
         <EntityTypeShape EntityType="ErpModel.PRProductionPlanJobCardResultDetail" Width="1.5" PointX="27.875" PointY="45" />
         <EntityTypeShape EntityType="ErpModel.psmsIssueHeader" Width="1.5" PointX="33.5" PointY="21.625" />
         <EntityTypeShape EntityType="ErpModel.psmsReceiveHeader" Width="1.5" PointX="46.75" PointY="26.75" />
@@ -450,7 +439,6 @@
         <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsCustomer" />
         <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_slmsPriceCategory" />
         <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsProformaHeader" />
-        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" />
         <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsSalesHeader" />
         <EntityTypeShape EntityType="ErpModel.slmsItemPrice" Width="1.5" PointX="20.625" PointY="34.25" />
         <AssociationConnector Association="ErpModel.FK_SalesItemPrice_lupMeasurementUnit" />
@@ -460,9 +448,21 @@
         <EntityTypeShape EntityType="ErpModel.slmsSalesArea" Width="1.5" PointX="20.25" PointY="40.5" />
         <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_slmsSalesArea" />
         <AssociationConnector Association="ErpModel.FK_SlmsArea_psmsStore" />
-        <AssociationConnector Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory" />
         <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_SlmsArea" />
         <AssociationConnector Association="ErpModel.FK_SlmsSalesHeader_SlmsArea" />
+        <EntityTypeShape EntityType="ErpModel.slmsProformaDetail" Width="1.5" PointX="36.75" PointY="37.75" />
+        <EntityTypeShape EntityType="ErpModel.slmsSalesDetail" Width="1.5" PointX="49" PointY="35.5" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupMeasurementUnit" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupPriceGroup" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupPriceGroup" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory" />
+        <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" />
+        <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

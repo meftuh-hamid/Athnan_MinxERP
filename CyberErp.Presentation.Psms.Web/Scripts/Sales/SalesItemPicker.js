@@ -84,6 +84,7 @@ Ext.extend(Ext.erp.ux.salesItemPicker.Window, Ext.Window, {
                     IsLOTItem: selectedItems[i].get('IsLOTItem'),
                     ItemCategory: selectedItems[i].get('ItemCategory'),
                     IsTaxable: selectedItems[i].get('IsTaxable'),
+                    WithHoldingTax: selectedItems[i].get('WithHoldingTax'),
                     Tax: 0,
                     UnitCost: 0,
                     Quantity: 0,
@@ -138,7 +139,7 @@ Ext.erp.ux.salesItemPicker.Grid = function (config) {
 
           
 
-            fields: ['Id', 'Name', 'Code', 'UnitId', 'IsSerialItem', 'IsLOTItem', 'IsTaxable', 'ItemCategory', 'PriceCategoryId', 'PriceCategory', 'ItemType', 'PartNumber', 'MeasurementUnit', 'PriceGroupId', 'PriceGroup', 'UnitPrice', 'RangeEndValue', 'RangeStartValue', 'VolumeRangeType', 'SalesPriceWithMinimumQuantity', 'AdjustedSellingPriceIncludingTax', 'ItemPriceId', 'PurchasePrice'],
+            fields: ['Id', 'Name', 'Code', 'UnitId', 'IsSerialItem', 'IsLOTItem', 'WithHoldingTax', 'IsTaxable', 'ItemCategory', 'PriceCategoryId', 'PriceCategory', 'ItemType', 'PartNumber', 'MeasurementUnit', 'PriceGroupId', 'PriceGroup', 'UnitPrice', 'RangeEndValue', 'RangeStartValue', 'VolumeRangeType', 'SalesPriceWithMinimumQuantity', 'AdjustedSellingPriceIncludingTax', 'ItemPriceId', 'PurchasePrice'],
             remoteSort: true,
             listeners: {
                 beforeLoad: function () {
@@ -199,7 +200,7 @@ Ext.erp.ux.salesItemPicker.Grid = function (config) {
 Ext.extend(Ext.erp.ux.salesItemPicker.Grid, Ext.grid.GridPanel, {
     initComponent: function () {
 
-        this.store.baseParams = { record: Ext.encode({ priceCategoryId: this.priceCategoryId, priceGroupId: this.priceGroupId }) };
+        this.store.baseParams = { record: Ext.encode({ priceCategoryId: this.priceCategoryId, priceCategory: this.priceCategory, priceGroupId: this.priceGroupId }) };
         this.tbar = [
           {
               xtype: 'displayfield',

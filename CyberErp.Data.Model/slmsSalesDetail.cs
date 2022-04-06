@@ -18,9 +18,10 @@ namespace CyberErp.Data.Model
         public System.Guid SalesHeaderId { get; set; }
         public Nullable<System.Guid> UnitId { get; set; }
         public System.Guid ItemId { get; set; }
-        public System.Guid PriceGroupId { get; set; }
+        public Nullable<System.Guid> PriceGroupId { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Quantity { get; set; }
+        public Nullable<decimal> WithholdableUnitPrice { get; set; }
         public Nullable<decimal> SoldQuantity { get; set; }
         public Nullable<decimal> RemainingQuantity { get; set; }
         public System.Guid StatusId { get; set; }

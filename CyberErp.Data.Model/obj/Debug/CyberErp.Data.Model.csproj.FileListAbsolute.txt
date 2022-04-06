@@ -86,3 +86,13 @@ D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlSe
 D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
 D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb
 D:\Projects\Athnan\PSMS\Code\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll.config
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\CyberErp.Data.Model.pdb
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\EntityFramework.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\EntityFramework.xml
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.csprojResolveAssemblyReference.cache
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.dll
+E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Model\obj\Debug\CyberErp.Data.Model.pdb

@@ -55,7 +55,13 @@ Ext.erp.ux.rptPurchase.Form = function (config) {
                     ['Purchase Order', 'Purchase Order'],                  
                     ['Purchase Order By Amount', 'Purchase Order By Amount'],
                     ['Outstanding Purchase Order', 'Outstanding Purchase Order'],
-                 
+                    ['Purchased ATC', 'Purchased ATC'],
+                    ['Purchased ATC outstanding', 'Purchased ATC outstanding'],
+                    ['Freight Order', 'Freight Order'],
+                    ['Delivery', 'Delivery'],
+                    ['Shipment', 'Shipment'],
+                    ['Transportation', 'Transportation'],
+
                     ['Payment', 'Payment'],
                     ['Supplier Settlement', 'Supplier Settlement'],
                     ['Supplier Ledger', 'Supplier Ledger'],
