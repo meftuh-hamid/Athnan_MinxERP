@@ -23,10 +23,13 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
         private readonly BaseModel<coreUser> _user;          
         private readonly BaseModel<coreUser> _users;
         private readonly BaseModel<coreRole> _role;
+        private readonly BaseModel<coreUserSubsystem> _userSubsystem;
+        private readonly BaseModel<coreUserRole> _userRole;
         private readonly BaseModel<psmsItem> _item;
         private readonly BaseModel<psmsStore> _store;
         private readonly BaseModel<coreFiscalYear> _fiscalYear;
         private readonly BaseModel<coreUnit> _unit;
+        private readonly BaseModel<coreSubsystem> _subSystem;
         private readonly BaseModel<psmsItemCategory> _itemCategory;
         private readonly BaseModel<psmsTaxRate> _taxRate;
         private readonly BaseModel<psmsSupplier> _supplier;
@@ -67,6 +70,8 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
         
         Guid approvedVoucherStatus = Guid.Parse(Constants.Voucher_Status_Approved);
         Guid voidVoucherStatus = Guid.Parse(Constants.Voucher_Status_Void);
+        Guid issuedVoucherStatus = Guid.Parse(Constants.Voucher_Status_Issued);     
+       
         Guid salesOrderVoucherType = Guid.Parse(Constants.Voucher_Type_sales);
         Guid orderVoucherStatus = Guid.Parse(Constants.Voucher_Status_Ordered);
         Guid finalVoucherStatus = Guid.Parse(Constants.Voucher_Status_Final_Approved);
@@ -120,6 +125,9 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
              _setting = new BaseModel<psmsSetting>(_context);
              _itemPrice = new BaseModel<slmsItemPrice>(_context);
              _proformaHeader = new BaseModel<slmsProformaHeader>(_context);
+             _subSystem = new BaseModel<coreSubsystem>(_context);
+             _userRole = new BaseModel<coreUserRole>(_context);
+             _userSubsystem = new BaseModel<coreUserSubsystem>(_context);
          }
 
         #endregion
@@ -231,6 +239,71 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
             };
             return this.Direct(result);
         }
+        public ActionResult GetSubSystem()
+        {
+            var records =_subSystem.GetAll().OrderBy(o => o.Name);
+            var Items = records.Select(item => new
+            {
+                item.Id,
+                Name = item.Name,
+            }).ToList();
+            var result = new
+            {
+                total = Items.Count(),
+                data = Items
+            };
+            return this.Direct(result);
+        }
+
+        public ActionResult GetRolesAndSubsystems()
+        {
+            var records = _subSystem.GetAll().OrderBy(o => o.Name);
+            var Items = records.Select(item => new
+            {
+                item.Id,
+                Name = item.Name,
+            }).ToList();
+            var roleRecords =_role.GetAll().OrderBy(o => o.Name);
+            var roleItems = roleRecords.Select(item => new
+            {
+                item.Id,
+                Name = item.Name,
+            }).ToList();
+            var result = new
+            {
+                countSubsystems = Items.Count(),
+                subsystems = Items,
+                countRoles = roleItems.Count(),
+                roles = roleItems,
+            };
+            return this.Direct(result);
+        }
+
+        public ActionResult GetRolesAndSubsystemsByUser(Guid id)
+        {
+            var alluserSubsystem = _userSubsystem.GetAll().AsQueryable();
+            var records =_subSystem.GetAll().Where(a=>alluserSubsystem.Where(o=>o.UserId==id && o.SubsystemId==a.Id).Any()).OrderBy(o => o.Name);
+            var Items = records.Select(item => new
+            {
+                item.Id,
+                Name = item.Name,
+            }).ToList();
+            var roleRecords = _role.GetAll().Where(a=>a.coreUserRole.Where(f=>f.UserId==id).Any()).OrderBy(o => o.Name);
+            var roleItems = roleRecords.Select(item => new
+            {
+                item.Id,
+                Name = item.Name,
+            }).ToList();
+            var result = new
+            {
+                countUserSubsystems = Items.Count(),
+                subsystems = Items,
+                countUserRoles = roleItems.Count(),
+                roles = roleItems,
+            };
+            return this.Direct(result);
+        }
+
         public ActionResult GetProductionStatus()
         {
             var records = _voucherStatus.GetAll().Where(a => a.Id ==orderVoucherStatus || a.Id==finalVoucherStatus).OrderBy(o => o.Name);
@@ -1136,11 +1209,13 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
             var LastWorkFlow = _voucherWorkFlow.GetAll().AsQueryable().Where(o => o.VoucherTypeId == salesOrderVoucherType).OrderByDescending(o => o.Step).FirstOrDefault();
             var lastVoucherId = LastWorkFlow != null ? LastWorkFlow.VoucherStatusId : Guid.Empty;
 
-            var records = _salesHeader.GetAll().AsQueryable().Where(o =>lastVoucherId==Guid.Empty?true: o.StatusId == lastVoucherId);
+            var records = _salesHeader.GetAll().AsQueryable().Where(a => a.StatusId == issuedVoucherStatus);
             if (quarystring != "")
                 records = records.Where(o =>
                     o.slmsCustomer.Name.ToUpper().StartsWith(quarystring.ToUpper())||
-                     o.VoucherNumber.ToUpper().StartsWith(quarystring.ToUpper())
+                    o.FsNo.ToUpper().StartsWith(quarystring.ToUpper()) ||
+                
+                    o.VoucherNumber.ToUpper().StartsWith(quarystring.ToUpper())
                     );
             if (customerId != Guid.Empty)
             {
@@ -1157,7 +1232,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 SalesArea=item.slmsSalesArea.Name,
                 item.slmsSalesArea.StoreId,
                 item.VoucherNumber,
-                Name = item.VoucherNumber+" "+item.slmsCustomer.Name,
+                Name = item.FsNo,
                 item.CustomerId,
                 Customer=item.slmsCustomer.Name,
                 Address = item.slmsCustomer.Address,
@@ -1728,10 +1803,10 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
 
             var salesfiltered = _salesHeader.GetAll().AsQueryable();
             var beginningFilter =_customerCredit.GetAll().AsQueryable();
-            var creditSalesType = Guid.Parse(Constants.Voucher_Type_CreditSales);
+           // var creditSalesType = Guid.Parse(Constants.cash);
             if (customerId != Guid.Empty)
             {
-                salesfiltered = salesfiltered.Where(o => o.CustomerId == customerId && o.SalesTypeId == creditSalesType);
+                salesfiltered = salesfiltered.Where(o => o.CustomerId == customerId && o.lupSalesType.Name == "Credit");
                 beginningFilter = beginningFilter.Where(o => o.CustomerId == customerId);
             }
             var filtered = salesfiltered.Select(item => new
@@ -1819,19 +1894,18 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                 purchasefiltered = purchasefiltered.Where(o => o.SupplierId == supplierId && o.SalesType=="Credit");
                 beginningFilter = beginningFilter.Where(o => o.SupplierId == supplierId);
             }
-            var filtered = purchasefiltered.Select(item => new
+            var filtered = purchasefiltered.ToList().Select(item => new
             {
                 item.Id,
                 CreditId = Guid.Empty,
                 item.VoucherNumber,
                 Date=item.OrderedDate,
                 SalesArea = item.psmsStore.Name,
-                NetPay = item.Discount.Value,
-               RemainingAmount = item.Discount.Value ,
-               //- item.psmsSupplierSettlementDetail.Select(a => a.SettledAmount).DefaultIfEmpty(0).Sum(),
+                NetPay = GetNet(item.TotalSummarry),
+                RemainingAmount = GetNet(item.TotalSummarry) - item.psmsSupplierSettlementDetail.Select(a => a.SettledAmount).DefaultIfEmpty(0).Sum(),
                 item.CreatedAt,
             }).Concat(
-               beginningFilter.Select(item => new
+               beginningFilter.ToList().Select(item => new
                {
                    Id = Guid.Empty,
                    CreditId = item.Id,
@@ -2229,8 +2303,28 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
 
 
         }
-    
-  
+
+        private decimal GetNet(string totalSummary)
+        {
+            decimal total = 0;
+            if (totalSummary != null && totalSummary != "")
+            {
+                var totalList = totalSummary.Split(';');
+                if (totalList.Count()>0)
+                {
+                    var objSummary = totalList.LastOrDefault();
+                    var namePart = objSummary.Split(':').FirstOrDefault();
+                    var valuePart = objSummary.Split(':').LastOrDefault();
+                    total = Math.Abs(decimal.Parse(valuePart));
+                       
+                   
+                }
+
+            }
+
+            return total;
+        }
+
         #endregion
 
         #region Common Methods 

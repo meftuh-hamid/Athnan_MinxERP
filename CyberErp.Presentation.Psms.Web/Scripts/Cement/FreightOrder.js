@@ -227,7 +227,7 @@ Ext.erp.ux.freightOrder.Form = function (config) {
                     xtype: 'numberfield',
                     fieldLabel: 'Quantity',
                     readOnly: false,
-                    hidden:true,
+                    hidden:false,
                     allowBlank: true
                 }, {
                     name: 'Date',
@@ -512,7 +512,7 @@ Ext.erp.ux.freightOrder.Grid = function (config) {
                 field: 'Id',
                 direction: 'DSC'
             },
-            fields: ['Id', 'VoucherNumber', 'Date', 'StatusId', 'Status', 'PreparedBy', 'ATC', 'Unit', 'Quantity','DriverName', 'DriverTelephone', 'PlateNo', 'LicenseNo','ShipperName', 'ReceivedBy','Supplier'],
+            fields: ['Id', 'VoucherNumber', 'Date', 'StatusId', 'Status', 'PreparedBy', 'IsLastStep', 'ATC', 'Unit', 'Quantity', 'DriverName', 'DriverTelephone', 'PlateNo', 'LicenseNo', 'ShipperName', 'ReceivedBy', 'Supplier'],
             remoteSort: true,
             listeners: {
                 beforeLoad: function () {
@@ -554,12 +554,7 @@ Ext.erp.ux.freightOrder.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("Status") == "Approved")
-                    return '<img src="Content/images/app/OkPass.png"/>';
-                else if (record.get("Status") == "Certified")
-                    return '<img src="Content/images/app/pending.png"/>';
-                else
-                    return '<img src="Content/images/app/Cancel1.png"/>';
+                return '<img src="Content/images/app/yes.png"/>';
             }
         }, {
             dataIndex: 'VoucherNumber',

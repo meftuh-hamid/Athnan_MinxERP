@@ -29,7 +29,7 @@ namespace CyberErp.Data.Model
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
     
-        public virtual coreSubsystem coreSubsystem { get; set; }
         public virtual ICollection<coreOperation> coreOperation { get; set; }
+        public virtual coreSubsystem coreSubsystem { get; set; }
     }
 }

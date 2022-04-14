@@ -17,7 +17,6 @@ namespace CyberErp.Data.Model
         public coreUser()
         {
             this.coreUserRole = new HashSet<coreUserRole>();
-            this.coreUserSubsystem = new HashSet<coreUserSubsystem>();
             this.PRNotification = new HashSet<PRNotification>();
             this.PRProductionOrderHeader = new HashSet<PRProductionOrderHeader>();
             this.PRProductionPlanHeader = new HashSet<PRProductionPlanHeader>();
@@ -63,9 +62,10 @@ namespace CyberErp.Data.Model
             this.psmsAdjustmentHeader1 = new HashSet<psmsAdjustmentHeader>();
             this.psmsDelivery = new HashSet<psmsDelivery>();
             this.psmsFreightOrder = new HashSet<psmsFreightOrder>();
-            this.psmsTransportation = new HashSet<psmsTransportation>();
             this.slmsSalesHeader = new HashSet<slmsSalesHeader>();
             this.slmsSalesHeader1 = new HashSet<slmsSalesHeader>();
+            this.psmsTransportation = new HashSet<psmsTransportation>();
+            this.coreUserSubsystem = new HashSet<coreUserSubsystem>();
         }
     
         public System.Guid Id { get; set; }
@@ -87,7 +87,6 @@ namespace CyberErp.Data.Model
         public virtual coreUser coreUser11 { get; set; }
         public virtual coreUser coreUser3 { get; set; }
         public virtual ICollection<coreUserRole> coreUserRole { get; set; }
-        public virtual ICollection<coreUserSubsystem> coreUserSubsystem { get; set; }
         public virtual ICollection<PRNotification> PRNotification { get; set; }
         public virtual ICollection<PRProductionOrderHeader> PRProductionOrderHeader { get; set; }
         public virtual ICollection<PRProductionPlanHeader> PRProductionPlanHeader { get; set; }
@@ -133,8 +132,9 @@ namespace CyberErp.Data.Model
         public virtual ICollection<psmsAdjustmentHeader> psmsAdjustmentHeader1 { get; set; }
         public virtual ICollection<psmsDelivery> psmsDelivery { get; set; }
         public virtual ICollection<psmsFreightOrder> psmsFreightOrder { get; set; }
-        public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader1 { get; set; }
+        public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
+        public virtual ICollection<coreUserSubsystem> coreUserSubsystem { get; set; }
     }
 }

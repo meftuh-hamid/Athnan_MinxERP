@@ -494,23 +494,7 @@ namespace ReportEngine.Reports
                         repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
 
                     }
-                    else if (reportParams.ReportName == "ItemLOT")
-                    {
-                        this.repDocument = new rpt_ItemLOT();
-                        Tables repTbls = repDocument.Database.Tables;
-                        this.SetDBLogonForReport(connectionInfo, repTbls);
-                        this.reportViewer.ReportSource = repDocument;
-
-                        repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
-                        repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
-                        repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
-                        repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
-                        repDocument.DataDefinition.FormulaFields["ShowDetail"].Text =  Utility.InQuotation(reportParams.ShowDetail.ToString());
-                        repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate.HasValue ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
-                        repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate.HasValue ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
-
-          
-                    }
+                   
                     else if (reportParams.ReportName == "InventoryClosing")
                     {
                         this.repDocument = new rpt_InventoryClosing();
@@ -1110,6 +1094,53 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
 
                 }
+                if (reportParams.ReportName == "Delivery By Customer")
+                {
+                    this.repDocument = new rpt_DeliveryByCustomer();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+
+                }
+                if (reportParams.ReportName == "Customer outstanding")
+                {
+                    this.repDocument = new rpt_SalesWithDelivery();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+
+                }
                 if (reportParams.ReportName == "Freight Order")
                 {
                     this.repDocument = new rpt_FreightOrder();
@@ -1133,7 +1164,8 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
-
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                
                 }
                 if (reportParams.ReportName == "Purchased ATC")
                 {
@@ -1158,7 +1190,8 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
-
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                
                 }
                 if (reportParams.ReportName == "Purchased ATC outstanding")
                 {
@@ -1183,7 +1216,8 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
-
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                
                 }
                 if (reportParams.ReportName == "Shipment")
                 {
@@ -1208,6 +1242,112 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                
+                }
+
+                if (reportParams.ReportName == "Transportation")
+                {
+                    this.repDocument = new rpt_Transportation();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+
+                }
+                if (reportParams.ReportName == "Transportation By Customer")
+                {
+                    this.repDocument = new rpt_TransportationByCustomer();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+
+                }
+                if (reportParams.ReportName == "Transportation By Driver")
+                {
+                    this.repDocument = new rpt_TransportationByDriver();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+
+                }
+                if (reportParams.ReportName == "Transportation By PlateNo")
+                {
+                    this.repDocument = new rpt_TransportationByPlateNo();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+
+
+                    repDocument.DataDefinition.FormulaFields["StoreId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["Store"].Text = reportParams.Store != null ? Utility.InQuotation(reportParams.Store.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SupplierId"].Text = reportParams.SupplierId != Guid.Empty && reportParams.SupplierId != null ? Utility.InQuotation(reportParams.SupplierId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
 
                 }
 
@@ -1459,7 +1599,7 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
                     repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
-
+              
                 }
                 if (reportParams.ReportName == "Sales Order List")
                 {
@@ -1509,7 +1649,30 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty && reportParams.StatusId != null ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
 
                 }
-               
+                if (reportParams.ReportName == "Sales Order By Item")
+                {
+                    this.repDocument = new rpt_SalesOrderByItemList();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesAreaId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesArea"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["PriceCategoryId"].Text = reportParams.PriceCategoryId != Guid.Empty && reportParams.PriceCategoryId != null ? Utility.InQuotation(reportParams.PriceCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerCategoryId"].Text = reportParams.CustomerCategoryId != Guid.Empty && reportParams.CustomerCategoryId != null ? Utility.InQuotation(reportParams.CustomerCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesTypeId"].Text = reportParams.SalesTypeId != Guid.Empty && reportParams.SalesTypeId != null ? Utility.InQuotation(reportParams.SalesTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty && reportParams.StatusId != null ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+
+                }   
                 if (reportParams.ReportName == "Sales Order By All Item")
                 {
                     this.repDocument = new rpt_SalesOrderByAllItemList();
@@ -1534,6 +1697,30 @@ namespace ReportEngine.Reports
                     repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty && reportParams.StatusId != null ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
 
                 }
+                if (reportParams.ReportName == "VAT List")
+                {
+                    this.repDocument = new rpt_SalesOrderByVat();
+                    Tables repTbls = repDocument.Database.Tables;
+                    this.SetDBLogonForReport(connectionInfo, repTbls);
+                    this.reportViewer.ReportSource = repDocument;
+
+                    repDocument.DataDefinition.FormulaFields["ItemId"].Text = reportParams.ItemId != Guid.Empty ? Utility.InQuotation(reportParams.ItemId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesAreaId"].Text = reportParams.StoreId != Guid.Empty ? Utility.InQuotation(reportParams.StoreId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesArea"].Text = Utility.InQuotation(reportParams.Store);
+                    repDocument.DataDefinition.FormulaFields["StartDate"].Text = reportParams.StartDate != null ? Utility.InQuotation(reportParams.StartDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["EndDate"].Text = reportParams.EndDate != null ? Utility.InQuotation(reportParams.EndDate.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["VoucherNo"].Text = reportParams.VoucherNo != null ? Utility.InQuotation(reportParams.VoucherNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ReferenceNo"].Text = reportParams.ReferenceNo != null ? Utility.InQuotation(reportParams.ReferenceNo.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemTypeId"].Text = reportParams.ItemTypeId != Guid.Empty ? Utility.InQuotation(reportParams.ItemTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["ItemCategoryId"].Text = reportParams.ItemCategoryId != Guid.Empty ? Utility.InQuotation(reportParams.ItemCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerId"].Text = reportParams.CustomerId != Guid.Empty && reportParams.CustomerId != null ? Utility.InQuotation(reportParams.CustomerId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["PriceCategoryId"].Text = reportParams.PriceCategoryId != Guid.Empty && reportParams.PriceCategoryId != null ? Utility.InQuotation(reportParams.PriceCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["CustomerCategoryId"].Text = reportParams.CustomerCategoryId != Guid.Empty && reportParams.CustomerCategoryId != null ? Utility.InQuotation(reportParams.CustomerCategoryId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["SalesTypeId"].Text = reportParams.SalesTypeId != Guid.Empty && reportParams.SalesTypeId != null ? Utility.InQuotation(reportParams.SalesTypeId.ToString()) : Utility.InQuotation("");
+                    repDocument.DataDefinition.FormulaFields["StatusId"].Text = reportParams.StatusId != Guid.Empty && reportParams.StatusId != null ? Utility.InQuotation(reportParams.StatusId.ToString()) : Utility.InQuotation("");
+
+                } 
             }
 
             this.reportViewer.DataBind();

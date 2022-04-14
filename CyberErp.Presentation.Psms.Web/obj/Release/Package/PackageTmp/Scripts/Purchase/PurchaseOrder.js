@@ -83,7 +83,6 @@ Ext.erp.ux.purchaseOrder.Form = function (config) {
             else {
                 form.findField('SalesOrderNo').setVisible(true);
                 form.findField('PurchaseRequestNo').setVisible(false);
-
                 form.findField('SalesOrderNo').allowBlank = true;
                 form.findField('PurchaseRequestNo').allowBlank = true;
 
@@ -182,6 +181,28 @@ Ext.erp.ux.purchaseOrder.Form = function (config) {
                     hidden:true,
                     value:'',
                     allowBlank: true
+                }, {
+                    hiddenName: 'SalesType',
+                    xtype: 'combo',
+                    fieldLabel: 'Cash/Credit',
+                    triggerAction: 'all',
+                    mode: 'local',
+                    editable: false,
+                    hidden: false,
+                    forceSelection: false,
+                    emptyText: '---Select---',
+                    allowBlank: false,
+                    store: new Ext.data.ArrayStore({
+                        fields: ['Id', 'Name'],
+                        idProperty: 'Id',
+                        data: [
+                            ['Cash', 'Cash'],
+                            ['Credit', 'Credit'],
+                       
+                        ]
+                    }),
+                    valueField: 'Id',
+                    displayField: 'Name',
                 }, {
                     xtype: 'compositefield',
                     fieldLabel: 'Supplier',
@@ -1427,7 +1448,7 @@ Ext.erp.ux.purchaseOrder.Grid = function (config) {
                 field: 'Id',
                 direction: 'DESC'
             },
-            fields: ['Id', 'VoucherNumber', 'PurchaseRequestNo', 'SalesOrderNo', 'ReorderSheetHeaderId', 'RequestForQuotationNo', 'PreparedBy', 'OrderedDate', 'IsLastStep', 'RequiredDate', 'SupplierReferenceNo', 'Supplier', 'Consumer', 'StatusId', 'Status', 'OrderedBy', 'Store', 'OrderType'],
+            fields: ['Id', 'VoucherNumber', 'PurchaseRequestNo', 'SalesOrderNo', 'ReorderSheetHeaderId', 'SalesType', 'RequestForQuotationNo', 'PreparedBy', 'OrderedDate', 'IsLastStep', 'RequiredDate', 'SupplierReferenceNo', 'Supplier', 'Consumer', 'StatusId', 'Status', 'OrderedBy', 'Store', 'OrderType'],
             remoteSort: true,
             listeners: {
                 beforeLoad: function () {
@@ -1470,7 +1491,7 @@ Ext.erp.ux.purchaseOrder.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                 if (record.get("IsLastStep") == true)
+                if (record.get("IsLastStep") == true || record.get("Status") == 'Final Approval')
                     return '<img src="Content/images/app/yes.png"/>';
                 else
                     return '<img src="Content/images/app/no.png"/>';
@@ -1490,6 +1511,12 @@ Ext.erp.ux.purchaseOrder.Grid = function (config) {
         },  {
             dataIndex: 'OrderType',
             header: 'Order Type',
+            sortable: true,
+            width: 100,
+            menuDisabled: true
+        }, {
+            dataIndex: 'SalesType',
+            header: 'Sales Type',
             sortable: true,
             width: 100,
             menuDisabled: true
@@ -1696,8 +1723,8 @@ Ext.extend(Ext.erp.ux.purchaseOrder.Grid, Ext.grid.EditorGridPanel, {
         var id = grid.getSelectionModel().getSelected().get('Id');
         var status = grid.getSelectionModel().getSelected().get('Status');
         var IsLastStep = grid.getSelectionModel().getSelected().get('IsLastStep');
-        alert(IsLastStep)
-        if (IsLastStep ==false) {
+
+        if (IsLastStep == false) {
             Ext.MessageBox.show({
                 title: 'Error',
                 msg: "The trnasaction is not fuly approved yet!",

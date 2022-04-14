@@ -152,3 +152,17 @@ D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\bin\Release\Entity
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.dll
 D:\Projects\Athnan\PSMS\Code\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Business.Component.Psms.dll.config
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Business.Component.Psms.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Business.Component.Psms.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Data.Infrastructure.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Data.Model.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\EntityFramework.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\CyberErp.Data.Model.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\EntityFramework.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Release\CyberErp.Business.Component.Psms.pdb

@@ -32,7 +32,7 @@ namespace CyberErp.Presentation.Web.Psms.Controllers
          Guid partiallyVoucherStatus = Guid.Parse(Constants.Voucher_Status_Partially_Approved);
          Guid rejectedVoucherStatus = Guid.Parse(Constants.Voucher_Status_Rejected);
          Guid voidVoucherStatus = Guid.Parse(Constants.Voucher_Status_Void);
-         Guid IssueVoucherType = Guid.Parse(Constants.Voucher_Type_StoreTransferIssue);
+         Guid IssueVoucherType = Guid.Parse(Constants.Voucher_Type_StoreIssue);
 
         private readonly Lookups _lookup;
         private Guid employeeId = Guid.Empty;
@@ -139,10 +139,7 @@ namespace CyberErp.Presentation.Web.Psms.Controllers
                 filtered = SearchTransaction(mode, hashtable, filtered);
                 switch (sort)
                 {
-                    case "Id":
-                        filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.Id) : filtered.OrderBy(u => u.Id);
-                        break;
-                    case "VoucherNumber":
+                      case "VoucherNumber":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.VoucherNumber) : filtered.OrderBy(u => u.VoucherNumber);
                         break;
                     case "Date":
@@ -181,6 +178,10 @@ namespace CyberErp.Presentation.Web.Psms.Controllers
                      case "InvoiceNo":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.InvoiceNo) : filtered.OrderBy(u => u.InvoiceNo);
                         break;
+                     default:
+                        filtered = dir == "ASC" ? filtered.OrderBy(u => u.CreatedAt) : filtered.OrderByDescending(u => u.CreatedAt);
+                        break;
+     
 
                          }
                 var count = filtered.Count();
@@ -350,13 +351,13 @@ namespace CyberErp.Presentation.Web.Psms.Controllers
         {
             var freightOrder = _freightOrder.Get(a => a.Id == delivery.FreightOrderId);
             var model = new ParameterModel { VoucherId = delivery.Id, VoucherTypeId = IssueVoucherType, VoucherNo = delivery.VoucherNumber, ItemId = delivery.ItemId.Value, StoreId = freightOrder.psmsPurchaseOrderATCDetail.psmsPurchaseOrderDetail.psmsPurchaseOrderHeader.StoreId, FiscalYearId = delivery.FiscalYearId, TransactionDate = DateTime.Now, Quantity = (double)(delivery.Quantity.Value - oldquantity), DamagedQuantity = 0 };
-            _inventoryRecord.IssueInventoryUpdate(model);          
+            _inventoryRecord.DeliveryInventoryUpdate(model);          
         
         }
         private void UpdateInventoryFromVoidedT(psmsDelivery delivery)
         {
             var model = new ParameterModel { VoucherId = delivery.Id, VoucherTypeId = IssueVoucherType, VoucherNo = delivery.VoucherNumber, ItemId = delivery.ItemId.Value, StoreId = delivery.psmsFreightOrder.psmsPurchaseOrderATCDetail.psmsPurchaseOrderDetail.psmsPurchaseOrderHeader.StoreId, FiscalYearId = delivery.FiscalYearId, TransactionDate = DateTime.Now, Quantity = (double)(delivery.Quantity.Value ), DamagedQuantity = 0 };
-            _inventoryRecord.IssueInventoryUpdateFromVoidedT(model);
+            _inventoryRecord.DeliveryInventoryUpdateFromVoidedT(model);
         }  
         private IQueryable<psmsDelivery> SearchTransaction(string mode, Hashtable ht, IQueryable<psmsDelivery> filtered)
         {

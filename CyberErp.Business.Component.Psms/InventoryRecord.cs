@@ -265,6 +265,51 @@ namespace CyberErp.Business.Component.Psms
             objInventory.AvailableQuantity = objInventory.RunningQuantity - objInventory.CommittedQuantity - damagedQuantity - expiredQuantity > 0 ? objInventory.RunningQuantity - objInventory.CommittedQuantity.Value - damagedQuantity - expiredQuantity : 0;
         }
 
+
+        public decimal DeliveryInventoryUpdate(ParameterModel model)
+        {
+            decimal unitCost = 0;
+            var localModel = model.Clone();
+
+            var objInventory = this.GetAll().AsQueryable().Where(o => o.IsClosed == false && o.FiscalYearId == model.FiscalYearId && o.ItemId == model.ItemId && o.StoreId == model.StoreId).FirstOrDefault();
+            if (objInventory == null)
+                throw new System.InvalidOperationException("There is no inventory record for some of the items!");
+            //else if (objInventory.RunningQuantity < model.Quantity)
+            //    throw new System.InvalidOperationException("There is no enough available quantity for some of the items!");
+
+            objInventory.RunningQuantity = objInventory.RunningQuantity - model.Quantity;
+            var damagedQuantity = objInventory.DamagedQuantity.HasValue ? objInventory.DamagedQuantity.Value : 0;
+            var expiredQuantity = objInventory.ExpiredQuantity.HasValue ? objInventory.ExpiredQuantity.Value : 0;
+            objInventory.CommittedQuantity=objInventory.CommittedQuantity>0?objInventory.CommittedQuantity-model.Quantity:0;
+            objInventory.AvailableQuantity = objInventory.RunningQuantity - objInventory.CommittedQuantity - damagedQuantity - expiredQuantity > 0 ? objInventory.RunningQuantity - objInventory.CommittedQuantity.Value - damagedQuantity - expiredQuantity : 0;
+            unitCost = objInventory.UnitCost;
+            model.UnitCost = unitCost;
+            AddBincard(model, Guid.Empty, Guid.Empty, objInventory.RunningQuantity, 0, model.Quantity, unitCost);
+
+            return unitCost;
+        }
+        public void DeliveryInventoryUpdateFromVoidedT(ParameterModel model)
+        {
+
+            var objInventory = this.GetAll().AsQueryable().Where(o => o.IsClosed == false && o.FiscalYearId == model.FiscalYearId && o.ItemId == model.ItemId && o.StoreId == model.StoreId).FirstOrDefault();
+            if (objInventory != null)
+            {
+                objInventory.RunningQuantity = objInventory.RunningQuantity + model.Quantity;
+                var damagedQuantity = objInventory.DamagedQuantity.HasValue ? objInventory.DamagedQuantity.Value : 0;
+                var expiredQuantity = objInventory.ExpiredQuantity.HasValue ? objInventory.ExpiredQuantity.Value : 0;
+                objInventory.CommittedQuantity=objInventory.CommittedQuantity+model.Quantity;
+         
+                objInventory.AvailableQuantity = objInventory.RunningQuantity - objInventory.CommittedQuantity - damagedQuantity - expiredQuantity > 0 ? objInventory.RunningQuantity - objInventory.CommittedQuantity.Value - damagedQuantity - expiredQuantity : 0;
+
+                _bincard.Delete(o => o.VoucherTypeId == model.VoucherTypeId && o.FiscalYearId == model.FiscalYearId && o.VoucherId == model.VoucherId);
+
+            }
+
+        }
+   
+
+
+
         public psmsInventoryRecord AddNewInventory(ParameterModel model)
         {
             var objInventory = new psmsInventoryRecord();
@@ -284,6 +329,7 @@ namespace CyberErp.Business.Component.Psms
             model.UnitCost = 0;
             model.VoucherNo = "Beginning Quantity";
             model.VoucherId = Guid.Empty;
+            model.VoucherTypeId = null;
             var fiscalYear = _fiscalYear.GetAll().Where(f => f.IsActive == true && f.IsClosed == false).FirstOrDefault();
 
             model.TransactionDate =fiscalYear.StartDate;// model.FiscalYearDate.HasValue ? model.FiscalYearDate.Value : model.TransactionDate.AddHours(-1);

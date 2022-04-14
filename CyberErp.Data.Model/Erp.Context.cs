@@ -30,12 +30,10 @@ namespace CyberErp.Data.Model
         public virtual DbSet<corePeriod> corePeriod { get; set; }
         public virtual DbSet<coreRole> coreRole { get; set; }
         public virtual DbSet<coreRolePermission> coreRolePermission { get; set; }
-        public virtual DbSet<coreSubsystem> coreSubsystem { get; set; }
         public virtual DbSet<coreUnit> coreUnit { get; set; }
         public virtual DbSet<coreFiscalYear> coreFiscalYear { get; set; }
         public virtual DbSet<coreUser> coreUser { get; set; }
         public virtual DbSet<coreUserRole> coreUserRole { get; set; }
-        public virtual DbSet<coreUserSubsystem> coreUserSubsystem { get; set; }
         public virtual DbSet<coreVoucherWorkFlow> coreVoucherWorkFlow { get; set; }
         public virtual DbSet<lupAdjustmentType> lupAdjustmentType { get; set; }
         public virtual DbSet<lupConsumerType> lupConsumerType { get; set; }
@@ -131,18 +129,20 @@ namespace CyberErp.Data.Model
         public virtual DbSet<psmsSupplierCredit> psmsSupplierCredit { get; set; }
         public virtual DbSet<slmsDailySales> slmsDailySales { get; set; }
         public virtual DbSet<slmsSettlementDetail> slmsSettlementDetail { get; set; }
-        public virtual DbSet<slmsSettlementHeader> slmsSettlementHeader { get; set; }
         public virtual DbSet<psmsSupplierSettlementDetail> psmsSupplierSettlementDetail { get; set; }
         public virtual DbSet<psmsSupplierSettlementHeader> psmsSupplierSettlementHeader { get; set; }
         public virtual DbSet<psmsDelivery> psmsDelivery { get; set; }
         public virtual DbSet<psmsFreightOrder> psmsFreightOrder { get; set; }
         public virtual DbSet<psmsPurchaseOrderATCDetail> psmsPurchaseOrderATCDetail { get; set; }
-        public virtual DbSet<psmsTransportation> psmsTransportation { get; set; }
         public virtual DbSet<slmsCustomer> slmsCustomer { get; set; }
         public virtual DbSet<slmsSalesHeader> slmsSalesHeader { get; set; }
         public virtual DbSet<slmsItemPrice> slmsItemPrice { get; set; }
         public virtual DbSet<slmsSalesArea> slmsSalesArea { get; set; }
         public virtual DbSet<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual DbSet<slmsSalesDetail> slmsSalesDetail { get; set; }
+        public virtual DbSet<slmsSettlementHeader> slmsSettlementHeader { get; set; }
+        public virtual DbSet<psmsTransportation> psmsTransportation { get; set; }
+        public virtual DbSet<coreUserSubsystem> coreUserSubsystem { get; set; }
+        public virtual DbSet<coreSubsystem> coreSubsystem { get; set; }
     }
 }

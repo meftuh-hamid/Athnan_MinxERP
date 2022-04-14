@@ -51,10 +51,10 @@ namespace CyberErp.Data.Model
             this.psmsAdjustmentHeader = new HashSet<psmsAdjustmentHeader>();
             this.psmsDelivery = new HashSet<psmsDelivery>();
             this.psmsFreightOrder = new HashSet<psmsFreightOrder>();
-            this.psmsTransportation = new HashSet<psmsTransportation>();
             this.slmsSalesHeader = new HashSet<slmsSalesHeader>();
             this.slmsProformaDetail = new HashSet<slmsProformaDetail>();
             this.slmsSalesDetail = new HashSet<slmsSalesDetail>();
+            this.psmsTransportation = new HashSet<psmsTransportation>();
         }
     
         public System.Guid Id { get; set; }
@@ -100,9 +100,9 @@ namespace CyberErp.Data.Model
         public virtual ICollection<psmsAdjustmentHeader> psmsAdjustmentHeader { get; set; }
         public virtual ICollection<psmsDelivery> psmsDelivery { get; set; }
         public virtual ICollection<psmsFreightOrder> psmsFreightOrder { get; set; }
-        public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
         public virtual ICollection<slmsProformaDetail> slmsProformaDetail { get; set; }
         public virtual ICollection<slmsSalesDetail> slmsSalesDetail { get; set; }
+        public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
     }
 }

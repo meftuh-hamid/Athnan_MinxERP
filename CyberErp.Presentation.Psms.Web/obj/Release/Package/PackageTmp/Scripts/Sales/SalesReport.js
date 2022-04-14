@@ -51,8 +51,11 @@ Ext.erp.ux.rptSales.Form = function (config) {
             store: new Ext.data.ArrayStore({
                 fields: ['Id', 'Name'],
                 data: [
-                    ['Sales', 'Sales'],
-                    ['Sales Summary', 'Sales Summary'],
+                    ['Sales Order List', 'Sales Order List'],
+                    ['Sales Order By Amount', 'Sales Order By Amount'],
+                    ['Sales Order By Item', 'Sales Order By Item'],
+                    ['Sales Order By All Item', 'Sales Order By All Item'],
+                    ['VAT List', 'VAT List'],
                     ['Collection', 'Collection'],
                     ['Settlement', 'Settlement'],
                     ['Customer Ledger', 'Customer Ledger'],
@@ -111,6 +114,53 @@ Ext.erp.ux.rptSales.Form = function (config) {
                     form.findField('CustomerCode').setValue(rec.data['Code']);
                 }
             }
+        }, {
+            hiddenName: 'SalesTypeId',
+            xtype: 'combo',
+            fieldLabel: 'Sales Type',
+            triggerAction: 'all',
+            mode: 'remote',
+            editable: false,
+            forceSelection: true,
+            hidden: true,
+            emptyText: '---Select---',
+            allowBlank: true,
+            store: new Ext.data.DirectStore({
+                reader: new Ext.data.JsonReader({
+                    successProperty: 'success',
+                    idProperty: 'Id',
+                    root: 'data',
+                    fields: ['Id', 'Name']
+                }),
+                autoLoad: true,
+                api: { read: Psms.GetSalesType }
+            }),
+            valueField: 'Id',
+            displayField: 'Name',
+            listeners: {
+            }
+        }, {
+            hiddenName: 'PriceCategoryId',
+            xtype: 'combo',
+            fieldLabel: 'Price Category',
+            triggerAction: 'all',
+            mode: 'remote',
+            editable: false,
+            forceSelection: true,
+            emptyText: '---Select---',
+            allowBlank: true,
+            store: new Ext.data.DirectStore({
+                reader: new Ext.data.JsonReader({
+                    successProperty: 'success',
+                    idProperty: 'Id',
+                    root: 'data',
+                    fields: ['Id', 'Name', 'Remark']
+                }),
+                autoLoad: true,
+                api: { read: Psms.GetPriceCategory }
+            }),
+            valueField: 'Id',
+            displayField: 'Name',
         }, {
             xtype: 'hidden',
             name: 'ItemTypeId'
@@ -182,22 +232,16 @@ Ext.erp.ux.rptSales.Form = function (config) {
                 }
             }
         }, {
-            xtype: 'hidden',
-            name: 'StoreId'
-        }, {
-            hiddenName: 'Store',
+            hiddenName: 'StoreId',
             xtype: 'combo',
-            fieldLabel: 'Store',
-            typeAhead: true,
-            width: 100,
-            hideTrigger: true,
-            minChars: 2,
-            listWidth: 280,
-            emptyText: '---Type to Search---',
+            fieldLabel: 'Sales Area',
+            triggerAction: 'all',
             mode: 'remote',
+            editable: false,
+            hidden: true,
+            forceSelection: true,
+            emptyText: '---Select---',
             allowBlank: true,
-            hidden: false,
-            tpl: '<tpl for="."><div ext:qtip="{Id}. {Name}" class="x-combo-list-item">' + '<h3><span>{Name}</span></h3> </div></tpl>',
             store: new Ext.data.DirectStore({
                 reader: new Ext.data.JsonReader({
                     successProperty: 'success',
@@ -206,17 +250,13 @@ Ext.erp.ux.rptSales.Form = function (config) {
                     fields: ['Id', 'Name']
                 }),
                 autoLoad: true,
-                api: { read: Psms.GetStoreBySearch }
-            }),
-            valueField: 'Name',
-            displayField: 'Name',
-            pageSize: 10,
-            listeners: {
-                scope: this,
-                select: function (cmb, rec, idx) {
-                    var form = Ext.getCmp('rptSales-form').getForm();
-                    form.findField('StoreId').setValue(rec.id);
+                api: {
+                    read: Psms.GetSalesArea
                 }
+            }),
+            valueField: 'Id',
+            displayField: 'Name',
+            listeners: {
             }
         }, {
             hiddenName: 'ItemCategoryId',
@@ -270,188 +310,7 @@ Ext.erp.ux.rptSales.Form = function (config) {
             displayField: 'Name',
             listeners: {
             }
-        }, {
-            hiddenName: 'ConsumerTypeId',
-            xtype: 'combo',
-            fieldLabel: 'Consumer Type',
-            triggerAction: 'all',
-            mode: 'remote',
-            editable: false,
-            forceSelection: true,
-            emptyText: '---Select---',
-            allowBlank: true,
-            hidden: true,
-            store: new Ext.data.DirectStore({
-                reader: new Ext.data.JsonReader({
-                    successProperty: 'success',
-                    idProperty: 'Id',
-                    root: 'data',
-                    fields: ['Id', 'Name']
-                }),
-                autoLoad: true,
-                api: { read: Psms.GetConsumerType }
-            }),
-            valueField: 'Id',
-            displayField: 'Name',
-            listeners: {
-                scope: this,
-                select: function (cmb, rec) {
-                    var form = Ext.getCmp('rptSales-form').getForm();
-                       //if Customer type is Store
-                    if (rec.get("Name") == 'Store') {
-                        form.findField('compositeEmployee').hide();
-                        form.findField('compositeUnit').hide();
-                        form.findField('compositeStore').show();
-
-                        form.findField('ConsumerStore').allowBlank = true;
-                        form.findField('ConsumerEmployee').allowBlank = true;
-                        form.findField('ConsumerUnit').allowBlank = true;
-
-                        form.findField('ConsumerEmployee').setValue('');
-                        form.findField('ConsumerEmployeeId').setValue('');
-                        form.findField('ConsumerUnit').setValue('');
-                        form.findField('ConsumerUnitId').setValue('');
-                    }
-                        //if Customer type is employee
-                    else if (rec.get("Name") == 'Employee') {
-                        form.findField('compositeEmployee').show();
-                        form.findField('compositeStore').hide();
-                        form.findField('compositeUnit').hide();
-                        form.findField('ConsumerStore').allowBlank = true;
-                        form.findField('ConsumerEmployee').allowBlank = true;
-                        form.findField('ConsumerUnit').allowBlank = true;
-
-
-                        form.findField('ConsumerUnit').setValue('');
-                        form.findField('ConsumerUnitId').setValue('');
-                        form.findField('ConsumerStore').setValue('');
-                        form.findField('ConsumerStoreId').setValue('');
-                    } //if Customer type is unit
-                    else if (rec.get("Name") == 'Unit') {
-                        form.findField('compositeEmployee').hide();
-                        form.findField('compositeUnit').show();
-                        form.findField('compositeStore').hide();
-                        form.findField('ConsumerStore').allowBlank = true;
-                        form.findField('ConsumerEmployee').allowBlank = true;
-                        form.findField('ConsumerUnit').allowBlank = true;
-
-
-                        form.findField('ConsumerEmployee').setValue('');
-                        form.findField('ConsumerEmployeeId').setValue('');
-                        form.findField('ConsumerStore').setValue('');
-                        form.findField('ConsumerStoreId').setValue('');
-                    }
-                    else {
-                        form.findField('compositeEmployee').hide();
-                        form.findField('compositeStore').hide();
-                        form.findField('compositeUnit').hide();
-                        form.findField('ConsumerStore').allowBlank = true;
-                        form.findField('ConsumerEmployee').allowBlank = true;
-                        form.findField('ConsumerUnit').allowBlank = true;
-
-                        form.findField('ConsumerEmployee').setValue('');
-                        form.findField('ConsumerEmployeeId').setValue('');
-                        form.findField('ConsumerUnit').setValue('');
-                        form.findField('ConsumerUnitId').setValue('');
-                        form.findField('ConsumerStore').setValue('');
-                        form.findField('ConsumerStoreId').setValue('');
-                    }
-                }
-            }
-        }, {
-            xtype: 'hidden',
-            name: 'ConsumerStoreId'
-        }, {
-            xtype: 'compositefield',
-            name: 'compositeStore',
-            fieldLabel: 'Consumer Store',
-            hidden: true,
-            defaults: {
-                flex: 1
-            },
-            items: [{
-                name: 'ConsumerStore',
-                xtype: 'textfield',
-                fieldLabel: 'Consumer',
-                readonly: true,
-                allowBlank: true
-            }, {
-                xtype: 'button',
-                iconCls: 'icon-filter',
-                width: 20,
-                handler: function () {
-                    var form = Ext.getCmp('rptSales-form').getForm();
-                    new Ext.erp.ux.common.StoreWindow({
-                        parentForm: form,
-                        controlIdField: 'ConsumerStoreId',
-                        controlNameField: 'ConsumerStore',
-                        consumer: 'Consumer'
-                    }).show();
-                }
-            }]
-        }, {
-            xtype: 'hidden',
-            name: 'ConsumerUnitId'
-        }, {
-            xtype: 'compositefield',
-            name: 'compositeUnit',
-            fieldLabel: 'Consumer Department',
-            hidden: true,
-            defaults: {
-                flex: 1
-            },
-            items: [{
-                name: 'ConsumerUnit',
-                xtype: 'textfield',
-                fieldLabel: 'Consumer',
-                readonly: true,
-                allowBlank: true
-            }, {
-                xtype: 'button',
-                iconCls: 'icon-filter',
-                width: 20,
-                handler: function () {
-                    var form = Ext.getCmp('rptSales-form').getForm();
-                    new Ext.erp.ux.common.UnitWindow({
-                        parentForm: form,
-                        controlIdField: 'ConsumerUnitId',
-                        controlNameField: 'ConsumerUnit',
-                        consumer: 'Consumer'
-                    }).show();
-                }
-            }]
-        }, {
-            xtype: 'hidden',
-            name: 'ConsumerEmployeeId'
-        }, {
-            xtype: 'compositefield',
-            name: 'compositeEmployee',
-            fieldLabel: 'Consumer Employee',
-            hidden: true,
-            defaults: {
-                flex: 1
-            },
-            items: [{
-                name: 'ConsumerEmployee',
-                xtype: 'textfield',
-                fieldLabel: 'Consumer',
-                readonly: true,
-                allowBlank: true
-            }, {
-                xtype: 'button',
-                 iconCls: 'icon-filter',
-                width: 20,
-                handler: function () {
-                    var form = Ext.getCmp('rptSales-form').getForm();
-                    new Ext.erp.ux.common.EmployeeWindow({
-                        parentForm: form,
-                        controlIdField: 'ConsumerEmployeeId',
-                        controlNameField: 'ConsumerEmployee',
-                        consumer: 'Consumer'
-                    }).show();
-                }
-            }]
-        }, {
+        },{
             name: 'StartDate',
             xtype: 'datefield',
             fieldLabel: 'Start Date',

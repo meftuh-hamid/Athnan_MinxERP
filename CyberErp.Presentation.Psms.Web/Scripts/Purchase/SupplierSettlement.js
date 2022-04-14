@@ -690,7 +690,7 @@ Ext.extend(Ext.erp.ux.supplierSettlement.InvoiceSelectionWindow, Ext.Window, {
                 var p = new item({
                     InvoiceId: selectedItems[i].get('Id'),
                     CreditId: selectedItems[i].get('CreditId'),
-                    Invoice: selectedItems[i].get('ZReportReference'),
+                    Invoice: selectedItems[i].get('VoucherNumber'),
                     InvoiceAmount: selectedItems[i].get('NetPay'),
                     SettledAmount: 0,
                     RemainingAmount: selectedItems[i].get('RemainingAmount'),

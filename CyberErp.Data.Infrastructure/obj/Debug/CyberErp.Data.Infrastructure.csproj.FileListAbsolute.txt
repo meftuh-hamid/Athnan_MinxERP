@@ -182,3 +182,13 @@ E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\Enti
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.dll
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\CyberErp.Data.Infrastructure.dll.config
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\CyberErp.Data.Infrastructure.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\EntityFramework.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\EntityFramework.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Data.Infrastructure\obj\Debug\CyberErp.Data.Infrastructure.csprojResolveAssemblyReference.cache

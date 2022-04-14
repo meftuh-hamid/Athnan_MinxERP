@@ -28,8 +28,8 @@
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Ext/Portal.js") %>"></script>
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Ext/PortalColumn.js") %>"></script>
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Ext/Portlet.js") %>"></script>
-
-     
+    <script type="text/javascript" src="<% = Url.Content("~/Scripts/Ext/CheckColumn.js") %>"></script>
+   
      <script type="text/javascript" src="<% = Url.Content("~/Direct/Api") %>"></script> 
    
 
@@ -52,6 +52,9 @@
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Common/VoucherApproval.js") %>"></script>
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Common/DocumentAttachment.js") %>"></script>
      <script type="text/javascript" src="<% = Url.Content("~/Scripts/Common/NotificationWindow.js") %>"></script>
+     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Common/Role.js") %>"></script>
+     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Common/User.js") %>"></script>
+    
     
     <%--Item--%>
     <script type="text/javascript" src="<% = Url.Content("~/Scripts/Inventory/Item/Item.js") %>"></script>

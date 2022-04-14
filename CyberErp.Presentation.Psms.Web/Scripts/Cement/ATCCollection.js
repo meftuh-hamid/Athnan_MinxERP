@@ -1,4 +1,5 @@
-﻿Ext.ns('Ext.erp.ux.aTCCollection');
+﻿/// <reference path="ATCCollection.js" />
+Ext.ns('Ext.erp.ux.aTCCollection');
 
 
 
@@ -947,7 +948,7 @@ Ext.erp.ux.aTCCollection.Grid = function (config) {
                 field: 'Id',
                 direction: 'DSC'
             },
-            fields: ['Id', 'VoucherNumber', 'RequestedDate', 'StatusId', 'Status', 'RequestedBy', 'NetPayWithWithholding', 'SubTotal', 'NetPay', 'Withholding', 'Vat', 'Store', 'Supplier', 'PurchaseType'],
+            fields: ['Id', 'VoucherNumber', 'RequestedDate', 'StatusId', 'IsLastStep', 'Status', 'RequestedBy', 'NetPayWithWithholding', 'SubTotal', 'NetPay', 'Withholding', 'Vat', 'Store', 'Supplier', 'PurchaseType'],
             remoteSort: true,
             listeners: {
                 beforeLoad: function () {
@@ -1011,12 +1012,10 @@ Ext.erp.ux.aTCCollection.Grid = function (config) {
            width: 100,
            menuDisabled: true,
            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-               if (record.get("Status") == "Approved")
-                   return '<img src="Content/images/app/OkPass.png"/>';
-               else if (record.get("Status") == "Certified")
-                   return '<img src="Content/images/app/pending.png"/>';
+               if (record.get("IsLastStep") == true || value=="Final Approval")
+                   return '<img src="Content/images/app/yes.png"/>';
                else
-                   return '<img src="Content/images/app/Cancel1.png"/>';
+                   return '<img src="Content/images/app/no.png"/>';
            }
        }, {
             dataIndex: 'VoucherNumber',

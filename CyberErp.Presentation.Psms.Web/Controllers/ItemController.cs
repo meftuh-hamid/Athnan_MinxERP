@@ -591,12 +591,12 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
         {
             try
             {
-                var objitem = _item.Find(i => (i.Name.Equals(item.Name) && i.ItemCategoryId == item.ItemCategoryId && i.Id != item.Id) || ( i.Code.Equals(item.Code) && i.ItemCategoryId == item.ItemCategoryId && i.Id != item.Id));
-                if (objitem != null)
-                {
-                    var result = new { success = false, data = "Item Name or Code has already been registered for this category!" };
-                    return this.Direct(result);
-                }
+                //var objitem = _item.Find(i => (i.Name.Equals(item.Name) && i.ItemCategoryId == item.ItemCategoryId && i.Id != item.Id) || ( i.Code.Equals(item.Code) && i.ItemCategoryId == item.ItemCategoryId && i.Id != item.Id));
+                //if (objitem != null)
+                //{
+                //    var result = new { success = false, data = "Item Name or Code has already been registered for this category!" };
+                //    return this.Direct(result);
+                //}
                 if (Request.Params["IsHazardous"] != null && Request.Params["IsHazardous"].ToString().Equals("on"))
                     item.IsHazardous = true;
                 else

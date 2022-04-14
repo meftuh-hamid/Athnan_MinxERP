@@ -646,12 +646,7 @@ Ext.erp.ux.delivery.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("Status") == "Approved")
-                    return '<img src="Content/images/app/OkPass.png"/>';
-                else if (record.get("Status") == "Certified")
-                    return '<img src="Content/images/app/pending.png"/>';
-                else
-                    return '<img src="Content/images/app/Cancel1.png"/>';
+                return '<img src="Content/images/app/yes.png"/>';
             }
         }, {
             dataIndex: 'VoucherNumber',
@@ -690,10 +685,10 @@ Ext.erp.ux.delivery.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (value == true)
-                    return '<img src="Content/images/app/OkPass.png"/>';
-                  else
-                    return '<img src="Content/images/app/Cancel1.png"/>';
+                if ( value ==true)
+                    return '<img src="Content/images/app/yes.png"/>';
+                else
+                    return '<img src="Content/images/app/no.png"/>';
             }
         }, {
             dataIndex: 'Date',

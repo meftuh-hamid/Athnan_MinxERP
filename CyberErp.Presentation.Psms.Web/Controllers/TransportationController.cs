@@ -105,6 +105,8 @@ namespace Presentation.Inventory.Web.Controllers
                 objTransportation.Location,
                 objTransportation.UnitCost,
                  objTransportation.SupplierId,
+                 objTransportation.CustomerId,
+                 Customer=objTransportation.CustomerId.HasValue?objTransportation.slmsCustomer.Name:"",
                 Supplier=objTransportation.SupplierId.HasValue?objTransportation.psmsSupplier.Name:"",
                 Date = objTransportation.Date.ToShortDateString(),              
                 FiscalYear = objTransportation.coreFiscalYear.Name,
@@ -131,10 +133,7 @@ namespace Presentation.Inventory.Web.Controllers
                 filtered = SearchTransaction(mode, hashtable, filtered);
                 switch (sort)
                 {
-                    case "Id":
-                        filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.Id) : filtered.OrderBy(u => u.Id);
-                        break;
-                    case "VoucherNumber":
+                      case "VoucherNumber":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.VoucherNumber) : filtered.OrderBy(u => u.VoucherNumber);
                         break;
                     case "Date":
@@ -161,10 +160,10 @@ namespace Presentation.Inventory.Web.Controllers
                      case "Supplier":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.psmsSupplier.Name) : filtered.OrderBy(u => u.psmsSupplier.Name);
                         break;
-                       case "Customer":
-                        filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.UnitCost) : filtered.OrderBy(u => u.UnitCost);
-                        break;
-                       case "Location":
+                     case "Customer":
+                        filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.slmsCustomer.Name) : filtered.OrderBy(u => u.slmsCustomer.Name);
+                        break;   
+                        case "Location":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.Location) : filtered.OrderBy(u => u.Location);
                         break;
                      case "Item":
@@ -173,6 +172,10 @@ namespace Presentation.Inventory.Web.Controllers
                      case "IsOwnedVehicle":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.IsOwnedVehicle) : filtered.OrderBy(u => u.IsOwnedVehicle);
                         break;
+                     default:
+                        filtered = dir == "ASC" ? filtered.OrderBy(u => u.CreatedAt) : filtered.OrderByDescending(u => u.CreatedAt);
+                        break;
+     
 
                          }
                 var count = filtered.Count();
@@ -194,6 +197,8 @@ namespace Presentation.Inventory.Web.Controllers
                     item.PreparedById,
                     PreparedBy=item.coreUser.FirstName+" "+item.coreUser.LastName,
                     Supplier = item.SupplierId.HasValue ? item.psmsSupplier.Name : "",
+                    Customer = item.CustomerId.HasValue ? item.slmsCustomer.Name : "",
+             
                     Date = item.Date,
                     FiscalYear = item.coreFiscalYear.Name,
                     Status=item.lupVoucherStatus.Name,
@@ -219,6 +224,7 @@ namespace Presentation.Inventory.Web.Controllers
                     item.PlateNo,
                     item.LicenseNo,
                     item.ShipperName,
+                    item.Customer,
                     item.ReceivedBy,
                     item.PreparedById,
                     PreparedBy = item.PreparedBy,
@@ -326,9 +332,12 @@ namespace Presentation.Inventory.Web.Controllers
                         filtered = filtered.Where(v => 
 
                             (v.psmsSupplier.Name.ToUpper().StartsWith(tSearchText.ToUpper())) ||
+                            (v.CustomerId.HasValue? v.slmsCustomer.Name.ToUpper().StartsWith(tSearchText.ToUpper()):false) ||                         
                             (v.ATC.ToUpper().StartsWith(tSearchText.ToUpper())) ||
                             (v.DriverName.ToUpper().StartsWith(tSearchText.ToUpper())) ||
                             (v.DriverTelephone.ToUpper().StartsWith(tSearchText.ToUpper())) ||
+                            (v.ShipperName.ToUpper().StartsWith(tSearchText.ToUpper())) ||
+                            (v.Location.ToUpper().StartsWith(tSearchText.ToUpper())) ||
                             (v.PlateNo.ToUpper().StartsWith(tSearchText.ToUpper())) ||                            
                             (v.coreUser.FirstName + " " + v.coreUser.LastName).ToUpper().StartsWith(tSearchText.ToUpper())                         
                             );

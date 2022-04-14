@@ -163,7 +163,13 @@ Ext.erp.ux.deliverySchedule.Form = function (config) {
              width: 100,
              allowBlank: false,
              value: new Date(),
-         }, ]
+          }, {
+              name: 'Quantity',
+              xtype: 'numberfield',
+              fieldLabel: 'Quantity',
+              width: 100,
+              allowBlank: false,
+          }, ]
        
     }, config));
 }

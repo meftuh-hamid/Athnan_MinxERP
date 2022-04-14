@@ -31,7 +31,7 @@ namespace CyberErp.Data.Model
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
     
-        public virtual ICollection<slmsSettlementDetail> slmsSettlementDetail { get; set; }
         public virtual slmsCustomer slmsCustomer { get; set; }
+        public virtual ICollection<slmsSettlementDetail> slmsSettlementDetail { get; set; }
     }
 }

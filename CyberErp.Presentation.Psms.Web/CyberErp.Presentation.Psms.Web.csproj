@@ -226,6 +226,7 @@
     <Compile Include="Controllers\ProductionPlanController.cs" />
     <Compile Include="Controllers\ProductionPlanDeliveryController.cs" />
     <Compile Include="Controllers\ProformaController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SalesAreaController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\SupplierSettlementController.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Controllers\StoreRequestController.cs" />
     <Compile Include="Controllers\DailySalesController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VoucherWorkFlowController.cs" />
     <Compile Include="Controllers\InventoryRecordController.cs" />
     <Compile Include="Controllers\IssueController.cs" />
@@ -301,6 +303,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\List\Inventory\rpt_SalesWithDelivery.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_SalesWithDelivery.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerBalanceList.cs">
       <DependentUpon>rpt_SupplierLedgerBalanceList.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -337,11 +345,35 @@
       <DependentUpon>rpt_Delivery.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\List\FixedAsset\rpt_DeliveryByCustomer.cs">
+    <Compile Include="Reports\List\Purchase\rpt_DeliveryByCustomer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DeliveryByCustomer.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_TransportationByPlateNo.cs">
+      <DependentUpon>rpt_TransportationByPlateNo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_TransportationByDriver.cs">
+      <DependentUpon>rpt_TransportationByDriver.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_TransportationByCustomer.cs">
+      <DependentUpon>rpt_TransportationByCustomer.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\List\Purchase\rpt_Transportation.cs">
+      <DependentUpon>rpt_Transportation.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\List\Purchase\rpt_Shipment.cs">
       <DependentUpon>rpt_Shipment.rpt</DependentUpon>
@@ -457,10 +489,22 @@
       <DependentUpon>rpt_SalesOrderByAllItemList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Sales\rpt_SalesOrderByVat.cs">
+      <DependentUpon>rpt_SalesOrderByVat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\Sales\rpt_SalesOrderByAmountList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_SalesOrderByAmountList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales\rpt_SalesOrderByItemList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_SalesOrderByItemList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Sales\rpt_SalesOrderList.cs">
@@ -633,12 +677,6 @@
     </Compile>
     <Compile Include="Reports\List\Purchase\rpt_SupplierList.cs">
       <DependentUpon>rpt_SupplierList.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\List\Inventory\Bincard\rpt_ItemLOT.cs">
-      <DependentUpon>rpt_ItemLOT.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -944,6 +982,8 @@
     <Content Include="Scripts\Cement\FreightOrder.js" />
     <Content Include="Scripts\Cement\Transportation.js" />
     <Content Include="Scripts\Common\NotificationWindow.js" />
+    <Content Include="Scripts\Common\Role.js" />
+    <Content Include="Scripts\Common\User.js" />
     <Content Include="Scripts\Inventory\Item\ProductionPicker.js" />
     <Content Include="Scripts\Inventory\Transaction\StoreRequest.js" />
     <Content Include="Scripts\Production\BillofMaterial.js" />
@@ -2229,7 +2269,6 @@
     <None Include="Content\images\yourtheme\window\top-bottom.psd" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\AB-HAM.pubxml" />
-    <Content Include="Reports\List\Purchase\iffs.zip" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -2258,6 +2297,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_StockEvaluation.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Inventory\rpt_SalesWithDelivery.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesWithDelivery.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\List\Purchase\Payment\rpt_SupplierLedgerBalanceList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SupplierLedgerBalanceList.cs</LastGenOutput>
@@ -2282,9 +2325,25 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Delivery.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\List\FixedAsset\rpt_DeliveryByCustomer.rpt">
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_DeliveryByCustomer.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DeliveryByCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_TransportationByPlateNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransportationByPlateNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_TransportationByDriver.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransportationByDriver.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_TransportationByCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TransportationByCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\List\Purchase\rpt_Transportation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Transportation.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\List\Purchase\rpt_Shipment.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2362,9 +2421,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SalesOrderByAllItemList.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_SalesOrderByVat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesOrderByVat.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sales\rpt_SalesOrderByAmountList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SalesOrderByAmountList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales\rpt_SalesOrderByItemList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_SalesOrderByItemList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sales\rpt_SalesOrderList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2481,10 +2548,6 @@
     <EmbeddedResource Include="Reports\List\Purchase\rpt_SupplierList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_SupplierList.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_ItemLOT.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_ItemLOT.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\List\Inventory\Bincard\rpt_Item.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

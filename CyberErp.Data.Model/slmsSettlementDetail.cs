@@ -28,7 +28,7 @@ namespace CyberErp.Data.Model
         public System.DateTime UpdatedAt { get; set; }
     
         public virtual slmsCustomerCredit slmsCustomerCredit { get; set; }
-        public virtual slmsSettlementHeader slmsSettlementHeader { get; set; }
         public virtual slmsSalesHeader slmsSalesHeader { get; set; }
+        public virtual slmsSettlementHeader slmsSettlementHeader { get; set; }
     }
 }

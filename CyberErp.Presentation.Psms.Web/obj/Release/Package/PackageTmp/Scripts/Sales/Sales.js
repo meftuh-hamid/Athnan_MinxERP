@@ -63,6 +63,7 @@ Ext.erp.ux.sales.Form = function (config) {
             var form = Ext.getCmp('sales-form').getForm();
             var vatRate=Ext.getCmp('sales-form').vatRate;
             var withHoldingRate=Ext.getCmp('sales-form').withHoldingRate;
+            var withholdableTotal = 0;
 
             var totalAmount = 0,tax = 0,withholding = 0,netAmount = 0,discountAmount = 0;
    
@@ -77,16 +78,19 @@ Ext.erp.ux.sales.Form = function (config) {
                 taxableAmount = taxableAmount + parseFloat(record.data['Quantity']) * parseFloat(record.data['UnitPrice']);
             else
                totalAmount = totalAmount + parseFloat(record.data['Quantity']) * parseFloat(record.data['UnitPrice']);
-             
+                withholdableTotal = withholdableTotal + parseFloat(record.data['Quantity']) * parseFloat(record.data['WithHoldingTax'])
+
       
             });
             totalAmount=taxableAmount+totalAmount-discountAmount;
-            tax = ((taxableAmount - discountAmount) * (vatRate));
+            tax = taxableAmount>0?((taxableAmount - discountAmount) * (vatRate)):0;
             var taxTotal = this.roundToDecimal(tax);
             var parsedTotalAmount = this.roundToDecimal(totalAmount);
             if (applyWithholding) {
-                if (totalAmount > 10000) {
-                    withholding = (parsedTotalAmount * withHoldingRate);
+                var parsedwithholdableTotal = this.roundToDecimal(withholdableTotal);
+
+                if (parsedwithholdableTotal > 10000) {
+                    withholding = (parsedwithholdableTotal * withHoldingRate);
                 }
             }
             netAmount = parsedTotalAmount + taxTotal - withholding;
@@ -95,7 +99,7 @@ Ext.erp.ux.sales.Form = function (config) {
             form.findField('WithHolding').setValue(withholding);
 
             form.findField('NetPay').setValue(netAmount);
-            var totalSummary = " Sub Total:" + (parsedTotalAmount - discountAmount )+ " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
+            var totalSummary = " Sub Total:" + (totalAmount +discountAmount) + " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
 
             Ext.getCmp('sales-totalSummary').setValue(totalSummary);
 
@@ -571,7 +575,7 @@ Ext.erp.ux.sales.GridDetail = function (config) {
                 direction: 'ASC'
             },
 
-            fields: ['Id', 'SalesSalesHeaderId', 'IsSerialItem', 'IsLOTItem', 'ItemId', 'IsTaxable', 'UnitId', 'MeasurementUnit', 'PriceGroupId', 'PriceGroup', 'UnitCost', 'UnitPrice', 'Tax', 'Name', 'Code', 'Quantity', 'RemainingQuantity', 'Remark'],
+            fields: ['Id', 'SalesSalesHeaderId', 'IsSerialItem', 'IsLOTItem', 'ItemId', 'WithHoldingTax', 'IsTaxable', 'UnitId', 'MeasurementUnit', 'PriceGroupId', 'PriceGroup', 'UnitCost', 'UnitPrice', 'Tax', 'Name', 'Code', 'Quantity', 'RemainingQuantity', 'Remark'],
 
             remoteSort: true,
             listeners: {
@@ -647,7 +651,7 @@ Ext.erp.ux.sales.GridDetail = function (config) {
                                 successProperty: 'success',
                                 idProperty: 'Id',
                                 root: 'data',
-                                fields: ['Id', 'Name', 'Code', 'IsTaxable', 'IsSerialItem', 'IsLOTItem', 'UnitId', 'MeasurementUnit', 'UnitPrice', 'PriceGroup', 'PriceGroupId']
+                                fields: ['Id', 'Name', 'Code', 'IsTaxable', 'IsSerialItem', 'WithHoldingTax', 'IsLOTItem', 'UnitId', 'MeasurementUnit', 'UnitPrice', 'PriceGroup', 'PriceGroupId']
                             }),
                             api: { read: Psms.GetSalesItemBySearch }
                         }),
@@ -683,6 +687,7 @@ Ext.erp.ux.sales.GridDetail = function (config) {
                                 selectedrecord.set('PriceGroupId', record.get("PriceGroupId"));
                                 selectedrecord.set('PriceGroup', record.get("PriceGroup"));
                                 selectedrecord.set('UnitPrice', record.get("UnitPrice"));
+                                selectedrecord.set('WithHoldingTax', record.get("WithHoldingTax"));
 
                             }
                         }
@@ -767,6 +772,12 @@ Ext.erp.ux.sales.GridDetail = function (config) {
                                 selectedrecord.set('PriceGroupId', record.get("Id"));
                                 var priceGroupId = record.get("Id");
                                 var itemId = selectedrecord.get("ItemId");
+                                Psms.GetItemPriceByPriceGroup(itemId, priceGroupId, priceCategoryId, function (result) {
+                                    selectedrecord.set('IsTaxable', result.IsTaxable);
+                                    selectedrecord.set('UnitPrice', result.data);
+                                    selectedrecord.set('WithHoldingTax', result.WithHoldingTax);
+                                    Ext.getCmp('sales-form').calculateTotal();
+                                });
                             }
                         }
                     })
@@ -1110,7 +1121,8 @@ Ext.extend(Ext.erp.ux.sales.Window, Ext.Window, {
                 item.data['UnitId'] + ':' +
                 item.data['UnitPrice'] + ':' +
                 item.data['PriceGroupId'] + ':' +
-            item.data['IsTaxable'] + ';';
+            item.data['IsTaxable'] + ':' +
+            item.data['WithHoldingTax'] + ';';
         });
         return rec;
     },
@@ -1683,7 +1695,7 @@ Ext.extend(Ext.erp.ux.sales.Grid, Ext.grid.EditorGridPanel, {
     },
     customRenderer: function (value, metaData, record, rowIndex, colIndex, store) {
 
-        if (record.get("IsLastStep") == true)
+        if (record.get("IsLastStep") == true || record.get("Status") == 'Issued')
             return '<span style=color:green>' + value + '</span>';
         else if (record.get("Status") == "Void")
             return '<span style=color:red>' + value + '</span>';

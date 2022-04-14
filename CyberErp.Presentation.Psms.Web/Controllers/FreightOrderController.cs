@@ -35,7 +35,8 @@ namespace Presentation.Inventory.Web.Controllers
          Guid voidVoucherStatus = Guid.Parse(Constants.Voucher_Status_Void);
          Guid deliveryOrderVoucherType = Guid.Parse(Constants.Voucher_Type_DeliveryOrder);
          Guid finalApprovedVoucherStatus = Guid.Parse(Constants.Voucher_Status_Final_Approved);
-    
+         Guid issuedVoucherStatus = Guid.Parse(Constants.Voucher_Status_Issued);     
+       
         private readonly Lookups _lookup;
         private Guid employeeId = Guid.Empty;
         private string employeeName = "";
@@ -144,10 +145,7 @@ namespace Presentation.Inventory.Web.Controllers
                 filtered = SearchTransaction(mode, hashtable, filtered);
                 switch (sort)
                 {
-                    case "Id":
-                        filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.Id) : filtered.OrderBy(u => u.Id);
-                        break;
-                    case "VoucherNumber":
+                       case "VoucherNumber":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.VoucherNumber) : filtered.OrderBy(u => u.VoucherNumber);
                         break;
                     case "Date":
@@ -177,6 +175,10 @@ namespace Presentation.Inventory.Web.Controllers
                      case "Supplier":
                         filtered = dir == "DSC" ? filtered.OrderByDescending(u => u.psmsSupplier.Name) : filtered.OrderBy(u => u.psmsSupplier.Name);
                         break;
+                     default:
+                        filtered = dir == "ASC" ? filtered.OrderBy(u => u.CreatedAt) : filtered.OrderByDescending(u => u.CreatedAt);
+                        break;
+     
 
                          }
                 var count = filtered.Count();
@@ -324,7 +326,7 @@ namespace Presentation.Inventory.Web.Controllers
                 var mode = hashtable["mode"] != null ? hashtable["mode"].ToString() : "";
 
                 var deliveryList=_delivery.GetAll().AsQueryable();
-                var filtered =_salesOrderDetail.GetAll().AsQueryable();
+                var filtered =_salesOrderDetail.GetAll().AsQueryable().Where(a=>a.slmsSalesHeader.StatusId==issuedVoucherStatus);
                 var scheduleList = _freightOrder.GetAll().AsQueryable().Where(o => o.CustomerId.HasValue && o.psmsPurchaseOrderATCDetail.IsDelivered==false);
                 filtered = SearchTransactionCustmerBalance(mode, hashtable, filtered);
                 switch (sort)
@@ -366,7 +368,7 @@ namespace Presentation.Inventory.Web.Controllers
                     LastDeliveryDate = item.ObjLastDelivery!=null?item.ObjLastDelivery.Date.ToShortDateString():"",
                     ScheduledAmount=item.ScheduledAmount,
                     
-                }).Where(o=>o.RemainingBalance>0);
+                }).Where(o=>o.RemainingBalance>0).OrderBy(a=>a.Item);
                 return this.Direct(new { total = count, data = salesOrderList });
             }
             catch (Exception exception)

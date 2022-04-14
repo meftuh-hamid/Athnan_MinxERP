@@ -53,8 +53,9 @@ Ext.erp.ux.rptSales.Form = function (config) {
                 data: [
                     ['Sales Order List', 'Sales Order List'],
                     ['Sales Order By Amount', 'Sales Order By Amount'],
+                    ['Sales Order By Item', 'Sales Order By Item'],
                     ['Sales Order By All Item', 'Sales Order By All Item'],
-
+                    ['VAT List', 'VAT List'],
                     ['Collection', 'Collection'],
                     ['Settlement', 'Settlement'],
                     ['Customer Ledger', 'Customer Ledger'],

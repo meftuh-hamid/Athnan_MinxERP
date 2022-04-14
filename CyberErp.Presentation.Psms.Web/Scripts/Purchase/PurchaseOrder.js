@@ -1491,7 +1491,7 @@ Ext.erp.ux.purchaseOrder.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                 if (record.get("IsLastStep") == true)
+                if (record.get("IsLastStep") == true || record.get("Status") == 'Final Approval')
                     return '<img src="Content/images/app/yes.png"/>';
                 else
                     return '<img src="Content/images/app/no.png"/>';
@@ -1723,8 +1723,8 @@ Ext.extend(Ext.erp.ux.purchaseOrder.Grid, Ext.grid.EditorGridPanel, {
         var id = grid.getSelectionModel().getSelected().get('Id');
         var status = grid.getSelectionModel().getSelected().get('Status');
         var IsLastStep = grid.getSelectionModel().getSelected().get('IsLastStep');
-        alert(IsLastStep)
-        if (IsLastStep ==false) {
+
+        if (IsLastStep == false) {
             Ext.MessageBox.show({
                 title: 'Error',
                 msg: "The trnasaction is not fuly approved yet!",

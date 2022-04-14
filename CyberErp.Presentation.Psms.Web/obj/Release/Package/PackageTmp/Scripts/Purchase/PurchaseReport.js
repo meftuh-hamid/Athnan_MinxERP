@@ -39,6 +39,9 @@ Ext.erp.ux.rptPurchase.Form = function (config) {
             name: 'SupplierCode',
             xtype: 'hidden'
         }, {
+            name: 'CustomerId',
+            xtype: 'hidden'
+        }, {
             hiddenName: 'ReportName',
             xtype: 'combo',
             fieldLabel: 'Report Name',
@@ -51,31 +54,23 @@ Ext.erp.ux.rptPurchase.Form = function (config) {
             store: new Ext.data.ArrayStore({
                 fields: ['Id', 'Name'],
                 data: [
-                   // ['Purchase Request', 'Purchase Request'],
-                   // ['Supplier List', 'Supplier List'],
-                   // ['Purchase Order', 'Purchase Order'],
-                   // ['Daliy Purchase Order', 'Daily Purchase Order'],
-                   //   ['Daliy Purchase Order by Supplier', 'Daily Purchase Order by Supplier'],
+                    ['Supplier List', 'Supplier List'],
+                    ['Purchase Order', 'Purchase Order'],                  
+                    ['Purchase Order By Amount', 'Purchase Order By Amount'],
+                    ['Outstanding Purchase Order', 'Outstanding Purchase Order'],
+                    ['Purchased ATC', 'Purchased ATC'],
+                    ['Purchased ATC outstanding', 'Purchased ATC outstanding'],
+                    ['Freight Order', 'Freight Order'],
+                    ['Delivery', 'Delivery'],
+                    ['Delivery By Customer', 'Delivery By Customer'],
+                    ['Shipment', 'Shipment'],
+                    ['Transportation', 'Transportation'],
+                    ['Transportation By Customer', 'Transportation By Customer'],
+                    ['Transportation By Driver', 'Transportation By Driver'],
+                    ['Transportation By PlateNo', 'Transportation By PlateNo'],
 
-                   // ['Purchase Order By Item', 'Purchase Order By Item'],
-                   // ['Purchase Order By Amount', 'Purchase Order By Amount'],
+                 ['Customer outstanding', 'Customer outstanding'],
 
-                   // ['Weekly Purchase Order', 'Weekly Purchase Order'],
-
-                   // ['Outstanding Purchase Order', 'Outstanding Purchase Order'],
-                 
-                   // ['Purchase Order By Branch', 'Purchase Order By Branch'],
-                   // ['Purchase Order By Supplier', 'Purchase Order By Supplier'],
-                   // ['Purchase Order By Supplier and Account', 'Purchase Order By Supplier and Account'],
-                   // ['Purchase Order By Supplier With Previous', 'Purchase Order By Supplier With Previous'],
-                   // ['Purchase Order By Sub Category', 'Purchase Order By Sub Category'],
-                   // ['Purchase Order By Category', 'Purchase Order By Category'],
-                   // ['Purchase Order By Category Total', 'Purchase Order By Category Total'],
-                   
-                   //['Purchase Order By Amount', 'Purchase Order By Amount'],
-
-                   //  ['Purchase Order By Month', 'Purchase Order By Month'],
-                   // ['Request For Quotation', 'Request For Quotation'],
                     ['Payment', 'Payment'],
                     ['Supplier Settlement', 'Supplier Settlement'],
                     ['Supplier Ledger', 'Supplier Ledger'],
@@ -470,6 +465,38 @@ Ext.erp.ux.rptPurchase.Form = function (config) {
                     }).show();
                 }
             }]
+        }, {
+            hiddenName: 'Customer',
+            xtype: 'combo',
+            fieldLabel: 'Customer',
+            typeAhead: true,
+            hideTrigger: true,
+            minChars: 2,
+            listWidth: 280,
+            emptyText: '---Type to Search---',
+            mode: 'remote',
+            allowBlank: true,
+            tpl: '<tpl for="."><div ext:qtip="{Id}. {Name}" class="x-combo-list-item">' + '<h3><span>{Name}</span></h3> </div></tpl>',
+            store: new Ext.data.DirectStore({
+                reader: new Ext.data.JsonReader({
+                    successProperty: 'success',
+                    idProperty: 'Id',
+                    root: 'data',
+                    fields: ['Id', 'Name', 'Code']
+                }),
+                autoLoad: true,
+                api: { read: Psms.GetCustomerBySearch }
+            }),
+            valueField: 'Id',
+            displayField: 'Name',
+            pageSize: 10,
+            listeners: {
+                scope: this,
+                select: function (cmb, rec, idx) {
+                    var form = Ext.getCmp('rptPurchase-form').getForm();
+                    form.findField('CustomerId').setValue(rec.id);
+                 }
+            }
         }, {
             name: 'StartDate',
             xtype: 'datefield',

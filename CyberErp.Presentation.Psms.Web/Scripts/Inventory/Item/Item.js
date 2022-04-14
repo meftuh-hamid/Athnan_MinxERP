@@ -77,6 +77,9 @@ Ext.erp.ux.item.Form = function (config) {
                     name: 'TaxRateIds',
                     xtype: 'hidden'
                 }, {
+                    name: 'TaxRateIds',
+                    xtype: 'hidden'
+                }, {
                     name: 'CreatedAt',
                     xtype: 'hidden'
                 },
@@ -196,7 +199,35 @@ Ext.erp.ux.item.Form = function (config) {
                     readOnly: false,
                     allowBlank: true,
                     checked: false
-                },  {
+                }, {
+                    xtype: 'compositefield',
+                    fieldLabel: 'Tax',
+                    defaults: {
+                        flex: 1
+                    },
+                    items: [
+                        {
+                            name: 'TaxRateDescription',
+                            xtype: 'textarea',
+                            fieldLabel: 'Tax',
+                            allowBlank: true,
+                            height: 50,
+                            readOnly: false
+                        },
+                    {
+                        xtype: 'button',
+                        width: 30,
+                        iconCls: 'icon-add',
+                        handler: function () {
+                            var form = Ext.getCmp('item-form').getForm();
+                            new Ext.erp.ux.taxPicker.Window({
+                                targetForm: form,
+                            }).show();
+
+                        }
+                    }
+                    ]
+                }, {
                     name: 'ItemSpecification',
                     xtype: 'textarea',
                     fieldLabel: 'Item Specification',

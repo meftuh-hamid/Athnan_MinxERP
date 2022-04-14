@@ -236,3 +236,17 @@ E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.dll
 E:\Project\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.dll.config
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Business.Component.Psms.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Infrastructure.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\CyberErp.Data.Model.pdb
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.csprojResolveAssemblyReference.cache
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.dll
+D:\Projects\Athnan\Repository\MinXERP\CyberErp.Business.Component.Psms\obj\Debug\CyberErp.Business.Component.Psms.pdb

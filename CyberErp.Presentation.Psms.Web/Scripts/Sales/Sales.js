@@ -83,7 +83,7 @@ Ext.erp.ux.sales.Form = function (config) {
       
             });
             totalAmount=taxableAmount+totalAmount-discountAmount;
-            tax = ((taxableAmount - discountAmount) * (vatRate));
+            tax = taxableAmount>0?((taxableAmount - discountAmount) * (vatRate)):0;
             var taxTotal = this.roundToDecimal(tax);
             var parsedTotalAmount = this.roundToDecimal(totalAmount);
             if (applyWithholding) {
@@ -99,7 +99,7 @@ Ext.erp.ux.sales.Form = function (config) {
             form.findField('WithHolding').setValue(withholding);
 
             form.findField('NetPay').setValue(netAmount);
-            var totalSummary = " Sub Total:" + (parsedTotalAmount - discountAmount )+ " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
+            var totalSummary = " Sub Total:" + (totalAmount +discountAmount) + " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
 
             Ext.getCmp('sales-totalSummary').setValue(totalSummary);
 

@@ -14,9 +14,7 @@
         <EntityTypeShape EntityType="ErpModel.corePeriod" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="ErpModel.coreRole" Width="1.5" PointX="3" PointY="11.25" />
         <EntityTypeShape EntityType="ErpModel.coreRolePermission" Width="1.5" PointX="5.25" PointY="6.75" />
-        <EntityTypeShape EntityType="ErpModel.coreSubsystem" Width="1.5" PointX="0.75" PointY="5" />
         <EntityTypeShape EntityType="ErpModel.coreUnit" Width="1.5" PointX="3.375" PointY="0.75" />
-        <AssociationConnector Association="ErpModel.FK_coreModule_coreSubsystem" />
         <AssociationConnector Association="ErpModel.FK_coreOperation_coreModule" />
         <AssociationConnector Association="ErpModel.FK_coreRolePermission_coreOperation" />
         <AssociationConnector Association="ErpModel.FK_coreRolePermission_coreRole" />
@@ -27,7 +25,6 @@
         <AssociationConnector Association="ErpModel.FK_coreUser_coreUser" />
         <AssociationConnector Association="ErpModel.FK_coreUser_coreUser1" />
         <EntityTypeShape EntityType="ErpModel.coreUserRole" Width="1.5" PointX="10" PointY="3.125" />
-        <EntityTypeShape EntityType="ErpModel.coreUserSubsystem" Width="1.5" PointX="9.75" PointY="11.75" />
         <EntityTypeShape EntityType="ErpModel.coreVoucherWorkFlow" Width="1.5" PointX="10" PointY="7" />
         <EntityTypeShape EntityType="ErpModel.lupAdjustmentType" Width="1.5" PointX="11.75" PointY="11.75" />
         <EntityTypeShape EntityType="ErpModel.lupConsumerType" Width="1.5" PointX="12.75" PointY="0.75" />
@@ -48,7 +45,6 @@
         <EntityTypeShape EntityType="ErpModel.lupVoucherType" Width="1.5" PointX="7.75" PointY="7.25" />
         <AssociationConnector Association="ErpModel.FK_coreUserRole_coreRole" />
         <AssociationConnector Association="ErpModel.FK_coreUserRole_coreUser" />
-        <AssociationConnector Association="ErpModel.FK_coreUserSubsystem_coreUser" />
         <AssociationConnector Association="ErpModel.FK_coreVoucherWorkFlow_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_coreVoucherWorkFlow_lupVoucherType" />
         <EntityTypeShape EntityType="ErpModel.PRBillofMaterialDetail" Width="1.5" PointX="23.625" PointY="17.875" />
@@ -385,9 +381,7 @@
         <EntityTypeShape EntityType="ErpModel.slmsDailySales" Width="1.5" PointX="20.25" PointY="79.125" />
         <AssociationConnector Association="ErpModel.FK_slmsDailySales_psmsStore" />
         <EntityTypeShape EntityType="ErpModel.slmsSettlementDetail" Width="1.5" PointX="46" PointY="46.25" />
-        <EntityTypeShape EntityType="ErpModel.slmsSettlementHeader" Width="1.5" PointX="43.75" PointY="46.5" />
         <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsCustomerCredit" />
-        <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsSettlementHeader" />
         <EntityTypeShape EntityType="ErpModel.psmsSupplierSettlementDetail" Width="1.5" PointX="38" PointY="19.75" />
         <EntityTypeShape EntityType="ErpModel.psmsSupplierSettlementHeader" Width="1.5" PointX="35.75" PointY="54" />
         <AssociationConnector Association="ErpModel.FK_psmsSupplierSettlementDetail_psmsPurchaseOrderHeader" />
@@ -397,28 +391,21 @@
         <EntityTypeShape EntityType="ErpModel.psmsDelivery" Width="1.5" PointX="49.75" PointY="25" />
         <EntityTypeShape EntityType="ErpModel.psmsFreightOrder" Width="1.5" PointX="42.5" PointY="36.875" />
         <EntityTypeShape EntityType="ErpModel.psmsPurchaseOrderATCDetail" Width="1.5" PointX="38.25" PointY="25.25" />
-        <EntityTypeShape EntityType="ErpModel.psmsTransportation" Width="1.5" PointX="39.75" PointY="36.5" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_coreFiscalYear1" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_coreFiscalYear1" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreFiscalYear1" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_coreUser1" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_coreUser1" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreUser1" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsDelivery" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsFreightOrder" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsTransportation" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_lupVoucherStatus" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_lupVoucherStatus" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsFreightOrder" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_psmsSupplier" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsPurchaseOrderATCDetail" />
         <AssociationConnector Association="ErpModel.FK_psmsFreightOrder_psmsSupplier" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsItem" />
         <AssociationConnector Association="ErpModel.FK_psmsPurchaseOrderATCDetail_psmsPurchaseOrderDetail" />
-        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsSupplier" />
         <EntityTypeShape EntityType="ErpModel.slmsCustomer" Width="1.5" PointX="16.125" PointY="28.125" />
         <AssociationConnector Association="ErpModel.FK_PRProductionOrderHeader_slmsCustomer" />
         <AssociationConnector Association="ErpModel.FK_psmsDelivery_slmsCustomer" />
@@ -428,7 +415,6 @@
         <AssociationConnector Association="ErpModel.FK_slmsCustomer_slmsPriceCategory" />
         <AssociationConnector Association="ErpModel.FK_slmsCustomerCredit_slmsCustomer" />
         <AssociationConnector Association="ErpModel.FK_SlmsProformaHeader_SlmsCustomer" />
-        <AssociationConnector Association="ErpModel.FK_slmsSettlementHeader_slmsCustomer" />
         <EntityTypeShape EntityType="ErpModel.slmsSalesHeader" Width="1.5" PointX="43.75" PointY="23.5" />
         <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_coreUser" />
         <AssociationConnector Association="ErpModel.FK_slmsSalesHeader_coreUser1" />
@@ -463,6 +449,21 @@
         <AssociationConnector Association="ErpModel.FK_slmsSalesArea_slmsPriceCategory" />
         <AssociationConnector Association="ErpModel.FK_SlmsProformaDetail_SlmsProformaHeader" />
         <AssociationConnector Association="ErpModel.FK_SlmsSalesDetail_SlmsSalesDetail" />
+        <EntityTypeShape EntityType="ErpModel.slmsSettlementHeader" Width="1.5" PointX="18.375" PointY="71.25" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementHeader_slmsCustomer" />
+        <AssociationConnector Association="ErpModel.FK_slmsSettlementDetail_slmsSettlementHeader" />
+        <EntityTypeShape EntityType="ErpModel.psmsTransportation" Width="1.5" PointX="40.25" PointY="37.25" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreFiscalYear1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_coreUser1" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsTransportation" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_lupVoucherStatus" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsItem" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_psmsSupplier" />
+        <AssociationConnector Association="ErpModel.FK_psmsTransportation_slmsCustomer" />
+        <EntityTypeShape EntityType="ErpModel.coreUserSubsystem" Width="1.5" PointX="20.375" PointY="20.25" />
+        <AssociationConnector Association="ErpModel.FK_coreUserSubsystem_coreUser" />
+        <EntityTypeShape EntityType="ErpModel.coreSubsystem" Width="1.5" PointX="0.75" PointY="5.5" />
+        <AssociationConnector Association="ErpModel.FK_coreModule_coreSubsystem" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

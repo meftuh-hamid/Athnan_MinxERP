@@ -171,7 +171,7 @@ Ext.erp.ux.notification.Grid = function (config) {
                 field: 'Id',
                 direction: 'DESC'
             },
-            fields: ['Id', 'Title', 'Message', 'Type', 'Date', 'VoucherStatus', 'IsViewed'],
+            fields: ['Id', 'Title', 'VoucherId', 'VoucherNo', 'VoucherTypeId', 'Supplier', 'Criteria', 'StoreId', 'UnitId', 'VoucherStatusId', 'Message', 'Type', 'Response', 'Date', 'VoucherStatus', 'Status', 'IsViewed'],
             remoteSort: true,
             listeners: {
                 beforeLoad: function () {
@@ -204,66 +204,72 @@ Ext.erp.ux.notification.Grid = function (config) {
                 var date = this.getSelectionModel().getSelected().get('Date');
                 var message = this.getSelectionModel().getSelected().get('Message');
                 var voucherStatus = this.getSelectionModel().getSelected().get('VoucherStatus');
+                var response = this.getSelectionModel().getSelected().get('Response');
+                var criteria = this.getSelectionModel().getSelected().get('Criteria');
+                var supplier = this.getSelectionModel().getSelected().get('Supplier');
+                var storeId = this.getSelectionModel().getSelected().get('StoreId');
+                var unitId = this.getSelectionModel().getSelected().get('UnitId');
 
-                new Ext.erp.ux.notification.notificationWindow({
+                new Ext.erp.ux.notificationWindow.notificationWindow({
                     id: id,
                     type: type,
                     title: title,
                     date: date,
                     message: message,
-                    voucherStatus: voucherStatus
+                    criteria: criteria,
+                    voucherStatus: voucherStatus,
+                    supplier: supplier,
+                    response: response,
+                    storeId: storeId,
+                    unitId: unitId,
                 }).show();
             },
             scope: this
         },
         columns: [new Ext.grid.RowNumberer(), {
-            dataIndex: 'Id', header: 'Id', sortable: true, hidden: true, width: 100, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'Id',
+            header: 'Id',
+            sortable: true,
+            hidden: true,
+            width: 100,
+            menuDisabled: true,
         }, {
-            dataIndex: 'Type', header: 'Type', sortable: true, width: 150, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("IsViewed") == true)
-                    return '<span style=color:black>' + value + '</span>';
-                else
-                    return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'Type',
+            header: 'Type',
+            sortable: true,
+            width: 100,
+            menuDisabled: true,
         }, {
-            dataIndex: 'Title', header: 'Title', sortable: true, width: 150, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("IsViewed") == true)
-                    return '<span style=color:black>' + value + '</span>';
-                else
-                    return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'Title',
+            header: 'Title',
+            sortable: true,
+            width: 150,
+            menuDisabled: true,
         }, {
-            dataIndex: 'VoucherStatus', header: 'Action', sortable: true, hidden: false, width: 100, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'VoucherStatus',
+            header: 'Action',
+            sortable: true,
+            hidden: false,
+            width: 100,
+            menuDisabled: true,
         }, {
-            dataIndex: 'Date', header: 'Date', sortable: true, width: 100, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("IsViewed") == true)
-                    return '<span style=color:black>' + value + '</span>';
-                else
-                    return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'Supplier',
+            header: 'Supplier',
+            sortable: true,
+            width: 150,
+            menuDisabled: true,
         }, {
-            dataIndex: 'Message', header: 'Message', sortable: true, width: 370, menuDisabled: true,
-            renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("IsViewed") == true)
-                    return '<span style=color:black>' + value + '</span>';
-                else
-                    return '<span style=color:green>' + value + '</span>';
-
-            }
+            dataIndex: 'Date',
+            header: 'Date',
+            sortable: true,
+            width: 100,
+            menuDisabled: true,
+        }, {
+            dataIndex: 'Message',
+            header: 'Message',
+            sortable: true,
+            width: 370,
+            menuDisabled: true,
         }
         ]
     }, config));
@@ -271,7 +277,33 @@ Ext.erp.ux.notification.Grid = function (config) {
 Ext.extend(Ext.erp.ux.notification.Grid, Ext.grid.GridPanel, {
     initComponent: function () {
         this.store.baseParams = { record: Ext.encode({}) };
-        this.tbar = [];
+        this.tbar = [{
+            xtype: 'tbfill'
+        }, {
+            xtype: 'textfield',
+            emptyText: 'Type Search text here and press "Enter"',
+            submitEmptyText: false,
+            enableKeyEvents: true,
+            style: {
+                borderRadius: '25px',
+                padding: '0 10px',
+                width: '200px'
+            },
+            listeners: {
+                specialKey: function (field, e) {
+                    if (e.getKey() == e.ENTER) {
+                        var grid = Ext.getCmp('notification-grid');
+                        grid.store.baseParams['record'] = Ext.encode({ searchText: field.getValue() });
+                        grid.store.load({ params: { start: 0, limit: grid.pageSize } });
+                    }
+                },
+                Keyup: function (field, e) {
+                    var grid = Ext.getCmp('notification-grid');
+                    grid.store.baseParams['record'] = Ext.encode({ searchText: field.getValue() });
+                    grid.store.load({ params: { start: 0, limit: grid.pageSize } });
+                }
+            }
+        }];
         this.bbar = new Ext.PagingToolbar({
             id: 'notification-paging',
             store: this.store,

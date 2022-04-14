@@ -431,7 +431,6 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                         if (action != "revision" && voucherNo == "Draft")                                    
                         _utils.UpdateVoucherNumberBySpplier("Purchase Order", PurchaseOrderHeader.SupplierId);
                         httpapplication.Application.UnLock();
-                        if (action != "revision")                                                         
                         UpdateStatus(PurchaseOrderHeader, action);
            
                     }
@@ -770,7 +769,7 @@ namespace CyberErp.Presentation.Psms.Web.Controllers
                     item.CustomerId,
                     item.Quantity,
                     item.DeliveredQuantity,
-                    Different = item.DeliveredQuantity > 0 ? item.Quantity - item.DeliveredQuantity.Value : 0,
+                    Different = item.DeliveredQuantity > 0 ? item.DeliveredQuantity - item.Quantity.Value : 0,
                     item.IsDelivered,
                     Customer = item.CustomerId.HasValue ? item.slmsCustomer.Name : "",
                     item.Remark

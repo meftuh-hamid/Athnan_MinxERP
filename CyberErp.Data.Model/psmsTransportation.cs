@@ -18,6 +18,7 @@ namespace CyberErp.Data.Model
         public System.Guid FiscalYearId { get; set; }
         public Nullable<System.Guid> ItemId { get; set; }
         public Nullable<System.Guid> SupplierId { get; set; }
+        public Nullable<System.Guid> CustomerId { get; set; }
         public string VoucherNumber { get; set; }
         public System.DateTime Date { get; set; }
         public bool IsOwnedVehicle { get; set; }
@@ -46,5 +47,6 @@ namespace CyberErp.Data.Model
         public virtual lupVoucherStatus lupVoucherStatus { get; set; }
         public virtual psmsItem psmsItem { get; set; }
         public virtual psmsSupplier psmsSupplier { get; set; }
+        public virtual slmsCustomer slmsCustomer { get; set; }
     }
 }

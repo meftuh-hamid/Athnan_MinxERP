@@ -124,6 +124,10 @@ Ext.erp.ux.transportation.Form = function (config) {
                             form.findField('FreightOrderId').setValue(rec.data['Id']);
                             form.findField('SupplierId').setValue(rec.data['SupplierId']);
                             form.findField('Supplier').setValue(rec.data['Supplier']);
+                            form.findField('CustomerId').setValue(rec.data['CustomerId']);
+                            form.findField('Customer').setValue(rec.data['Customer']);
+
+
                             form.findField('Quantity').setValue(rec.data['Quantity']);
                             form.findField('UnitId').setValue(rec.data['UnitId']);
                             form.findField('ATC').setValue(rec.data['ATC']);
@@ -208,6 +212,42 @@ Ext.erp.ux.transportation.Form = function (config) {
                             if (newvalue == "") {
                                 var form = Ext.getCmp('transportation-form').getForm();
                                 form.findField('SupplierId').reset();
+                            }
+                        }
+                    }
+                }, {
+                    hiddenName: 'Customer',
+                    xtype: 'combo',
+                    fieldLabel: 'Customer',
+                    typeAhead: false,
+                    hideTrigger: true,
+                    minChars: 2,
+                    listWidth: 280,
+                    emptyText: '---Type to Search---',
+                    mode: 'remote',
+                    allowBlank: false,
+                    tpl: '<tpl for="."><div ext:qtip="{Id}. {Code}" class="x-combo-list-item">' + '<h3><span>{Name}</span></h3> {Code}</div></tpl>',
+                    store: new Ext.data.DirectStore({
+                        reader: new Ext.data.JsonReader({
+                            successProperty: 'success',
+                            idProperty: 'Id',
+                            root: 'data',
+                            fields: ['Id', 'Name']
+                        }),
+                        autoLoad: true,
+                        api: { read: Psms.GetCustomerBySearch }
+                    }),
+                    valueField: 'Name',
+                    displayField: 'Name',
+                    pageSize: 10, listeners: {
+                        select: function (cmb, rec, idx) {
+                            var form = Ext.getCmp('transportation-form').getForm();
+                            form.findField('CustomerId').setValue(rec.id);
+                        },
+                        change: function (cmb, newvalue, oldvalue) {
+                            if (newvalue == "") {
+                                var form = Ext.getCmp('transportation-form').getForm();
+                                form.findField('CustomerId').reset();
                             }
                         }
                     }
@@ -567,12 +607,7 @@ Ext.erp.ux.transportation.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("Status") == "Approved")
-                    return '<img src="Content/images/app/OkPass.png"/>';
-                else if (record.get("Status") == "Certified")
-                    return '<img src="Content/images/app/pending.png"/>';
-                else
-                    return '<img src="Content/images/app/Cancel1.png"/>';
+                return '<img src="Content/images/app/yes.png"/>';
             }
         }, {
             dataIndex: 'VoucherNumber',
@@ -643,12 +678,10 @@ Ext.erp.ux.transportation.Grid = function (config) {
             width: 100,
             menuDisabled: true,
             renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                if (record.get("Status") == "Approved")
-                    return '<img src="Content/images/app/OkPass.png"/>';
-                else if (record.get("Status") == "Certified")
-                    return '<img src="Content/images/app/pending.png"/>';
+                if (value == true)
+                    return '<img src="Content/images/app/yes.png"/>';
                 else
-                    return '<img src="Content/images/app/Cancel1.png"/>';
+                    return '<img src="Content/images/app/no.png"/>';
             }
         }, {
             dataIndex: 'DriverName',

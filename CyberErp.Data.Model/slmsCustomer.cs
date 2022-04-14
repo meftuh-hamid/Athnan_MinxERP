@@ -22,8 +22,9 @@ namespace CyberErp.Data.Model
             this.psmsPurchaseOrderATCDetail = new HashSet<psmsPurchaseOrderATCDetail>();
             this.slmsCustomerCredit = new HashSet<slmsCustomerCredit>();
             this.slmsProformaHeader = new HashSet<slmsProformaHeader>();
-            this.slmsSettlementHeader = new HashSet<slmsSettlementHeader>();
             this.slmsSalesHeader = new HashSet<slmsSalesHeader>();
+            this.slmsSettlementHeader = new HashSet<slmsSettlementHeader>();
+            this.psmsTransportation = new HashSet<psmsTransportation>();
         }
     
         public System.Guid Id { get; set; }
@@ -60,7 +61,8 @@ namespace CyberErp.Data.Model
         public virtual slmsPriceCategory slmsPriceCategory { get; set; }
         public virtual ICollection<slmsCustomerCredit> slmsCustomerCredit { get; set; }
         public virtual ICollection<slmsProformaHeader> slmsProformaHeader { get; set; }
-        public virtual ICollection<slmsSettlementHeader> slmsSettlementHeader { get; set; }
         public virtual ICollection<slmsSalesHeader> slmsSalesHeader { get; set; }
+        public virtual ICollection<slmsSettlementHeader> slmsSettlementHeader { get; set; }
+        public virtual ICollection<psmsTransportation> psmsTransportation { get; set; }
     }
 }

@@ -39,10 +39,10 @@ var grid = new Ext.grid.EditorGridPanel({
 Ext.ux.grid.CheckColumn = Ext.extend(Ext.grid.Column, {
 
     /**
-     * @private
-     * Process and refire events routed from the GridView's processEvent method.
-     */
-    processEvent : function(name, e, grid, rowIndex, colIndex){
+    * @private
+    * Process and refire events routed from the GridView's processEvent method.
+    */
+    processEvent: function (name, e, grid, rowIndex, colIndex) {
         if (name == 'mousedown') {
             var record = grid.store.getAt(rowIndex);
             record.set(this.dataIndex, !record.data[this.dataIndex]);
@@ -52,8 +52,8 @@ Ext.ux.grid.CheckColumn = Ext.extend(Ext.grid.Column, {
         }
     },
 
-    renderer : function(v, p, record){
-        p.css += ' x-grid3-check-col-td'; 
+    renderer: function (v, p, record) {
+        p.css += ' x-grid3-check-col-td';
         return String.format('<div class="x-grid3-check-col{0}">&#160;</div>', v ? '-on' : '');
     },
 

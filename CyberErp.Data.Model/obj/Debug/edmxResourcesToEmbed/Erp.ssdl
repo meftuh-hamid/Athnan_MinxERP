@@ -1900,6 +1900,7 @@
     <Property Name="FiscalYearId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="ItemId" Type="uniqueidentifier" />
     <Property Name="SupplierId" Type="uniqueidentifier" />
+    <Property Name="CustomerId" Type="uniqueidentifier" />
     <Property Name="VoucherNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="IsOwnedVehicle" Type="bit" Nullable="false" />
@@ -2197,7 +2198,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="ReferenceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceNo" Type="nvarchar(max)" />
     <Property Name="CustomerId" Type="uniqueidentifier" />
     <Property Name="CollectedFrom" Type="nvarchar(max)" />
     <Property Name="Amount" Type="money" />
@@ -5726,6 +5727,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_psmsTransportation_slmsCustomer">
+    <End Role="slmsCustomer" Type="Self.slmsCustomer" Multiplicity="0..1" />
+    <End Role="psmsTransportation" Type="Self.psmsTransportation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="slmsCustomer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="psmsTransportation">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_psmsVooucherStatusTransaction_lupVoucherType">
     <End Role="lupVoucherType" Type="Self.lupVoucherType" Multiplicity="0..1" />
     <End Role="psmsVoucherStatusTransaction" Type="Self.psmsVoucherStatusTransaction" Multiplicity="*" />
@@ -7520,6 +7533,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_psmsTransportation_psmsTransportation" Association="Self.FK_psmsTransportation_psmsTransportation">
       <End Role="lupMeasurementUnit" EntitySet="lupMeasurementUnit" />
+      <End Role="psmsTransportation" EntitySet="psmsTransportation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_psmsTransportation_slmsCustomer" Association="Self.FK_psmsTransportation_slmsCustomer">
+      <End Role="slmsCustomer" EntitySet="slmsCustomer" />
       <End Role="psmsTransportation" EntitySet="psmsTransportation" />
     </AssociationSet>
     <AssociationSet Name="FK_psmsVooucherStatusTransaction_lupVoucherType" Association="Self.FK_psmsVooucherStatusTransaction_lupVoucherType">

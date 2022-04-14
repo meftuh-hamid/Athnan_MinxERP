@@ -99,7 +99,7 @@ Ext.erp.ux.proforma.Form = function (config) {
             form.findField('WithHolding').setValue(withholding);
 
             form.findField('NetPay').setValue(netAmount);
-            var totalSummary = " Sub Total:" + (parsedTotalAmount - discountAmount) + " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
+            var totalSummary = " Sub Total:" + (totalAmount + discountAmount) + " ; " + (discountAmount > 0 ? " Discount: " + discountAmount + " ; " + " Sub Total:" + parsedTotalAmount + " ; " : "") + "Tax:" + taxTotal + " ; " + (withholding > 0 ? " Withholding: " + withholding + " ; " : "") + " Net:" + netAmount;
 
             Ext.getCmp('proforma-totalSummary').setValue(totalSummary);
 
